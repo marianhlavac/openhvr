@@ -4,10 +4,10 @@
 
 {TODO} Users usually interact with the virtual environment using the controllers...
 
-{TODO} The work is inspired by and the main idea originates in the _Dolby Atmos_ system
+{TODO} The work is inspired by, and the main idea originates in the _Dolby Atmos_ system
 -- spatial audio system for delivering better sound immersion in cinemas.
 The system can adapt to almost any cinema
-in the world, any contemporary cinema speaker set-up can be used for use
+in the world. Any contemporary cinema speaker set-up can be used for use
 with Dolby Atmos. <<dawp>>
 
 {TODO} As of year 2020, the videogame industry market is ... {TODO Oduvodnit proc
