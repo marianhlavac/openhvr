@@ -1,0 +1,88 @@
+== Virtual Reality
+
+There are many definitions describing the term Virtual Reality (shortly VR).
+Some of them are older, and define virtual reality as following:
+
+> Virtual Reality is electronic simulation of environments experienced via
+head mounted eye goggles and wired clothing enabling the end user to interact
+in realistic three-dimensional situations (Coates, 1992)
+
+Other, newer ones, define VR as:
+
+> The use of computer technology to create an interactive three-dimensional
+world in which the objects have a sense of spatial presence;
+virtual environment, and virtual world are synonyms for virtual reality.
+(Department of Defense, 2018)
+
+The age of the first definition is apparent, but whether using older or newer
+definition, majority of them define VR as some kind of
+virtual world that can be viewed, explored or experienced by the user.
+
+Virtual Reality is sometimes mistakenly confused with Augmented Reality (AR).
+For unenlightened people, these terms (VR and AR) can be hard to distinguish,
+not to mention there are other terms in the industry, such as MR and XR
+(mixed reality and extended reality, respectively). There is very simple
+way to distinguish VR from AR -- VR is known to "replace" elements
+(visual, sound) to provide full immersion in a completely different virtual
+world, whereas AR often "adds" elements to the real world <<vrar>>.
+The most clear example would be to compare HTC Vive VR headset with
+Microsoft HoloLens AR headset -- Vive blocks your view completely, putting
+a screen in front of your eyes, and HoloLens is equipped with holographic display,
+which is transparent and allows you to see through.
+
+It is also important to acknowledge, that Virtual Reality didn't always mean
+putting a headset on your head and a controllers in your heads, as most of the
+users of contemporary hardware would expect. Especially in
+early VR experiments, the visuals could be provided by projecting the images
+on four walls surrounding the user (as in popular CAVE system <<cave>>) and
+using surround sound system for the spatial audio.
+
+=== Contemporary hardware
+
+The days of low-resolution, high-latency displays and expensive, unavailable and
+unprecise hardware sensors are long gone. Nowadays, virtual reality headsets are
+sold as a consumer product and are available to almost everyone. They are
+equipped with high-frequency refresh-rate displays, fast and low-latency
+gyroscopes and other high-end electronics components invented in the last
+decades.
+
+Current consumer virtual reality headsets features, among other components,
+a high resolution displays with refresh speeds often reaching 90Hz, gyroscopes
+with up to 0.01° rotation precision and stereo headphones with 3D sound.
+Location tracking of the VR system can reach up to sub-millimetric precision
+<<vivenasa>> and motion-to-photon latency
+footnote:[Latency measured between headset motion and photons emitted from the display.]
+on some headsets range between 2-7 milliseconds. <<mtpltc>> <<xinwiki>>
+VR headsets offers such precise tracking abilities, that it's suitable even
+for researching purposes and scientific projects <<vivepbsr>>, and therefore
+it shouldn't be surprising that VR is a very popular topic to research.
+
+.Photo of modern VR headset (Sony Playstation VR) (CC BY-NC 2.0)
+image::25688530252_e56eee6e9d_b.jpg[Sony Playstation]
+
+=== Uses of Virtual Reality
+
+Looking closely at the investments made to AR and VR technologies, it suggests,
+that the most popular application of AR/VR lies in entertainment industry, followed
+by training situations, industrial maintenance and retail showcasing.
+<<statistavr>>
+
+Advancements in haptic feedback allows for better surgery training using
+VR simulations <<vhfcrmisvrt>>. Though no exact data proving performance gains
+weren't published yet, it can be expected that thanks to the correct haptic
+feedback, VR training might become superior, compared to traditional
+training methods. <<vrsrgr>>
+
+=== Developing for Virtual Reality
+
+The contemporary state of Virtual Reality development tools is undoubtfully
+coupled to the videogame industry, together with the procedures and practices.
+It shouldn't be surprising, that the most popular tools for creating
+applications for virtual reality are game engines and frameworks.
+
+The current most notable popular game engines, with the support of creating VR
+applications are: Unity footnote:[https://unity3d.com] by
+Unity Technologies, Unreal Engine footnote:[https://unrealengine.com] by
+Epic Games, or Godot Engine, open-source engine developed by the community
+under the MIT license. footnote:[https://godotengine.org] <<slantvr>>
+

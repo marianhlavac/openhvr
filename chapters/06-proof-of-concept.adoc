@@ -1,0 +1,36 @@
+== Proof of Concept results
+
+In April 2019, a proof of concept was performed as a coursework for the MI-MPR
+course at FIT CTU<<poc>>. During the course a testing hardware was assembled
+and simple Unity script was implemented.
+
+The work shortly discussed the motivation and inspiration for the idea,
+specified some goals and presented a simple use-case of the system. In one of the
+chapters it defined some expected results and projected a work schedule.
+Opportunities for various experiments were proposed.
+
+Lastly, the implementation and its results were described. The implementation
+focused solely on the wind simulation, as it's the easiest and most affordable
+effect to simulate and test.
+
+Some of the expected problems or experiment opportunities included, for example,
+a need for taking in consideration the actuation time of the devices producing
+the effects, or possibility of unability to reach desired quality of effect
+simulation, caused, for example, by having not enough fans around the user
+in the room, to simulate all kinds and directions of the wind.
+
+The hardware consisted of two 3D-printed fan bodies, two DC toy motors and Arduino
+UNO controlling the fans using PWM footnote:[Pulse Width Modulation]. Inside
+the VR world, a red dot represented a wind source. Fan positions were manually
+input. Unity plugin was constantly sending relative positions between the
+wind source and fan positions to the Arduino board.
+
+.Photograph of the prototype setup. In the background a Unity application can be seen. Red ball defines the wind source.
+image::IMG_1891.jpeg[Photo of the POC setup]
+
+For simplicity, the VR application was not room-scaled, but in the
+user sitting/standing mode, and worked only with 2-dimensional plane for
+computing the direction differences between sources and effect producers.
+
+The work successfully proved that such system can be created and layed down
+the foundations for transforming the idea into master thesis project.

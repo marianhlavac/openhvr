@@ -1,0 +1,28 @@
+name: Build
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    name: Build book output files
+    runs-on: ubuntu-latest
+    container: asciidoctor/docker-asciidoctor
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        lfs: true
+    - name: Build HTML
+      run: asciidoctor book.adoc -o MT_hlavam30_2020_preview.html
+    - name: Upload HTML as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: MT_hlavam30_2020_preview
+        path: MT_hlavam30_2020_preview.html
+    - name: Build PDF
+      run: asciidoctor-pdf book.adoc -o MT_hlavam30_2020_preview.pdf
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: MT_hlavam30_2020_preview
+        path: MT_hlavam30_2020_preview.pdf

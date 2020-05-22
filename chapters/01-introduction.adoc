@@ -1,0 +1,20 @@
+== Introduction
+
+{TODO Napsat introduction}
+
+{TODO} Users usually interact with the virtual environment using the controllers...
+
+{TODO} The work is inspired by and the main idea originates in the _Dolby Atmos_ system
+-- spatial audio system for delivering better sound immersion in cinemas.
+The system can adapt to almost any cinema
+in the world, any contemporary cinema speaker set-up can be used for use
+with Dolby Atmos. <<dawp>>
+
+{TODO} As of year 2020, the videogame industry market is ... {TODO Oduvodnit proc
+se zajimat o VR, velikost trhu, primarni investice ve videogame industry}
+
+{TODO} Using latest technologies and IoT devices, this work will focus on
+enhancing user experience and VR immersion using surrounding environmental
+effects distributed in the room, where the VR experience is happening in
+the real world.
+

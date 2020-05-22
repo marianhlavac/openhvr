@@ -1,0 +1,29 @@
+== Attachments
+
+[att1]
+== Attachment 1: Results of the failed "fan direction" test
+
+Following table contains the calculated magnitudes of vector differences `d`
+for each collected user's sample, originally collected with the
+height information (Y-axis not removed)
+
+.Table of collected measurings
+[cols="2,1,1,1,1,1,1",options="header"]
+|===
+| Tester | 1A | 1B | 2A | 2C | 3A | 3D
+| Tester A | 0,1607147 | 0,6379536 | 0,305311 | 0,3321228 | 0,8487036 | 1,263571
+| Tester B | 0,3658605 | 0,4990586 | 0,1040664 | 0,9002404 | 0,5659719 | 1,285348
+| Tester C | 0,298934 | 0,3214657 | 0,3184844 | 0,1148799 | 0,159058 | 1,06579
+| Tester D | 0,7013891 | 0,7075886 | 0,7987939 | 0,4982374 | 0,6480926 | 0,7447294
+| Tester H | 0,3276841 | 0,352311 | 0,3917351 | 0,1454643 | 0,4060867 | 0,2452434
+
+|===
+
+Colors define the target fans written in uppercase letters and colors
+(red fan A, green fan B, blue fan C, purple fan D),
+lowercase letters stands for individual testers and their results. This data
+have Y-axis information removed and is visualized on a 2D-plane
+(viewed from top).
+
+.Chart comparing real fan positions vs. testers input.
+image::direction-results.svg[]

@@ -1,0 +1,67 @@
+== Example application using OpenHVR
+
+To demonstrate the abilities of the system, an example VR application
+was created.
+
+In the application, user can walk around the virtual room and interact with
+various items inside the room. Some of the items are equipped with OpenHVR
+effects. Each of example effect use is described below.
+
+This example application will be used in one of the user tests, where
+participants will be asked about overall opinion on the system and its
+immersiveness.
+
+3D models and materials was created using Microsoft Maquette
+footnote:[VR prototyping tool, allowing fast building of spatial environments https://maquette.ms]
+and for interactions with various items inside the 3D worlds, Unity's
+XR Interaction Toolkit library was used. This library allows users to
+intuitively pick items with their hands and iteract with them (e.g. throw them
+or put somewhere).
+
+Created models are very basic and overall there wasn't much focus on design
+of the models or making the scene photorealistic. Because of the limited time,
+the scene design is functional and simplistic, not beautiful.
+
+By making this example application, the OpenHVR system was validated and proved, that
+it can be used as a whole and works for desired purpose. Application is using
+all parts of the system -- the server must be running, the devices must be
+connected and tracked their positions. Application is producing effects
+using those devices, so the Unity plug-in must be used to produce the effects.
+
+{SCREENSHOT SCENY}
+
+=== Testing entities
+
+The example application could be used for user testing. For those purposes,
+two main testing entities are included within the scene of the application.
+
+==== Windows
+
+There are multiple breakable windows in the room. Each of the interactable
+window can be set to produce various combinations of effects. Any combination
+of following effects can be turned on or off, according to testing
+scenario requirements:
+
+* Visual effect of blowing wind
+* Sound effect of blowing wind
+* Blue cold screen colorization to indicate changing temperature
+* OpenHVR wind effect at the location of the window
+
+The room also contains interactable pieces of stones. Users can grab those
+stones and throw them at the windows to break them. After breaking the window,
+the effects will run.
+
+{SCREENSHOT OKNA}
+
+==== Fireplaces
+
+The virtual room will have multiple fireplaces. Users can grab a match and
+start a fire. When fire is started, similarily to the windows, an optional
+combination of effects will start:
+
+* Visual effect of fire
+* Sound effect of fire and cracking wood
+* Orange warm screen colorization to indicate the change of temperature
+* OpenHVR heat effect at the location of the fireplace
+
+{SCREENSHOT KRBU}

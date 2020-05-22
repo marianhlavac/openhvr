@@ -1,0 +1,121 @@
+== Designing the System
+
+A name "OpenHVR" was chosen as a codename and project name, under which
+all source codes will be publicly available. This name will be also further
+mentioned in the text, carrying meaning of the actual system, that results from
+this work.
+
+.Logo designed for OpenHVR
+image::openhvrlogo.png[OpenHVR Logo]
+
+=== Components cooperation
+
+Following simple diagram is picturing the system components and the
+communication between them.
+
+.Simple Diagram picturing the overview of system functionality
+image::openhvr-diagram.svg[]
+<1> Administrator is user that configures the system and performs the
+first set-up.
+<2> VR User is user experiencing VR application. This user can (and often will
+be) the same user as the Administrator.
+<3> Configurator Tool (as described in chapter <<cfganl,5.4>>).
+<4> VR Application written in Unity Engine (or possibly later other supported
+frameworks and game engines), that is using OpenHVR Unity Plug-in
+<5> Unity plug-in (as described in chapter <<unityanl,5.6>>).
+<6> Effect Devices registered in setup instance of OpenHVR System.
+<7> OpenHVR Communication Server (as described in chapter <<serveranl,5.5>>).
+
+=== Configurator Tool wireframe prototype
+
+As as first step of designing the Configurator Tool, a wireframe prototype
+has been designed. Configurator Tool user interface will consist of only
+two interactive screens -- the main screen and screen for creating new device.
+On the main screen, user will be able to see overview of the room configuration,
+manage (move, update, remove) effect devices and will see the status of the
+system. The new device screen will be displayed after clicking on "new device"
+button at the main screen.
+
+The prototype pictures layout of the user interface.
+
+.Wireframe design of the dashboard (main) screen of the Configurator Tool
+image::wireframe-1-dash.svg[]
+
+.Wireframe design of the in-place editing of devices
+image::wireframe-2-editing.svg[]
+
+.Wireframe design of the "Add device" screen
+image::wireframe-3-adding.svg[]
+
+=== REST API Design
+
+Following is a list of resources available at the API endpoint, with short
+descriptions is a simple draft of functions provided by the server
+component and is a part of pre-implementation design.
+Precise resource and schemas documentation, which is derived
+directly from the implementation can be later found
+in xref:./13-developer-guide.adoc#server-api[Chapter 13.1] of the
+Developer Guide chapter.
+
+GET /devices/::
+Returns a list of registered effect devices in the current room configuration,
+together with their properties (such as location, etc.).
+
+POST /devices/::
+Registers a new effect device in the room.
+
+GET /devices/drivers::
+Returns a list of currently available drivers. New drivers can be added only
+by extending the source code of the server.
+
+GET /devices/{deviceId}::
+Returns details about a specific device.
+
+PUT /devices/{deviceId}::
+Updates specific device properties (such as its location, name description, etc.)
+
+DELETE /devices/{deviceId}::
+Removes registration of the device from the room configuration.
+
+POST /effects/::
+Requests new effect performance. This resource is meant to be requested by the
+client each time there is an event happening in the VR scene, that should also
+produce acompanying effect in the room. Using parameters from client
+(location, type of effect, strength, duration, etc.), the server will calculate
+which effect devices needs to be instructed and send the instructions to them.
+
+DELETE /effects/::
+Immediately cancels all previously requested effect performances. Useful when
+scene needs to be cleared or for any reason it needs to be reassured that
+no devices are producing any effects (for example when quitting the VR
+application).
+
+DELETE /effects/{effectId}::
+Immediately cancels a specific, previously requested effect performance.
+Cancelling specific performances is needed only when infinite duration
+was specified when requesting. Otherwise the effect will end after the
+duration and there is no need to cancel it.
+
+GET /effects/types::
+Returns list of available types of effects. Client applications can request
+this list at their startup and raise a warning at the client-side, if VR
+application is requesting effect that is not available.
+
+GET /system/status::
+Returns system status.
+
+=== API Security
+
+The server will not support authentication and all resources will be publicly
+available. It is expected, that each server will serve single instance of
+virtual reality setup and will be run on local network without public access.
+Should user ever be concerned about unwanted access to the system, the server
+will support IP whitelisting
+footnote:[IP Whitelisting is common name for the process of filtering
+requests by the sender IP address and letting through only the requests
+of the set of IP address, that are specified on the "whitelist".].
+
+Securing of each of the device depends on the software and firmware provided
+with the smart device itself. Drivers included in the OpenHVR server should
+support secure connection too. Tasmota firmware supports username and
+password authentication.

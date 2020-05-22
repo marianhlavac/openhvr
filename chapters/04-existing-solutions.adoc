@@ -1,0 +1,180 @@
+== Existing solutions and Related work
+
+In this chapter, existing similar software and research papers related to this
+work are discussed. While the previous chapter discussed the VR haptics in
+general and presented the most popular current products and researches, this
+chapter will focus more on similar projects, that implements winds simulations
+or other external effects on the user. It also focuses on similar software
+solutions relevant to the configuration tool planned for this work.
+
+=== Related work
+
+One of the research papers, called
+"Wind and Warmth in Virtual Reality: Implementation and Evaluation"
+showed that it's very similar to this work and chose a similar approach. Two
+other projects (VRScooter and Ambiotherm) are of the similar or same topic,
+but choosing different approach with different objectives.
+Following text is discussing the results of the research.
+
+==== Ambiotherm
+
+Ambiotherm is a project researched by Nimesha Ranasinghe et al. at Keio-NUS
+CUTE Center, Interactive & Digital Media Institute, National University of
+Singapore. This project presents a prototype of wearable accessory for virtual
+reality headsets that is attached to user's head and neck, to simulate wind
+and heat sources. The control module is communicating over Bluetooth with
+a mobile device running the VR simulation.
+
+System is designed to be used with mobile VR systems.
+The advantage of this system is the usage of inexpensive hardware and low power
+demands. One limiting factor of this system is the lack of locality of the effects.
+It is most apparent on the heat simulation, which can simulate
+only ambient temperatures -- since the heat generating device is
+placed on user's neck, user cannot tell where the heat is coming from.
+
+Accessory is demonstrated on two VR environments -- hot desert and
+snowy mountains. Using these environments a study is performed addressing
+design factors of the system and acessory's effect on user's presence
+and immersion in the virtual environment.
+
+==== Wind and Warmth in CAVE at Bielefeld University
+
+CAVE is a virtual reality system presented at SIGGRAPH in 1992.
+It's quite popular among universities and research centers, because there are
+many researches done using the CAVE system. CAVE is a bit different from
+usual contemporary virtual reality systems, because it doesn't utilize
+stereoscopic displays attached to user's head, but rather uses multiple
+projectors to project images on all sides of the room, where the
+VR experience takes the place.
+
+In 2014, at Faculty of Technology of Bielefield University in Germany,
+a group of researched called "AI Group" presented a research paper, in which
+they described a system within the CAVE system, that can simulate winds
+and heat in a room in various locations and directions.
+
+Results of this system have served as a inspiration to create this work.
+However, the equipment used for reproducing the system described in this work
+is very expensive and not easily accessible for consumer users.
+It consists of many hardware parts, powerful computers and multiple
+network systems and protocols. The fans and lights used are commonly used
+for various live performances, such as in theatres or live concerts, and are
+also very expensive.
+
+==== VR Scooter
+
+In 2006 L.Deligiannidis and R. J.K. Jacob presented a novel input device called
+"VR scooter". This device has vibrotactile feedback generators mounted on itself
+and acompanying fans are blowing wind to simulate motion of the scooter.
+
+Work concluded that wind simulation and vibration is a viable travel
+mechanism type in VR environments. Other than that, the study conducted within
+the work confirmed the hypothesis, that performance improves when the level of
+immersion is increased.
+
+==== Conclusion
+
+It is also important to note, that almost none of the mentioned works focused on
+creating accessible developer tools to help interested developers to create
+content using modern tools, frameworks and game engines.
+
+=== Configurator tools
+
+To configure room to properly produce external effects, it needs to be
+configured. System described in this work will need a configuration utility.
+Software related to room configuration is evaluated, whether it's relevant
+to virtual reality, IoT or none of them. It's focused on user interface and functionalities.
+Results of this short research of existing solutions
+will provide an input for the upcoming analysis and design.
+
+==== SteamVR Room Setup
+
+SteamVR is runtime software primarily designed to be used with headsets made
+by Valve Corporation (HTC Vive, Valve Index, etc.). Software is used for
+system configuration, status reporting, device management and provides users
+with user interface in VR <<steamvr>>.
+
+In the Room Setup configuration utility, users are guided through few steps
+in which they can prepare their newly bought system to be used in their
+space.
+
+In one particular step (which can be seen on the screenshot), user can see
+real-time tracking of his space and location of all tracked devices viewed
+from the top on a 2-dimensional plane. Thanks to this visual cue, users can
+easily set room size and configure the play-space size and rotation
+as they like.
+
+More information about the SteamVR system can be found online at
+https://partner.steamgames.com/doc/features/steamvr/info[SteamVR page in Steamworks Documentation].
+
+.Screenshot of room setup in SteamVR Room Setup utility {NAHRADIT VLASTNIM}
+image::steamvr-setup-room-scale-9.jpg[]
+
+* User interface is very simple and easy to use, it's trying to be informal
+  and entertaining (it's using characters from the Portal 2 game universe
+  footnote:[Game universe refers to a collection of art, characters, story
+  or items related to a single or series of computer games.],
+  and displays various entertaining animations thoughout the process)
+* Tracked devices (headset, controllers and lighthouses) are visible in
+  real-time on the screen.
+* All locations can be set using tracked controllers. Users can set play-space
+  size by taking their controller in four corners of the room and pressing
+  the trigger on the controller in each of the corners.
+
+* The software purpose is to set just the size of play-space, therefore it's not
+  meant to work
+  with any other tracked devices, third-party hardware or other elements or
+  other things placed in the room.
+* There is no ability to see heights of the objects, as the workspace is
+  on a 2-dimensional plane.
+
+==== Oculus Rift Sensor Setup
+
+Oculus Rift Sensor Setup is a configuration utility from Valve Corporation's
+competitor -- Facebook Inc. It's intended to be used with their headsets
+product line named "Oculus".
+
+Since the Oculus Rift uses a different tracking method (using infra-red cameras),
+the configuration utility is a little bit different and takes a little more
+time to setup properly.
+
+The cameras positions are displayed on the 2D-plane visualiser, similarly
+to SteamVR Room Setup. The feedback of location is important, because
+user, who is configuring the system, needs to know how to position the
+cameras better to achieve better tracking of the headset and the controllers.
+
+Overall, the configurator utility is very similar to SteamVR's one, though it
+is less playful and configuring the system takes more time (there are more steps
+involved).
+
+* User interface is modern and more formal.
+* Tracked devices (headset, controllers and cameras) are visible in real-time
+  on the screen.
+
+* For correct configuration, the configurator requires very strict placement
+  of the cameras. The configuration process is known to be frustrating,
+  as it sometimes can take a lot of time to position the cameras correctly.
+* There is no ability to see heights of the objects, as the workspace is
+  on a 2-dimensional plane.
+
+.Screenshot of Oculus Rift Sensor Setup {NAHRADIT VLASTNIM}
+image::oculus-sensor.jpg[]
+
+==== xcape.io
+
+Xcape.io is software used for automating escape rooms
+footnote:[Escape room is a popular entertainment game, where players are locked
+in a room, and through puzzles are challenged to escape the room in a time limit.].
+Although this software's relevance might seem to be far away,
+the similarity lies in the system's utilization of IoT devices
+connected together to provide the automation. Users can connect various
+devices and set a behaviour to them.
+
+The software is using MQTT for communication. It can run a MQTT server and
+therefore supports any device, that uses MQTT as a communication protocol.
+
+The system can be scripted to perform variety of tasks. System is available
+for free as a open-source project on GitHub.
+
+.Screenshot of xcape.io {NAHRADIT VLASTNIM}
+image::xcape.png[]
+

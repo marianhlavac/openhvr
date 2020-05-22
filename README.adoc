@@ -1,0 +1,70 @@
+= Master's Thesis
+
+Title::
+    Surrounding Environment Effects in Virtual Reality
+
+School::
+    Faculty of Information Technology +
+    Czech Technical University in Prague
+
+Department::
+    Department of Software Engineering
+
+Student::
+    Bc. Marián Hlaváč
+
+Supervisor::
+    Ing. Jiří Chludil
+
+Study Programme & Branch::
+    Informatics, Web and Software Engineering
+
+== About
+
+TODO
+
+== Assignment
+
+The goal is to create a part of a virtual reality system, which enhances the
+experience in the virtual reality worlds with real-world effects, such as wind
+or heat effects. The work is split into three parts — web-based room
+configurator, server application, and Unity framework plug-in.
+
+1. Research relevant electrical appliances and their capabilities, determine
+    which of those are suitable for producing the effects and controlling
+    programmatically from a computer.
+
+2. Research and evaluate existing software solutions for the room configuration.
+
+3. Using the typical software engineering methods, design the room configurator
+    and methods of communication between devices and the server.
+
+4. Implement the web-based room configurator, server application, and Unity
+    framework plug-in.
+
+5. Write unit tests, perform integration tests and user testing of the
+    completed system.
+
+== Chapters
+
+* xref:./chapters/01-introduction.adoc#[Introduction]
+* xref:./chapters/02-virtual-reality.adoc#[Virtual Reality]
+* xref:./chapters/03-current-state-of-effects.adoc#[Current State of Effects in Virtual Reality]
+** xref:./chapters/03-current-state-of-effects.adoc#suitable[Assessment of Suitable Effects]
+** xref:./chapters/03-current-state-of-effects.adoc#appliances[Viable Electrical Appliances]
+** xref:./chapters/03-current-state-of-effects.adoc#comm[Means of Communication]
+** xref:./chapters/03-current-state-of-effects.adoc#configurators[Configurators]
+* xref:./chapters/04-existing-solutions.adoc#[Existing Solutions and Relevant Works]
+* xref:./chapters/05-analysis.adoc#[Analytical Evaluation of the System]
+** xref:./chapters/05-analysis.adoc#comm[Communication Server]
+** xref:./chapters/05-analysis.adoc#configuarotr[Configurator]
+** xref:./chapters/05-analysis.adoc#name[NAME System]
+* xref:./chapters/06-proof-of-concept.adoc#[Proof of Concept Results]
+* xref:./chapters/07-design.adoc#[Designing the System]
+* xref:./chapters/08-implementation.adoc#[Implementation]
+* xref:./chapters/09-example-app.adoc#[Example application using NAME system]
+* xref:./chapters/10-user-testing.adoc#[Results of User Testing]
+* xref:./chapters/11-conclusion.adoc#[Conclusion]
+* xref:./chapters/12-future-works.adoc#[Future Works]
+* xref:./chapters/13-install-guide.adoc#[Installation Guide]
+* xref:./chapters/14-developer-guide.adoc#[Developer's Guide]
