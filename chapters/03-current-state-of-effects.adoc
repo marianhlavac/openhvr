@@ -45,7 +45,7 @@ device to the user's fingers. The wires are moving freely and can be locked
 in a position when needed. This solution claims to be non-expensive and 
 have low power consumption. <<wireality>>
 
-.Wireality
+.Visualization of how Wireality system looks and works (Photo courtesy of Carnegie Mellon University)
 image::wireality.png[Wireality]
 
 In 2016, the research staff of the Imagineering Institute of Malaysia
@@ -127,5 +127,5 @@ It stimulates another of the user's senses and makes their
 experience much more immersive. Apart from perfume release, the device is
 also equipped with heaters and small fans that make users feel a warm
 wind on their faces. One of the disadvantages of the device is the fact that
-it only covers the lower part of the user's head; therefore the user can feel
+it only covers the lower part of the user's head; therefore, the user can feel
 the warm wind only on his cheeks and mouth, which seems to be limiting.

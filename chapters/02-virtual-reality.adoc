@@ -15,40 +15,40 @@ virtual environment, and virtual world are synonyms for virtual reality.
 (Department of Defense, 2018)
 
 The age of the first definition is apparent, but whether using older or newer
-definition, majority of them define VR as a kind of
-virtual world, that can be viewed, explored or experienced by the user.
+definition, the majority of them define VR as a kind of
+virtual world that can be viewed, explored, or experienced by the user.
 
 Virtual reality is sometimes mistakenly confused with Augmented Reality (AR).
 For unenlightened people, these terms (VR and AR) can be hard to distinguish,
-not to mention there are other terms in the industry, such as MR and XR
+not to mention the other terms used in the industry, such as MR and XR
 (mixed reality and extended reality, respectively). There is a very straightforward
 way to differentiate VR from AR -- VR is known to replace elements
 (visual, sound) to provide full immersion in a completely different virtual
 world, whereas AR often adds elements to the real world <<vrar>>.
-The clearest example would be to compare HTC Vive VR headset with
-Microsoft HoloLens AR headset -- Vive blocks the view entirely, putting
-a screen in front of the eyes, while HoloLens is equipped with a holographic display,
-which is transparent and allows to see through.
+The clearest example would be to compare the _HTC Vive_ VR headset with
+_Microsoft HoloLens_ AR headset -- Vive blocks the view entirely, putting
+a screen in front of the eyes, while HoloLens is equipped with a holographic 
+display, which is transparent and allows to see through.
 
-It is also essential to acknowledge, that virtual reality did not always mean
+It is also essential to acknowledge, that virtual reality does not always mean
 putting a headset on the head and controllers in the heads, as most of the
-users of contemporary hardware would expect. Especially in
+contemporary hardware users would expect. Especially in
 early VR experiments, the visuals could be provided by projecting the images
 on four walls surrounding the user (as in popular CAVE system <<cave>>) and
 using surround sound system for the spatial audio.
 
 === Contemporary hardware
 
-The days of low-resolution, high-latency displays and expensive, unavailable and
-unprecise hardware sensors are long gone. Nowadays, VR headsets are
-sold as a consumer product and are available to almost everyone. They are
+The days of low-resolution, high-latency displays and expensive, unavailable,
+and unprecise hardware sensors are long gone. Nowadays, VR headsets are
+sold as consumer products and are available to almost everyone. They are
 equipped with high-frequency refresh-rate displays, fast and low-latency
-gyroscopes and other high-end electronics components invented in the last
+gyroscopes, and other high-end electronics components invented in the last
 decades.
 
 Current consumer VR headsets features, among other components,
 a high resolution displays with refresh speeds often reaching 90Hz, gyroscopes
-with up to 0.01° rotation precision and stereo headphones with 3D sound.
+with up to 0.01° rotation precision, and stereo headphones with 3D sound.
 Location tracking of the VR system can reach up to sub-millimetric precision
 <<vivenasa>>, and motion-to-photon latency
 footnote:[Latency measured between headset motion and photons emitted from the display.]
@@ -62,8 +62,8 @@ image::25688530252_e56eee6e9d_b.jpg[Sony Playstation]
 
 === Uses of virtual reality
 
-Looking closely at the investments made to AR and VR technologies, it suggests,
-that the most popular application of AR/VR lies in the entertainment industry,
+The investments made to AR and VR technologies suggest
+that the most popular application of AR/VR is in the entertainment industry,
 followed
 by training situations, industrial maintenance and retail showcases.
 <<statistavr>>
@@ -79,7 +79,7 @@ training methods. <<vrsrgr>>
 The contemporary state of virtual reality development tools is undoubtfully
 coupled to the videogame industry, together with the procedures and practices.
 It should not be surprising that the most popular tools for creating
-applications for VR are game engines and frameworks.
+VR applications are game engines and frameworks.
 
 The current most notable popular game engines with the support of creating VR
 applications are: Unity footnote:[https://unity3d.com] by
