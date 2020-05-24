@@ -134,7 +134,7 @@ Oculus Rift Sensor Setup is a configuration utility from Valve Corporation's
 competitor -- Facebook Inc. It is intended for use with their headsets
 product line named "Oculus".
 
-Since the Oculus Rift uses a different tracking method (using infra-red cameras),
+Since the Oculus Rift uses a different tracking method (using infrared cameras),
 the configuration utility is slightly different and takes a little more
 time to set up correctly.
 

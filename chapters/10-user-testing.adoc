@@ -237,7 +237,7 @@ Three variants of the fireplaces will be similar to windows:
 * Fireplace F -- visual and sound effect of burning fire + temperature change
   indication by coloring the screen with orange color
 * Fireplace G -- visual and sound effect of burning fire + OpenHVR
-  external effect using infra-red heater, simulating actual heat coming
+  external effect using infrared heater, simulating actual heat coming
   out of the position of the burning fire
 
 After performing all the tasks, users will be asked to evaluate the
@@ -307,12 +307,12 @@ Following is the list of relevant comments, that some testers reported
   effect."
 * "I think the fan in the real world was at wrong location, than the
   window in the virtual world."
-* "I saw the infra-red heater before beginning of the test, and I was
+* "I saw the infrared heater before beginning of the test, and I was
   little scared that I might get burned."
 * "I didn't see any difference between B and C, I just noticed, that
   some of them had glass shards and some not."
 * "I didn't like the quality level of graphics."
-* "The infra-red heater positively surprised me."
+* "The infrared heater positively surprised me."
 * "I felt like the sound was coming from different places, than they actually
    were at."
 * "The windows were much more interesting and entertaining, but the fireplace

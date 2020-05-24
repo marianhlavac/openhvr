@@ -1,157 +1,155 @@
 == Analytical evaluation of the system
 
-In this chapter, the system components and functionalities are analysed.
-The functionality definition is preceeded by the analysis of human senses.
-Each human sense is evaluated and decided if it's suitable to produce effects
-that affect those senses. The results of this analysis is then used for
+In this chapter, the system components and functionalities are being analyzed.
+The functionality definition is preceded by the analysis of the human senses.
+Each human sense is evaluated and decided if it is suitable to produce effects
+that affect those senses. The results of this analysis are then used for
 deciding what kind of effect the system will produce.
 
-The system consists of following components:
+The system consists of the following components:
 
 * Communication Server
 * Configurator Tool
 * Unity Plug-in
 
-For each of the listed components, a functional and non-functional requirements
+For each of the listed components, functional and non-functional requirements
 were constructed. At the end of this chapter, various communication protocols
-are assessed, to help pick appropriate way of communication between devices,
-server and the VR application.
+are assessed to help pick an appropriate way of communication between devices,
+server, and the VR application.
 
 === Assessment of human senses
 
-To correctly asses all possible suitable effects that can be produced by the
-system, all externally affectable human senses has been listed and each assessed,
-if it's possible and appropriate to produce effects that can affect those senses.
+To correctly assess all possible suitable effects that can be produced by the
+system, all externally affectable human senses have been listed, and each assessed,
+if it is possible and appropriate to produce effects that can affect those senses.
 
-The system is focused on external effects. Internal senses, such as
-hunger, thirst or proprioception (sense of body motion) are neither
-easily affectable by the common electronics, but they also might not be safe
-and comfortable for users, to affect. The moral point of view
+The system is focused primarily on external effects. Inner senses, such as
+hunger, thirst, or proprioception (sense of body motion), are neither
+easily affectable by the standard electronics, but they also might not be safe
+and comfortable for users to affect. The moral point of view
 might also be in the way.
 
-We're taking in consideration following human external tactile senses:
+We are taking into consideration following human external tactile senses:
 Visual (sight), Auditory (hearing), Somatosensory (touch), Olfaction (smell),
-Gustation (taste) and Equilibrioception (balance). Somatosensory sense can
-be further divided into Mechanoreception (skin touch), Nociception (pain) and
-Thermoception (heat). Each of them are assessed more in detail further in this
+Gustation (taste), and Equilibrioception (balance). Somatosensory sense can
+be further divided into Mechanoreception (skin touch), Nociception (pain), and
+Thermoception (heat). Each of them is assessed more in detail further in this
 chapter.
 
 The process of affecting each sense has been evaluated by difficulty,
-price, ergonomics and safety. There might be various reasons, why some
+price, ergonomics, and safety. There might be various reasons why some
 effects are not suitable for the use-case of our system.
 Each of the senses is evaluated by categorizing into three types of results:
 
-* *Suitable* -- it might be appropriate to create effects affecting this sense
+* *Suitable* -- it might be appropriate to create effects affecting this sense,
 * *Irrelevant* -- even though it might be appropriate to affect this sense,
-there are reasons for why not to do it
-* *Not Suitable* -- affecting such sense is inappropriate
+there are reasons why it will not have any effect,
+* *Not Suitable* -- affecting such sense is inappropriate.
 
 ==== Irrelevant: Visual (sight)
 
-Since all VR users are using headset, that completely blocks
+Since all VR users are using a headset that completely blocks
 all visual perceptions from the real world and "replaces" them by the visuals
 created on the display of the VR headset, visual effects produced externally
 will have no effect on the user.
 
 Outside of the scope of this work, there might be an opportunity for experiments
-to provide effects for people, that are not using the VR headset and are
-just watching. Such situation can happen in VR arcades or simply
+to provide effects for people who are not using the VR headset and are
+just watching. Such a situation can happen in VR arcades or simply
 just between a group of people, where just one of them is using the VR headset.
-By creating visual effects, that are in sync with the VR
+By creating visual effects in sync with the VR
 simulation, others can find watching someone else experiencing the experience
-more enjoyable and entertaining. But for the time being and purposes of this
-work, visual effects are considered as irrelevant.
+more enjoyable and entertaining. Nevertheless, for the time being and purposes 
+of this work, visual effects are considered as irrelevant.
 
 ==== Suitable: Auditory (hearing)
 
 There might be the same argument as for the visuals --
-majority of virtual reality headsets are already equipped with
-headphones, and if not, users often use their own headphones for
+the majority of virtual reality headsets are already equipped with
+headphones, and if not, users often use own headphones for
 enhanced immersion in the virtual reality worlds.
 Spatial audio
 footnote:[Spatial audio is a full sphere surround-sound technique that uses a dimensional approach to audio to mimic the way we hear in real life. <<spaudio>>]
 makes a real difference and is achieved usually using the headphones.
 Surround sound systems are not typical for current virtual reality systems.
 
-But there is still one opportunity for enhancing the experience with sound.
-It is particularly beneficial while using headphones. Typical frequency
-response of headphones are from 20Hz to 20KHz <<freqresp>>, but it is obvious,
+However, there is still one opportunity for enhancing the experience with sound.
+It is particularly beneficial while using headphones. The typical frequency
+response of headphones is from 20Hz to 20KHz <<freqresp>>, but it is obvious
 that lower ranges of frequencies produced by headphones are often much
-less powerful and doesn't create large vibrations that can be felt by a whole
-body. This type of effect partially belongs under somatosensory senses, because
-lower frequencies can not only be heard, but also felt. People commonly say
-"I feel the bass in my chest". Creating large vibrations with bass
-speakers can simulate large thuds or explosions happening within the virtual
-world, which can create such effect.
+less powerful and can not create large vibrations that can be felt by a whole
+body. This type of effect partially belongs to somatosensory senses, because
+lower frequencies can not only be heard but also felt. Creating large 
+vibrations with bass speakers can simulate large thuds or explosions 
+happening within the virtual world, which can create such an effect.
 
-==== Suitable: Direct contact (Mechanoreception)
+==== Suitable: Direct contact
 
 Simulating the touch is difficult. There are, for example, many receptors on
 human fingers, which helps us feel various structures of solid
 objects. We can touch solid objects and feel the feedback. By squeezing the
-object we can determine the rigidity of the solid object, and all those
-information is very difficult to simulate and communicate to user from
-virtual to real world.
+object, we can deduce the solid object's rigidity, and all this
+information is very difficult to simulate and communicate to users from
+virtual to the real world.
 
 Some of the touch simulations are possible, as explored
 in the xref:./03-current-state-of-effects.adoc#hapticexp[third chapter], but all
-of them are simulated by using various wearable equpiment (gloves, suits),
-or devices attached to user's body.
+of them are simulated by using various wearable equipment (gloves, suits),
+or devices attached to the user's body.
 
-Suitable are those devices, that can produce effects externally (without an
-all-time direct contact with the user), so they don't interfere with the VR
-experience, and still be able to create direct contact with the user when
-the effect is required.
+Suitable are those devices that can produce effects externally (without an
+all-time direct contact with the user), so they do not interfere with the VR
+experience and can still create direct contact with the user when required.
 
-Regarding to direct touch, the system created within this work will be primarily
-focused rather on wind simulation, direct pressure contact with user will
+Regarding direct touch, the system created within this work will be primarily
+focused rather on wind simulation, direct pressure contact with the user will
 be left to potential future works, as there are currently not known any
 devices, that would fit into the description.
 
-==== Suitable: Feeling of moving air (Mechanoreception)
+==== Suitable: Feeling of moving air
 
 Humans are overall good at detecting winds and their direction. Our body hair
-helps a lot. Moving air around using electronics is also very easy, fans
+helps a lot. Moving air around using electronics is also very easy; fans
 are specialized devices used primarily for moving the air.
 
-Wind effects are very suitable and easily achieveable as a effects that can
-enhance the virtual experiences. They are relatively safe, cheap to produce,
-directional and easily controllable.
+Wind effects are very suitable and easily achievable as an effect that can
+enhance virtual experiences. They are relatively safe, cheap to produce,
+directional, and easily controllable.
 
-==== Not Suitable: Feeling of wetness (Mechanoreception)
+==== Not Suitable: Feeling of wetness
 
-Another way to cause skin sensations is to make user feel a humidity.
+Another way to cause skin sensations is to make the user feel the humidity.
 The ability to disperse water in the room might drastically enhance immersion
-in the virtual environment. Imagine a virtual reality scene, where you stand
-next to sea or standing in the rainy weather.
+in the virtual environment. Imagine a virtual reality scene where standing
+next to the sea or standing in the rainy weather.
 
-An inspiration for this come from these so-called "5D Cinemas" -- a business
-places (widely popular in shopping malls in Czech Republic) offering
-enhanced cinema experience. It uses combination of 3D stereoscopic
-picture with various enhancing effects, and among the others, it provides
+Inspiration for this comes from these so-called "5D Cinemas" -- a business
+place (widely popular in shopping malls in the Czech Republic) offering
+enhanced cinema experience. It uses a combination of 3D stereoscopic
+pictures with various enhancing effects, and among the others, it provides
 a small water jet, which squirts small amounts of water to simulate a
 situation in the scene in the movie, for example, a water splash. <<5dcin>>
 
-It is important to acknowledge, that the environment in those "5D Cinemas"
+It is important to acknowledge that the environment in those "5D Cinemas"
 is more controlled and ready for such conditions -- their equipment
-is water-proof and safe to splash with water. Users of such system are not
+is water-proof and safe to splash with water. Users of such systems are not
 wearing expensive equipment on their heads, or if so, the equipment is
 most probably water-proof, and therefore splashing water in the room will not
 pose a risk of damaging the equipment.
 
-In the case of typical virtual reality set-up, none of the equipment is ready
-for a contact with water or high humidity levels. For example -- both the
+In the case of a typical virtual reality set-up, none of the equipment is ready
+for contact with water or high humidity levels. For example -- both the
 _Oculus Rift_ virtual reality headset and the _Oculus Touch_ virtual reality
-controllers has maximum operating humidity stated at 95% RH (non-condensing)
+controllers have maximum operating humidity stated at 95% RH (non-condensing)
 <<orhswg>>.
 
 ==== Not suitable: Nociception (pain)
 
 Pain simulation using electronic devices is possible. Electric currents can
-incude pain of various amounts, depending of amount of electric current
+induce pain of various amounts, depending on the amount of electric current
 flowing through the body. <<elepain>>
-Devices, that can induce pain are available for consumers
-(tasers, paralysers, electric shock toys, etc.) and it is possible to
+Devices inducing pain electrically are available for consumers
+(e.g., tasers, paralyzers, electric shock toys) and it is possible to
 incorporate them to generate pain effects for VR simulation.
 
 While pain simulation might greatly enhance virtual reality immersion
@@ -160,54 +158,54 @@ such devices also require direct contact with the user and, again,
 it might affect user comfort when using the system and might get in between
 when experiencing VR experience and affect it negatively.
 
-But the main concerns and reasons to discard such effects are
-safety and morality of such device. Thus, such experiments won't be part of
-this work for obvious reasons.
+However, the main concerns and reasons to discard such effects are the
+safety and morality of such a device. Thus, such experiments will not be 
+a part of this work for obvious reasons.
 
 ==== Suitable: Thermoception (heat)
 
-When keeped in safe ranges, heat can help user to get more information about the
-current scene in virtual environment and distinguish between various conditions
+When kept in safe ranges, heat can help users to get more information about the
+current scene in the virtual environment and distinguish between various conditions
 happening in such scenes.
 
-Feeling of shining sun or heat coming from a cozy fireplace placed in
-virtual world can be simulated using heating elements placed in real world.
+The feeling of shining sun or heat coming from a cozy fireplace placed in the
+virtual world can be simulated using heating elements placed in the real world.
 
 The only risk relates particularly to safety measures, as heating elements are
-potential fire risk and securing electronic device producing heat effects
+a potential fire risk, and securing electronic devices producing heat effects
 must be emphasized.
 
 ==== Suitable: Olfaction (smell)
 
 To the current date, simulation of smell can be categorized as something unusual
-or experimental. There are various attepts to simulate smell using electronic
-devices, some projects are even directly related to Virtual Reality technologies.
+or experimental. There are various attempts to simulate smell using electronic
+devices; some projects are directly related to Virtual Reality technologies.
 
 As researched in
-xref:./03-current-state-of-effects.adoc#feelreal[third chapter],
+xref:./03-current-state-of-effects.adoc#feelreal[the third chapter],
 one approach to solving the problem was based on smell
-cartridges, that emits the smells by heating them with heating elements.
-The main disadvantage of such system is the need of maintenance -- the
-cartridges needs to be replaced, which might turn up to be costly in the
+cartridges that emit the smells by heating them with heating elements.
+The main disadvantage of such a system is the need for maintenance -- the
+cartridges need to be replaced, which might turn up to be costly in the
 long-term.
 
 Concluding from the performed research, we still have too little
-knowledge of how to precisely simulate any smell, or how to affect our organs
+knowledge of how to simulate any smell precisely, or how to affect our organs
 sensing smell. Currently, creating smell effects can be reliably achieved
-only by heating up perfume cartridges.
+only by heating perfume cartridges.
 
-Although somewhat limited, such devices can be used for producing simulation
+Although somewhat limited, such devices can be used for producing a simulation
 of virtual world smells.
 
 ==== Not Suitable: Gustation (taste)
 
 Similarly to smell simulation, stimulating taste receptors electronically is
-complicated aswell. Although experiments can be considered more successfull
-in comparison with electronic smell simulation (mainly because of easier access
-to taste receptors), it's still an early experiment. <<stsie>>
+complicated as well. Although experiments can be considered more successful
+compared to electronic smell simulation (mainly because of easier access
+to taste receptors), it is still an early experiment. <<stsie>>
 
-Even if experiments were advanced and in usable state, it would
-still require user to have some kind of electronic device attached to user's
+Even if experiments were advanced and in a usable state, it would
+require the user to have some kind of electronic device attached to the user's
 tongue. Such attachment might be uncomfortable for the user, especially when
 using for long periods of time. Given the little potential of enhancing virtual
 reality with taste, the negative effects will most probably balance out
@@ -215,20 +213,20 @@ the positive ones.
 
 We can expect development in this field in the future. Imagine a product
 for end-users, that is safe and comfortable for long use and uses wireless
-technology. But until such product exists, working with taste simulation
-in current state is not suitable for the project.
+technology. But until such a product exists, working with taste simulation
+in the current state is not suitable for the project.
 
 ==== Not suitable: Equilibrioception (balance)
 
-To this date we don't record any electronic device, that would be able to
-directly affect user's balance and simulate it's state.
+To this date, we do not record any electronic device that could
+directly affect body balance and simulate its state.
 
-Not only we know too little about controlling user's balance,
-overall it might be not a good idea to affect balance of the user. Losing
-balance might result in user falling and damaging the equipment (headset and
+We know too little about controlling the body balance, and overall, 
+it might not be a good idea to affect the user's balance. Losing
+balance might result in users falling and damaging the equipment (headset and
 controllers) or damaging the equipment in the room around the user.
 
-Virtual reality systems are constantly fighting with users balance problems,
+Virtual reality systems are constantly fighting with user's balance problems,
 affecting perception systems affecting balance could potentially be
 counter-productive in efforts to eliminate motion sickness.
 
@@ -237,7 +235,7 @@ Affecting user balance is considered as not suitable.
 ==== Overview
 
 As a result of this assessment, a system for external effects for VR experience
-enhancement can focus on four senses stimulation -- hearing, touch, heat
+enhancement can focus on four senses stimulation -- hearing, touch, heat,
 and smell.
 
 For simplicity, this work will be focusing on just two of the mentioned suitable
@@ -263,15 +261,14 @@ effects -- wind and heat.
 [[viableappl]]
 === Viable electrical appliances
 
-Provided with the senses appropriate to affect, now it's important to determine
-which electrical appliances can be used for creating effects,
-that can trigger mentioned senses.
+Provided with the senses appropriate to affect, now it is important to determine
+which electrical appliances can be used for creating effects that can trigger mentioned senses.
 
 We set categories of effects in the following table, and from now on will
-refer to there effects by these categories.
+refer to these effects by the category names.
 
-For each category a suitable type of electrical appliance is picked, later in
-analytical parts of the work, a specific devices will be choosed, according to
+For each category, a suitable type of electrical appliance is picked. Later in
+analytical parts of the work, specific devices will be chosen, according to
 current options.
 
 [[appltable]]
@@ -281,47 +278,47 @@ current options.
 | Sense | Category |  Affectable by
 .3+| Auditory (hearing) .3+| *Vibrations* | Large speakers
 | Subwoofer speakers
-| Vibration generators / motors
+| Vibration generators/motors
 | Somatosensory, Mechanoreception (touch) | *Wind* | Pedestal fans
 .2+| Thermoception (heat) .2+| *Heat* | Heaters
-| Infra-red heaters
+| Infrared heaters
 | Olfaction (smell) | *Smell* | Perfume dispensers
 |===
 
-Device must be able to be controller programatically over a computer network,
+Device must be able to be controller programmatically over a computer network,
 to act as a dynamic effect generator.
 
-There are devices available on market,
-that are marked as "smart". Briefly speaking, it means, that the device
-is connected to other devices wired or wirelessly, for a data exchange. <<wisd>>
-Such devices, in most cases, are able to send information they collect over
-the network (e.g. weather stations collecting weather data, making them readable
+There are devices available on the market that are marked as "smart". 
+Briefly speaking, it means that the device
+is connected to other devices wired or wirelessly for data exchange. <<wisd>>
+Such devices, in most cases, can send information they collect over
+the network (e.g., weather stations collecting weather data, making them readable
 on user's smartphones), or able to listen to commands sent to this devices
-from other devices, and perform some kind of actions (e.g. command to
+from other devices, and perform some kind of actions (e.g., a command to
 turn off a desk lamp).
 
-There are two ways to approach the selection of the appliances. Either the
-appliance can be smart, and provide interface of commands, that can be sent, or
-it can be typical appliance connected via so-called "smart wall sockets" --
-devices, that can turn off the electrical power to appliances.
+There are two ways to approach the selection of appliances. Either the
+appliance can be smart and provide an interface of commands that can be sent, or
+it can be a typical appliance connected via so-called "smart wall sockets" --
+devices that can turn off the electrical power to appliances.
 
-The main disadvantage of using specialized smart device is the necessity of
-working with different interfaces. There must be an explicit
-support in the server code, for specific smart devices.
+The main disadvantage of using a specialized smart device is the necessity of
+working with different interfaces. There must be explicit
+support in the server code for specific smart devices.
 
-The main disadvantage of using smart wall socket is the limitation in
-control of the devices. Basically, the devices can be either turned on, or off.
-This approach doesn't allow precise control of fan speeds, or power output
+The main disadvantage of using the smart wall socket is the limitation in
+control of the devices. Fundamentally, the devices can be either turned on or off.
+This approach does not allow precise control of the fan speeds or the power output
 of heaters.
 
 === Analysis of the appliances used
 
-According to the <<appltable,Table 2>> and taking in considerations the
+According to <<appltable,Table 2>> and taking into consideration the
 options available while working on the project, we will be using **fans
-and infra-red heaters**
-for creating wind currents and sources of heat, respectively.
+and infrared heaters**
+to create wind currents and sources of heat, respectively.
 
-Fans and infra-red heaters will be controlled using smart wall plug
+Fans and infrared heaters will be controlled using a smart wall plug
 and will be in two states -- off and on. For each of the selected appliance
 type, a set of properties will be defined
 or measured and set as a "effect device properties" in the configuration
@@ -333,32 +330,32 @@ software. Such measurements will be taken as a part of the user testing.
 | Property | Description | Expected values
 
 | Actuation time
-| The time the device need to go from turned off state to
-  turned on state.
+| The time the device needs to go from a turned-off state to
+  a turned-on state.
 | seconds
 
 | Directionality and range
-| The range and direction span of the area, in
+| The range and direction span of the area in
   which can be the effect experienced by the user.
 | seconds
 |===
 
 
-The fact, that the appliances differs by manufacturer, model and type,
-makes the measurements specific to each individual devices.
-For example, it's expected, that spin-up time
+The fact that the appliances differ by manufacturer, model, and type,
+makes the measurements specific to each individual device.
+For example, it is expected that the spin-up time
 (actuation time) and range of wind effect produced by various pedestal fans
 will be different, as such properties heavily depend on the power of the fan.
 
-For the testing environment built for this work, an approximate measures will be
-taken and they will be provided in the configuration software as optional
+For the testing environment built for this work, approximate measures will be
+taken, and they will be provided in the configuration software as optional
 recommended defaults. Future users of the system will be allowed
 to measure their appliances by themselves and configure the properties with
 their measured values.
 
-System presented in this work is more focused
-on accessible hardware, open-source and non-proprietary solutions and
-ability for broader audience to build their effect system in DIY style.
+The system presented in this work focuses more
+on accessible hardware, open-source and non-proprietary solutions, and
+the opportunity for more people to build their effect system in DIY style.
 
 [cfganl]
 === Configurator tool analysis
@@ -366,14 +363,13 @@ ability for broader audience to build their effect system in DIY style.
 Configurator Tool (alternatively "Room Configurator") is a web application that
 can be used to
 input properties of the room, in which the VR experience will take place.
-Application should provide convenient GUI footnote:[Graphical User Interface]
-for users to easily configure system for their room and VR setup.
+The application should provide convenient GUI footnote:[Graphical User Interface]
+for users to easily configure the system for their room and VR set-up.
 
-Through this application, users will define location, rotation, type and
-additional configuration for each effect device placed in the room. Application
-can be also used for various general configurations, that might arise after
-implementation, that also weren't mentioned in the analysis.
-
+Through this application, users will define the location, rotation, type, and
+additional configuration for each effect device placed in the room. The application
+can also be used for various general system configurations that might arise after
+the implementation, that could not be mentioned in the analysis.
 
 
 ==== Functional requirements
@@ -385,22 +381,22 @@ using the configurator tool.
 
 ===== **User wants to add an effect device into the configuration** [CFG-F2]
 
-Each device placed into room, that user intends to use for producing the effects,
-must be connected with the communication server and its type must be specified.
+Each device placed into a room that the user intends to use for producing the effects
+must be connected with the communication server, and its type must be specified.
 
-Additionally more configuration might be required, depending on the type
-of the device (such as any kinds of thresholds, hardware limitations, etc.)
+Additionally, more configuration might be required, depending on the type
+of the device (such as any kinds of thresholds, or hardware limitations)
 
 ===== **User wants to define a location of added effect device** [CFG-F3]
 
-Each device in room, that user connected to the system and defined its type,
+Each device in a room that the user connected to the system and defined its type
 must have location and rotation (pose) information.
 
 ===== **User wants to input location information using one of the tracked controller in virtual reality space** [CFG-F4]
 
-Additionally to manually inputting location values, for user convenience,
-the application will allow using tracked controller to input the location at
-various places for locating of the effect
+Additionally, to manually inputting location values, for user convenience,
+the application will allow using a tracked controller to input the location at
+various places for locating the effect
 devices and mapping between the real world coordinate system and virtual
 world coordinate system.
 
@@ -408,51 +404,51 @@ world coordinate system.
 
 ===== **User interface must be fast and responsive** [CFG-N1]
 
-To provide satisfying user experience, user interface should be fast and
-responsive. User interface should display loading progress and inform users
+To provide satisfying user experience, the user interface should be fast and
+responsive. The user interface should display loading progress and inform users
 about currently ongoing actions.
 
 ===== **User interface must follow WCAG 2.1** [CFG-N2]
 
-User interface must follow WCAG 2.1
+The user interface must follow WCAG 2.1
 footnote:[Web Content Accessibility Guidelines (WCAG) 2.1 https://www.w3.org/TR/WCAG21/]
-guidelines to provide accessible user interface.
+guidelines to provide an accessible user interface.
 
 [serveranl]
 === Communication Server analysis
 
-Communication Server is a web-server, that acts as a intermediary component,
-passing information between devices producing effects and computer with
+Communication Server is a web server, that acts as an intermediary component,
+passing information between devices producing effects and the computer with
 running VR simulation. This server holds data about room configuration,
-status and location of the effect devices and overall status of the system.
+status, and location of the effect devices and overall status of the system.
 
 It must provide API footnote:[Application Programming Interface] to enable
-information exchange between computer running the simulation and devices
+information exchange between the computer running the simulation and devices
 producing the effects.
 
 ==== Functional requirements
 
-===== **User wants to save new configuration.** [SRV-F1]
+===== **User wants to save a new configuration.** [SRV-F1]
 
-After creating or editing a configuration in Configurator Tool, user
-wants to save his changes and apply its effects on the OpenHVR system.
+After creating or editing a configuration in Configurator Tool, the user
+want to save his changes and apply its effects on the OpenHVR system.
 
 [[srv-f2]]
 ===== **Unity plug-in will send information containing instructions for reproducing current scene effects** [SRV-F2]
 
-Each effect happening inside the VR scene will be described as effect instruction
-and with such instruction, the plug-in will create a request on the server, to
-reproduce described effects in real world, using the system.
+Each effect happening inside the VR scene will be described as an effect 
+instruction. Using such instruction, the plug-in will create a request on the server to
+reproduce described effects in the real world.
 
 ===== **Effect devices will expect instructions on how to behave** [SRV-F3]
 
 All running effect devices will individually expect instructions for their
-behavior. Server must receive instructions coming from Unity plug-in (in <<srv-f2,SRV-F2>>)
-and decide, which devices will receive instructions and what content of the
+behavior. The server must receive instructions coming from Unity plug-in (in <<srv-f2,SRV-F2>>)
+and decide which devices will receive instructions and what content of the
 instruction will be.
 
-Practically speaking, if Unity plug-in asks to blow wind from northern side of
-the room, server will determine which fans are located on the northern side
+Practically speaking, if Unity plug-in asks to blow wind from the northern side of
+the room, the server will determine which fans are located on the northern side
 and send them instruction to start or stop spinning.
 
 ==== Non-Functional requirements
@@ -464,33 +460,33 @@ and send them instruction to start or stop spinning.
 [unityanl]
 === Unity Plug-in analysis
 
-Current VR applications doesn't provide any standardized way
+Current VR applications do not provide any standardized way
 of gathering detailed environmental information about the simulation.
-Most often such details aren't even simulated by the application
+Most often, such details are not generally simulated by the application
 (for example, not all VR applications simulate wind currents or
 temperature in the scene).
 
-For providing such information to the OpenHVR system, so the system can
+For providing such information to the OpenHVR system, so that the system can
 reproduce virtual scene conditions in the real world, a custom Unity plug-in
 will be implemented.
 
 This plug-in will interoperate with Unity's Transform system to determine the
-effect location. Thanks to the componentual architecture of the game engine,
-plug-in can provide a component object, that can be attached to any game object.
-Developers then can use the component in the same way, as they use the other
+effect location. Thanks to the componential architecture of the game engine,
+the plug-in can provide a component object, that can be attached to any game object.
+Developers can then use the component in the same way as they use the other
 components.
 
 .Display of Unity components in the UI of Unity Engine. NAHRADIT VLASTNIM
 image::unity-plugin-for-android-10-638.jpg[]
 
 Plug-in components will be very similar to current existing components, which
-developers are used to. For example -- definition of vibration effect can be
-very similar to defining an 3D audio source in Unity.
+developers are used to. For example -- the definition of vibration effect can be
+very similar to defining a 3D audio source in Unity.
 
 In the same way, developers will be able to fine-tune the effect type and
 its range.
 
-.3D Audio source placed in Unity Engine. Speaker icon defines the source location of the sound and blue sphere defines the strength (range) of the 3D sound. NAHRADIT VLASTNIM
+.3D Audio source set in a Unity Engine scene. The speaker icon defines the source location of the sound, and the blue sphere defines the strength (range) of the 3D sound. NAHRADIT VLASTNIM
 image::75955-screen-audiosource.png[]
 
 
@@ -498,36 +494,36 @@ image::75955-screen-audiosource.png[]
 
 ===== **Developer wants to produce an effect at some location in the game world** [PLG-F1]
 
-Using the component provided by the Unity plug-in, developer will attach
-a component to any object with Transform component. Transform component
-will provide the location of the effect in the game world. Using scripts,
-developer will set-up and trigger effect to be produced by sending signals
-to the plug-in provided component.
+Using the component provided by the Unity plug-in, the developer will attach
+a component to any object with a Transform component. The Transform component
+will provide the location of the effect in the game world. The developer will 
+set and trigger an effect by sending signals to the component provided with 
+the plug-in.
 
 ===== **Developer wants to use reference points of existing devices in the game world** [PLG-F1]
 
-Even though it's not necessary for the typical usecase, developer can receive
-positions and rotations of effect devices to better produce effects in the
-game world.
+The developer can receive
+positions and rotations of effect devices to produce effects in the
+game world better.
 
 This function will be, for example, used in the example app. Location points of
-fans will be collected and one of them will be picked and used to alter
-the position of virtual window (it will help to pick the correct wall position,
+fans will be collected, and one of them will be picked and used to alter
+the position of the virtual window (it will help to pick the correct wall position,
 including the height of the window). Depending on the configured fan size,
-the window size will be adjusted aswell.
+the window size will be adjusted too.
 
 ==== Non-Functional requirements
 
 ===== **Provided resources will be standardized among the Unity Engine environment** [PLG-N1]
 
-For implementation of the plugin, native tools, UI elements and properties
+For the implementation of the plug-in, native tools, UI elements, and properties
 will be used to achieve creating an interface between Unity and OpenHVR system.
 Interface and tools should feel familiar for Unity developers.
 
 === OpenHVR System analysis
 
 Users will often come into contact with the system as a whole. End-users
-often won't distinguish between the specific parts of the system. From such
+often will not distinguish between the specific parts of the system. From such
 users, specific requirements will arise. These requirements are not coupled with
 any specific component of the system, but rather imposes requirements on
 the system as a whole.
@@ -541,39 +537,40 @@ This functional requirement is the primary functionality of the system.
 
 ==== Non-Functional requirements
 
-===== **User wants the effects to not affect his virtual reality experience negatively** [SYS-N1]
+===== **User wants the effects not to affect his virtual reality experience negatively** [SYS-N1]
 
-The system shouldn't affect the original virtual reality experience in any
+The system should not affect the original virtual reality experience in any
 negative way. For example, no such effect, produced by the system, should ever
-constrain user in experiencing some parts of the original VR experience.
+constrain users from experiencing some parts of the original VR experience.
 
 ===== **OpenHVR should not put excessive pressure on system resources of the computer running VR applications** [SYS-N2]
 
-VR applications are very demanding, regarding to system resources. It must be
-made sure, that OpenHVR system won't use excessive amounts of system resources,
+Regarding system resources, VR applications are very demanding. It must be
+made sure that the OpenHVR system will not use excessive amounts of system resources,
 to keep the VR applications running smoothly.
 
 === Means of communication analysis
 
-It was established, that devices will be communicating over a computer network.
-There are many network protocols, with different properties. This chapter will
-analyze possible communication protocols and tools to be used for communication
-between the smart devices, web server and VR application.
+It was established that the effect devices would communicate over a computer network.
+There are many network protocols, with different properties. The chapter will
+analyze possible communication protocols and tools for communication
+between smart devices, web servers, and VR applications.
 
 ==== Art-Net
 
-Firstly let's focus on a protocol, that would seem to be the best for the control
-of a physical devices, such as lights or fans. Art-Net is network protocol for
-distribution of data over a Ethernet network. It supports connection of DMX
-devices, which are most often used for stage lights. It uses UDP-based packet
+Firstly let us focus on a protocol that would seem to be the best for controlling
+physical devices, such as lights or fans. Art-Net is a network protocol for
+the distribution of data over an Ethernet network. It supports the connection of DMX
+devices, which are most often used for stage lights. It uses a UDP-based packet
 structure. <<artnet>>
 
-Art-Net is mostly used for lighting live performances. First version "Art-Net I"
-was released in 1998, the latest 4th version released in September 2016
-is called "Art-Net 4". Art-Net is therefore matured and widely used in
+Art-Net is mostly used for lighting live performances. The first version,
+"Art-Net I", was released in 1998. The latest 4th version released 
+in September 2016
+is called "Art-Net 4". Art-Net is hence matured and widely used in the
 entertainment industry.
 
-Unfortunately, majority of the equipment supporting Art-Net is
+Unfortunately, the majority of equipment supporting Art-Net is
 professional-grade, built to be very reliable, which raises the price point
 by a lot and makes them unavailable for a typical consumer.
 
@@ -581,34 +578,34 @@ by a lot and makes them unavailable for a typical consumer.
 
 MQTT is a lightweight messaging protocol for small sensors and mobile devices,
 optimized for high-latency or unreliable networks. <<mqtthp>> It is
-based on a publish-subscribe concept and the messages are sorted into a "topics",
+based on a publish-subscribe concept, and the messages are sorted into a "topics",
 devices can subscribe to messages published under a topic, or publish
 a message into the topic.
 
-Considering the fact, that the devices will be controlled by smart home
+Considering the fact, that the devices will generally be a smart home
 electronics, MQTT might be a good choice, because many of them have built-in
 support for MQTT or use MQTT as the primary protocol for communication.
 
 The main disadvantage of MQTT is the unreliability in terms of latency.
-It heavily depends on the implementation of MQTT on each of the devices, and on
-the implementation of MQTT server. The latency range is usually
+It heavily depends on the implementation of MQTT on each of the device and on
+the implementation of the MQTT server. The latency range is usually
 in tens or hundreds of milliseconds for the most popular implementations,
 <<mqttlat>> which is sufficient, but the unpredictability is making MQTT
-less suitable for using with real-time effects.
+less suitable for use with real-time effects.
 
 ==== HTTP (RESTful)
 
 The most straightforward way of communication between devices would be to use
-HTTP protocol, which is the most widespread protocol used in computer networks,
-and is used everyday by bilions of users. <<httpsrv>>
+HTTP protocol, which is the most widespread protocol used in computer networks
+and is used every day by billions of users. <<httpsrv>>
 
-A small disadvantage might be the versatility of HTTP protocol. There would be
-a need of standardized API for communication between devices and with the
-server. To mitigate this disadvantage, an RESTful API can be designed to provide
-standardized API with expectable results.
+A small disadvantage might be the versatility of the HTTP protocol. There would be
+a need for a standardized API for communication between devices and with the
+server. To mitigate this disadvantage, a RESTful API can be designed to provide
+the standardized API with expectable results.
 
 REST (REpresentational State Transfer) is an architectural style for developing
 web services and their interfaces. It defines constraints and conventions to
-offer greater performance, scalability, simplicity and more uniform interface.
-<<restdef>> RESTful API is API that conforms to the REST architectural style.
+offer greater performance, scalability, simplicity, and a more uniform interface.
+<<restdef>> RESTful API is an API that conforms to the REST architectural style.
 

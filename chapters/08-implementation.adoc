@@ -231,7 +231,7 @@ access to the device. With original firmware, the users are "locked" to use
 Sonoff's online cloud platform called "WeLink", to send and receive data.
 
 For this work, the model "DUAL R2" was picked. These relays will be used to
-control the infra-red heater and some of the fans. DUAL R2 offers two output
+control the infrared heater and some of the fans. DUAL R2 offers two output
 channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
 
