@@ -10,3 +10,5 @@ RUN apt update && apt install -y \
   texlive-extra-utils \
   texlive-bibtex-extra \
   texlive-lang-czechslovak
+
+RUN apt install -y git git-lfs
