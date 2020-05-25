@@ -2,147 +2,152 @@
 
 This chapter describes the process of implementation of the OpenHVR system.
 As the analysis chapter stated, the system consists of three components: the
-communication server, configuration UI and Unity plug-in -- each of their
-implementation processes are described.
+Communication Server, Configuration UI, and Unity Plug-in -- each of their
+implementation processes is described.
 
-First, the process of implementation of the communication server is described,
-followed by description of the configurator and the plug-in. Lastly, the choice
+First, the process of communication server implementation is described,
+followed by the description of the configurator and the plug-in. Lastly, the choice
 of the hardware used for testing the system is discussed.
 
 === Communication Server
 
 For the implementation of the server, the
 *Go* footnote:[The Go Programming Language http://golang.org] language was
-chosen. It's missing some of the important parts of modern or functional
-language, that modern developer might be used to, but on the other side it's
-suited for writing performant server web applications and is easy
-to learn and write the code in. <<gogbu>>
+chosen. The design of the language is not considered a modern
+language's design, but on the other hand, it is
+suited for writing performant server web applications, and easy
+to learn and write the code. <<gogbu>>
 
-For rapid development of the REST API, the *Beego* footnote:[https://beego.me]
-framework was picked. It offers MVC architecture, URL routing abilities, ORM
-and other modules for easy development of a webserver. <<beego>>
+For the rapid development of the REST API, the *Beego* footnote:[https://beego.me]
+framework was picked. It offers MVC architecture, URL routing abilities, ORM,
+and other modules for the easy development of a webserver. <<beego>>
 
 For persisting the data, *SQLite* footnote:[https://www.sqlite.org/]
-is used as a database engine. SQLite 3 is
-very popular database, and it doesn't require any complicated installation
+is used by the server as a database engine. SQLite 3 is
+a popular database, and it does not require any complicated installation
 (as opposed to, for example, PostgreSQL or MySQL) and can save all data into
 memory or file system. SQLite is suitable especially for modest data loads, as
-it's not as performant as previously mentioned alternatives. Server will use the
-filesystem persistence of data. Conveniently, Beego framework has built-in
+it is not as performant as previously mentioned alternatives. The server uses the
+filesystem persistence of data. Conveniently, the Beego framework has built-in
 ORM support for SQLite databases.
 
 ==== Unit tests
 
 For unit testing, Convey footnote:[https://github.com/smartystreets/goconvey]
-library was used. Unit tests covers the functions in models, helper functions and others.
+library is used. Unit tests cover the functions in models, helper functions,
+and others.
 
 ==== Device drivers
 
-To support future extendability of the communication server, a concept named
-"drivers" has been implemented.
+To support the future extendability of the communication server, a concept named
+"drivers" has been implemented. This concept allows other developers to write
+request handlers to extend the server's abilities further.
 
-Following diagram pictures the data flow of incoming effect request.
+The following diagram pictures the data flow of the incoming effect request.
 
-.Simplified program diagram of device drivers behaviour when an effect request is received
+.Simplified program diagram of device drivers behavior when an effect request is received
 image::drivers-diagram.svg[]
 
-Devices are registered at initialization of the server, in the server code.
-Each device driver gets its own name, which needs to be specified when creating new
-device using `POST /devices/`. For clients, to know about available device
-drivers, an resource `GET /devices/drivers` exists, which returns a list
+Devices will register at the initialization of the server (in the server code).
+Each device driver then gets its name, which needs to be specified when adding a new
+device using `POST /devices/`. For the clients, to know about available device
+drivers, a resource `GET /devices/drivers` exists, which returns a list
 of currently supported drivers.
 
 === Configurator Tool
 
-The assumptions when designing the configurator tool suggested, that it will
-be developed as web application. This will allow configuring the system
+The assumptions when designing the configurator tool suggested that it will
+be a web application. The web application will allow configuring the system
 on a computer or mobile device. Since the server will provide REST API,
 the configurator tool acts as a
 web client (thin client) and uses this REST API to communicate and transfer
 all data.
 
-When picking a language for client-side application to be run in
-current browsers, there is not much choice. The one current
-emerging candidate *WebAssembly* footnote:[https://webassembly.org]
+There is not much choice when picking a language for client-side applications 
+to run in current browsers. One of the currently
+emerging candidates -- *WebAssembly* footnote:[https://webassembly.org]
 -- binary instruction format for web browsers, can be considered as
-present-day alternative to JavaScript. Even though WebAssembly is
+a present-day alternative to JavaScript. Even though WebAssembly is
 currently available in almost all modern browsers <<wasmroadmap>>, frameworks
-and tools are rather very new and many of them are in early experimental states.
+and tools are rather new and many are in early experimental states.
 
-For implementation of this web client, *JavaScript* language was picked, because
-of existing mature tools and frameworks. It is known, that WebAssembly
-is much faster, than Javascript <<wasmfast>>, but given the nature of the
-applicaton, it's fairly safe to say, that the application will be fast enough
-even with JavaScript, to satisfy the xref:./05-analysis.adoc[_CFG-N1_]
+For the implementation, *JavaScript* language was picked, because
+of existing mature tools and frameworks. It is known that WebAssembly
+is much faster than Javascript <<wasmfast>>, but given the nature of the
+application, it is fairly safe to say that using JavaScript, the application
+will be fast enough to satisfy the xref:./05-analysis.adoc[_CFG-N1_]
 (_User interface must be fast and responsive_)
 requirement.
 
-To build the user interface more quickly, it was decided to use UI framework.
-*Svelte* footnote:[https://svelte.dev] is modern web framework for JavaScript,
+To build the user interface more quickly, it was decided to use a UI framework.
+*Svelte* footnote:[https://svelte.dev] is a modern web framework for JavaScript
 that can help build the configurator UI much faster and make the application
-more reliable. Compared to other UI frameworks for JavaScript, Svelte offers
+more reliable. Unlike other UI frameworks for JavaScript, Svelte offers
 faster DOM updates
 footnote:[The Document Object Model (DOM) is a programming interface for HTML and XML documents. <<dom>>]
-, less unneccessary data transfers
-to clients and the framework code is ran at build time, rather at runtime on
-client's browsers. <<svelteblog>> On the other side, Svelte doesn't officially
-support transpilation from other languages, so for example it's not possible
+, less unnecessary data transfers
+to clients, and the framework code is run at build time rather than at runtime on
+client's browsers. <<svelteblog>> On the other side, Svelte does not officially
+support transpilation
+footnote:[Transpiler is a source code translator, that does not translate code into bytecode or assembly (as typical compilers do), but translates code to different source code of the same or different language (for example TypeScript -> JavaScript) <<sscd>>]
+from other languages, so for example, it is not possible
 to use TypeScript to write Svelte application with strongly typed code.
 
 ==== Note on input with tracked controllers
 
-To satisfy the requirement CFG-F4, the process of the system configuration
-ended up being splitted between two parts of the OpenHVR system --
-the main part is the front-end web application described
-in this chapter. Additionally a helper tool written in Unity has been added,
-which is now part of the Unity plug-in. This tool is used for determining
+For the satisfaction of the requirement CFG-F4, the process of the system configuration
+ended up being split between two parts of the OpenHVR system --
+the central part is the front-end web application described
+in this chapter. Additionally, a helper tool written in Unity has been added,
+which is now part of the Unity Plug-in. This tool is used for determining
 the precise location and rotation of effect devices in the VR space
 coordinate frame, as this is not possible from the web browser (at least
 not currently).
 
 The usage of the web application configurator tool is still justified.
 Configurator Tool can be opened and used while other VR application is currently
-running (VR systems can run only one VR application), and the current state
-of the system can be monitored there. Regarding UX, it would be uncomfortable to
-input text or fill in complex forms in VR. It's better to use web forms to
-input configuration values of the device (such as IP addresses, etc.).
+running (VR systems can run only one VR application), and offer current state
+monitoring on, for example, a mobile device. Regarding UX, it would be uncomfortable to
+input text or fill in complicated forms in VR. It is generally better to use web forms to
+input configuration of the device (such as IP addresses or device name).
 
-The helper tool acts as a another client. It's using the REST API of the server
+The helper tool acts as another client. It is using the REST API of the server
 the same way as the front-end application. More details about the helper tool
 can be found in the following chapter.
 
 === Unity Plug-in
 
-The behaviour of Unity applications can be extended using scripts. Even though
-we call this system component a "plug-in", in reality it consists of a
+Game scripts are used to extend the behavior of Unity applications. Even though
+we call this system component a plug-in, in reality, it consists just of a
 set of scripts and related assets, that can be imported into an existing
 or new Unity project and used.
 
-For scripting, Unity Engine enables choice between three languages --
-C#, UnityScript footnote:[UnityScript is a special variant of JavaScript] and
+For scripting, the Unity Engine gives a choice between three languages --
+C#, UnityScript footnote:[UnityScript is a special variant of JavaScript], and
 Boo. From these three, the first one is the most popular and the most
-feature-rich with the most complex binding to Unity API. <<unityblog>>
+feature-rich with the most complex binding to the Unity API. <<unityblog>>
 Because of those reasons, the immediate choice of language for this
 project was C#.
 
-Through C# scripts, Unity offers developers great abilities to extend the UI of
-the Unity editor. The plug-in greatly leverages this advantage, as it can
+Through C# scripts, Unity offers developers exceptional abilities to extend 
+the UI of the Unity editor. The plug-in leverages this advantage, as it can
 create an easy to use UI for developers to define and launch effects.
 
 ==== Gizmos
 
-Gizmos are Unity's editor icons and are used for a visual aid and visual
-debugging. <<gizmos>> With these icons, a developer can see objects, that are
-normally not visible in the scene.
+Gizmos are editor icons used in Unity Editor and they are used for 
+visual aid and visual debugging. <<gizmos>> 
+With these icons, developers can see the game objects, that are
+typically not visible in the scene.
 
-In the plugin, they are used to visualize positions and directions of the
+Plug-in uses Gizmos to visualize positions and directions of the
 effects, and after running the game, even positions of the configured
 effect devices.
 
-For the OpenHVR unity plug-in, a set of icons were designed and are used for
-Unity prefabs, that developers might use, when using the plug-in. The icons
+For the OpenHVR plug-in, a set of icons were designed and are used for
+Unity prefabs, that developers might use when using the plug-in. The icons
 are designed to be similar to Unity's default ones and therefore provide
-familiar user interface.
+a familiar user interface.
 
 .Designed series of Gizmos icons for using in Unity editor
 image::icon-series.png[Series of icons]
@@ -150,18 +155,17 @@ image::icon-series.png[Series of icons]
 ==== Location helper script
 
 For easy and precise determination of effect devices locations and rotations
-relative to VR coordinate frame, a Unity helper script has been created.
+relative to the VR coordinate frame, a Unity helper script was created.
 
-This script can be temporarily included in any Unity project, or can be run
-standalone in an empty project. It offers very simple interface:
-User runs the application, picks some of the already registered OpenHVR
-effect device and updates its position by moving the controller physically
-to the place of the effect device and pressing trigger.
+This script can be temporarily included in any Unity project or can be run
+standalone in an empty project. It offers a simple interface:
+User runs the application, picks one of the already registered OpenHVR
+effect devices, and updates its position by moving the controller physically
+to the place of the effect device and pressing the trigger.
 
-By using this tool, each time the room layout changes, user can start this
-script, select the devices one by one and for each of them just tap
-the trigger button with controller on the correct location and with the
-correct rotation.
+By using this tool, each time the room layout changes, the configuration can
+be updated by visiting all devices in the room and pressing the button at 
+correct locations.
 
 === Implementation notes
 
@@ -170,8 +174,8 @@ correct rotation.
 For versioning of the source code, Git
 footnote:[Git is a distributed version control system https://git-scm.com]
 was used, together with Git LFS for
-storing larger assets (such as textures, models and pictures)
-used for implementation of the example application.
+storing larger assets (such as textures, models, and pictures)
+, for the implementation of the example application.
 
 ==== Docker support
 
@@ -180,52 +184,52 @@ footnote:[Docker is container platform, using OS-level virtualization
 to deliver programs in packages called containers https://docker.com]
 images, that can be easily and quickly run on any machine.
 
-Users are given choice to compile the server manually, or if their machine has
-Docker installed, they can download the images and run them, without
-necessity of configuring the Go compiler and compiling it.
+Users are given a choice to compile the server manually, or if their machine has
+Docker installed, they can download the images and run them without
+the necessity of configuring the Go compiler and compiling it.
 
-More information can be found in the xref:13-install-guide.adoc[Install guide].
+More information is present in the xref:13-install-guide.adoc[Install guide].
 
 === Hardware used
 
 In this chapter, specific hardware selection, which will be used for testing the
-implementation of the system, is presented.
+system's implementation, is presented.
 
 ==== ESP-01S relay boards
 
 One of the cheapest variants to make electronic appliance controllable
 remotely is connecting them via ESP-01S relay boards with ESP8266 chips.
-These boards can be bought very cheapely at popular on-line marketplaces
+These boards can be bought very cheaply at popular online marketplaces
 (depending on the seller, around US$3), making it perfect for buying in
-higher amount to control many devices around the VR play-space in the room.
+higher amounts to control many devices around the VR play-space in the room.
 
-The main disadvantage of these cheap boards is their quality. In most cases
-they are not certified and their parameters often can't be trusted. Therefore
+The main disadvantage of these cheap boards is their quality. In most cases,
+they are not certified, and their parameters often cannot be trusted. Therefore
 these are suitable only for lower loads (like pedestal fans). Connecting high
-loads might be not safe.
+loads might not be safe.
 
 ESP8266 chips have integrated wi-fi and the communication can be made over
 TCP/IP with which are many developers (sometimes even users) already familiar.
 
 These boards come with plain firmware flashed into the memory. Alternative
 firmware called "Tasmota" can be easily flashed using FTDI into the memory
-of the chip. The advantages of the firmare is described in one of the
-following chapters.
+of the chip. The advantages of the alternative firmware are described 
+in one of the following chapters.
 
 ==== Sonoff Smart Relays
 
 When looking for a more safe and certified solution, while still staying in
 low-cost requirements, smart relays manufactured by company Sonoff
 seem to be a great choice. The model "Sonoff Basic" is certified for 10 A load,
-theoretically allowing connecting appliances with draw up to 2300 W (for the
+theoretically allowing connecting appliances with power draw up to 2300 W (for the
 electricity system in our country).
 
-Most of the models of smart relays by Sonoff are based on ESP8266 chip,
-and therefore can be flashed with Tasmota firmware to provide non-proprietary
+Most of the models of smart relays by Sonoff are based on ESP8266 chip;
+hence they can be flashed with the Tasmota firmware to provide non-proprietary
 access to the device. With original firmware, the users are "locked" to use
 Sonoff's online cloud platform called "WeLink", to send and receive data.
 
-For this work, the model "DUAL R2" was picked. These relays will be used to
+For this work, the model "DUAL R2" was picked. These relays are used to
 control the infrared heater and some of the fans. DUAL R2 offers two output
 channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
@@ -235,38 +239,38 @@ image::IMG_5236.jpeg[]
 
 ==== Tasmota -- alternative firmware for ESP8266-based devices
 
-Tasmota is an open-source alternative firmware for ESP8266-based devices.
+Tasmota is an alternative open-source firmware for ESP8266-based devices.
 As of April 2020, there are currently over 1180 devices supported <<tasdirec>>,
 which also includes many commercial consumer electronics based on ESP8266 chip,
 that can be disassembled and "hacked" by flashing the alternative firmware
 (such devices, unfortunately, will lose their warranty).
 The firmware provides all necessary functions and non-proprietary
 interfaces for communication over the TCP/IP using multiple protocols
-(HTTP, MQTT, etc.).
+(e.g., HTTP, MQTT).
 
-Difficulty of flashing the firmware differs for each device. A programming pin
-on ESP8266 chip must be pulled down to ground and connected to computer using
-any compatible FTDI device. There are many existing tools (e.g. esptool.py
-footnote:[https://github.com/espressif/esptool]),
-that provide simple and easy to use command line
+The difficulty of flashing the firmware differs for each device. A programming pin
+on the ESP8266 chip must be pulled down to the ground and connected to a computer using
+any compatible FTDI device. There are many existing tools (e.g., esptool.py
+footnote:[https://github.com/espressif/esptool])
+that provides simple and easy to use command-line
 interface for flashing new firmware to the device. Detailed description and
-steps, how to flash firmware to ESP8266 device is mentioned in the
+steps, how to flash firmware to ESP8266 device are mentioned in the
 xref:./12-install-guide.adoc[Install Guide].
 
-Devices equipped with Tasmota firmare can communicate over HTTP API, or MQTT.
+Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
 
 === Results
 
-All three components of the system were implemented and specific hardware
+All three components of the system are implemented and specific hardware
 for the testing environment was selected.
 
-Communication server was created and provided with OpenAPI documentation.
+The communication server was created and provided with OpenAPI documentation.
 A simple but sufficient web application for configuring the OpenHVR system
 has been created. The web application is client-side and is included with
 the OpenHVR Server. The server is hosting static files,
 including the client-side application.
-For using with Unity game engine a set of scripts, called for our purposes
-as the "plug-in" was also implemented.
+For using with Unity game engine, a set of scripts denoted as "Unity Plug-in" 
+was also implemented.
 
 .Screenshot of running server and the room configurator on the same machine
 image::running-server.png[]

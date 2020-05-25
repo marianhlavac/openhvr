@@ -92,3 +92,4 @@ include::chapters/15-attachments.adoc[]
 - [[[gizmos]]] https://docs.unity3d.com/ScriptReference/Gizmos.html
 - [[[dom]]] https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 - [[[sencormanual]]] Sencor SFN4047WH User Manual
+- [[[sscd]]] https://en.wikipedia.org/wiki/Source-to-source_compiler
