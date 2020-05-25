@@ -1,7 +1,10 @@
 == Attachments
 
 [att1]
-== Attachment 1: Results of the failed "fan direction" test
+== Attachment 1: Measurements of the "fan spin-up" test
+
+[att2]
+== Attachment 2: Results of the failed "fan direction" test
 
 Following table contains the calculated magnitudes of vector differences `d`
 for each collected user's sample, originally collected with the

@@ -1,15 +1,15 @@
 == User testing
 
-User testing was divided into two parts. In the first part,
-some of the testers were asked to help test and measure some properties
-of the effect devices.
-In the second part, all testers were presented with example application
-using the OpenHVR system and asked on their opinion.
+User testing is divided into two parts. In the first part,
+some testers are asked to help test and measure some properties
+of the effect devices. In the second part, the OpenHVR example application is
+presented to them, and they are asked on their opinion.
 
 Even though the current pandemic situation made in-person testing a bit harder,
-8 testers were willing to perform the tests, for which I would like to thank
-them again. The test was performed at Faculty of Information Technology, using
-Oculus Rift VR headset with Oculus Touch tracked controllers.
+eight testers were willing to perform the tests, for which they are owed
+a particular debt of gratitude. 
+The test was performed at the Faculty of Information Technology, using
+the Oculus Rift VR headset with Oculus Touch tracked controllers.
 
 .Prepared room with equipment for the user testing at FIT CTU.
 image::IMG_5238.jpeg[]
@@ -17,27 +17,27 @@ image::IMG_5238.jpeg[]
 === Devices property measuring
 
 Some testers were asked to help with measuring two properties of the fans used
-for testing. Measuring will tell us how precisely can user determine the
-direction from where is the wind coming from, and how long it takes until the
-fan spins up and user can feel the wind on his skin.
+for testing. The measurements will tell us how precisely the user can determine the
+direction from where the wind is coming from and how long it takes until the
+fan spins up and the user can feel the wind on his skin.
 
-For the next two tests, following conditions must be satisfied:
+For the next two tests, the following conditions must be satisfied:
 
-* Tester was introducted to the VR and the headset and controller
-  he or she will be using
+* Tester was introduced to the VR and the headset and controller
+  he or she will be using.
 * There are no objects or people in the play space that might negatively affect
-  the test process
+  the test process.
 * The room must have all doors and windows closed, without running A/C
-  or other potentional sources of winds
+  or other potential sources of winds.
 
 The test requires testers to know how to interact with objects and how to move
 inside the virtual world. The virtual room is scaled appropriately to the
-real room in which the VR experience takes place, so the tester can walk around
+real room where the VR experience takes place, so the tester can walk around
 and avoid using alternative methods of moving within the virtual world
 (such as teleport, which can be confusing for first-time VR users).
 
 Each device is different and depends on the power and quality of the fan.
-As a example, a specific measuring tests were performed for a single fan
+As an example, a specific measuring tests were performed for a single fan
 used for testing purposes:
 
 .Technical properties of the used Sencor pedestal fan <<sencormanual>>
@@ -53,34 +53,34 @@ used for testing purposes:
 | Maximum airflow speed | 2,9 m/s
 |===
 
-Results of this measurements will serve as a reference values for future
-room set-ups. It is obvious, that for different devices, these measurements
-would need to be taken again.
+The results of these measurements will serve as reference values for future
+room set-ups. It is evident that for different devices, these measurements
+would need to be retaken.
 
-==== Fan spinup time
+==== Fan spin-up time
 
-It takes a noticeable amount of time, until the fans start spinning and
-blow wind. It is necessary to delay the in-game effects by a offset, that
+It takes a noticeable amount of time until the fans start spinning and
+blow wind. It is necessary to delay the in-game effects by an offset that
 will make the in-game visual or sound effect in sync with the effect
 produced by the fan.
-For this test, the mentioned fan was used, positioned exactly in front of
+For this test, the mentioned fan was used, positioned straight in front of
 testers, with 1.5 meters distance and 1.5 meters height level.
 
 Testers were asked to follow the instructions on-screen: first press a button
-when they're ready and press it again the exact moment they can feel a wind
+when they are ready and press it again the exact moment they can feel a wind
 blowing on their skin. The test program records the time between the presses.
-Each tester was asked to collect 4 samples.
+Each tester collected four samples.
 
-Throughout the testing, tester's view is blocked by the VR headset (an atribrary
-background image is shown in the view) and loud music is played, so the tester
-can't see and hear the fan spinning. After tester first presses the button,
-a random fan will start to spin and stopwatch are started. After the second
-press, stopwatch and fan will stop and tester is asked to wait for a few second
+Throughout the testing, the VR headset blocks the tester's view (an arbitrary
+background image is shown in the view), and loud music plays, so the tester
+cannot see and hear the fan spinning. After the tester first presses the button,
+a random fan will start to spin, and stopwatch is started. After the second
+press, stopwatch and fan will stop, and the tester will wait for a few seconds
 to repeat the process for all positions.
 
-There was total of 16 samples collected.
+There was a total of 16 samples collected.
 
-.Fan spinup test min/max measurements for each testing subject
+.Fan spin-up test min/max measurements for each testing subject
 [cols="2,1,1,1",options="header"]
 |===
 | Tester | Min | Max | Mean
@@ -90,7 +90,7 @@ There was total of 16 samples collected.
 | Tester H | 2566 ms | 3676 ms | 3068 ms
 |===
 
-.Fan spinup test overall measurements statistics
+.Fan spin-up test overall measurements statistics
 [cols="2,3"]
 |===
 h| Minimum | 2432 ms
@@ -101,94 +101,96 @@ h| Median | 2865 ms
 |===
 
 
-.One of the testers performing the fan spinup test
+.One of the testers performing the fan spin-up test
 image::IMG_5242.jpeg[]
 
 ==== Fan spread range
 
-Fans are directional. To properly assess optimal number of fans, that
-would be necessary to build fully 360-degrees setup of fans surrounding
-the players, by this measurement we will try to determine, at what point they
-are not able to distinguish between various positions of fans.
+All fans are directional. The objective of this test is to assess 
+the optimal number of fans that would be necessary to build a full 360-degrees 
+set-up of fans surrounding the players. By analyzing the measurements,
+we will try to determine, at what point the testers could not distinguish 
+between positions of the fans.
 
-Fans will be positioned at a distance of 1.5 meters from the tester.
-Considering, that tester is looking forward, the fans to test will
-have four positions:
+The fans are positioned at a distance of 1.5 meters from the tester.
+Considering the tester is looking forward, the fans will
+have four different positions:
 
 * *A:* Placed directly in front of the tester
 * *B:* Rotated 15 degrees clockwise from the tester's forward look
 * *C:* Rotated 45 degrees clockwise from the tester's forward look
 * *D:* Rotated 90 degrees clockwise from the tester's forward look
 
-The positions are indicated on the following diagram:
+The positions are indicated in the following diagram:
 
 .Indication of fans positions
 image::fans-positions.svg[]
 
-The distribution of position is determined by the amount of available effect
-devices. It tries to test edge cases -- 90 degrees between A and D is large
-distance and it is expected, that testers will be able to distinguish
-the difference without any problems. On the other hand, the 15 degrees between
-A and B at the 1.5m distance will be most probably not distinguishable.
+The distribution of the positions is determined by the limited number of 
+available effect devices. It tests the most interesting cases -- 
+90 degrees between A and D is a large distance, and it is expected that testers 
+will be able to distinguish the difference without any problems. 
+On the other hand, the 15 degrees between
+A and B at the 1.5m distance will probably not be distinguishable.
 
 ---
 
-The scenario is following: Testers will be asked to wait, until some
-of the fans will start spinning and then to determine,
-where is the wind blowing from, pointing there with the tracked VR controllers
-and pressing the button. While tester is asked to determine the position of the
-fan, his view is blocked by the VR headset and loud music is played, so they
-can't locate the fan with hearing.
+The scenario is following: Testers are asked to wait until a fan start spinning 
+and then determine from where is the wind blowing. By pointing there with the 
+tracked VR controllers and pressing the button, they save their estimate. 
+While the tester is asked to determine the fan's position, the VR headset
+blocks his view and the test program will play loud music, so they
+cannot locate the fan with hearing.
 
-After pressing the button, the test program will save following numbers:
+After pressing the button, the test program will save the following information:
 
 * Three-dimensional direction vector oriented from controller position to
   the current spinning fan location (reference input)
 * Three-dimensional direction vector representing the rotation of the
   controller (tester's input)
-* Magnitude of difference of those two mentioned vectors
+* The magnitude of the difference between those two mentioned vectors
 
-Testers were asked to measure the A position 3 times (without their knowledge),
-so each tester collected following 6 samples for fan positions: A, B, A, C,
-A and D. Thanks to this, we can verify the repeability of successful
+Testers were asked to measure the A position three times (without their knowledge),
+so each tester collected following six samples for fan positions: A, B, A, C,
+A, and D. Thanks to this, we can verify the repeatability of successful
 localization of the same fan at the same position.
 
-For each of the sample collection, two vectors were collected:
+For each of the sample collection, the test program collects the following vectors:
 
-1. Normalized location difference `l` between current world position of the right
-   controller and location of the currently blowing fan. This gives a direction
-   vector from controller to the fan.
+1. Normalized location difference `l` between the current world position of the right
+   controller and location of the currently blowing fan. The difference gives a direction
+   vector from the controller to the fan.
 2. Direction vector `r` of current controller rotation.
 
-For each pairs of these two vectors, magnitude of their difference is calculated
+For each pair of these two vectors, the magnitude of their difference is calculated
 as `d = |(r-l)|`.
-Lower values represents greater tester's precision (value `0` represents
+Lower values represent greater tester's precision (value `0` represents
 perfect alignment).
 
 ---
 
-Unfortunately the results collected at the user testing sessions
-doesn't seem to bear the desired informational values.
-There might be an error in execution of the test. It is suspected, that
-the tracking and mapping of the real world with the virtual world was done
-not correctly, and therefore the results doesn't give correct answers to
+Unfortunately, the results collected at the user testing sessions 
+**do not seem to bear the desired informational values**.
+There might have been an error in the execution of the test. It is suspected that
+the tracking and real world's mapping to the virtual world were done
+incorrectly, and therefore the results do not give the correct answers to
 questions that led to this test.
 
-Collected data are attached as the xref:15-attachments.adoc#att1[Attachment 1].
+xref:15-attachments.adoc#att2[Attachment 2] contains the collected data.
 
-The correct determination of wind source height wasn't the primary
-objective to test. Because testers weren't correctly instructed on this matter,
-after the test some of them reported, that they intentionally ignored the
-height, and some of them actually tried to correctly determine the height.
+The correct determination of wind source height was not the primary
+objective to test. Because testers were not correctly instructed on this matter,
+after the test, some of them reported that they intentionally ignored the
+height, and some of them tried to determine the height correctly.
 To fix the measured data, the upward axis information from the vectors was
-removed and data are analyzed only on 2D-plane (view from top).
+removed, and data are analyzed only on 2D-plane (view from top).
 Conveniently this makes the data easier to visualize, but even this
-process didn't fix the errors in measured data.
+process did not fix the errors in measured data.
 
-It's not possible to draw any conclusion from this test. Theoretically, the
-test should be valid and correct execution of the test should will give
-desired answers. Unfortunately the execution, while user testing, was not
-correct and this test failed and must be performed again.
+It is not possible to draw any conclusion from this test. Theoretically, the
+test should be valid and correct execution of the test should give the
+desired answers. Unfortunately, the execution while user testing was not
+correct, and this test failed and must be performed again.
 
 === Main User Test
 
@@ -197,27 +199,26 @@ and three fireplaces (lower number of the fireplaces was caused by
 the headset tracking limitations). All 8 of the testers were participating
 in this test.
 
-The appearance of the room and entities are described in the previous
-chapter xref:09-example-app.adoc[Example app].
+xref:09-example-app.adoc[Chapter 9] describe the appearance of the room and the entities in it.
 
 ==== Scenario
 
-Using the example app (as described in previous chapter), tester will be asked
-to use the application to interact with the virtual windows and
+Using the example app (as described in the previous chapter), testers will 
+be asked to use the application to interact with the virtual windows and
 virtual fireplaces.
 
 There are conditions, that needs to be met before the test starts:
 
-* Tester was introducted to the VR and introducted to controls of
-  the example app -- how to pick objects, what buttons to use, etc.
+* Tester was introduced to the VR and controls of
+  the example app (e.g., how to pick objects, what buttons to use)
 * There are no objects or people in the play space that might negatively affect
   the test process
 * The room must have all doors and windows closed, without running A/C
-  or other potentional sources of winds
+  or other potential sources of winds
 
-There will be four variants of interactable windows, each of them will
-behave differently and users will be asked to compare the differences between
-them and overall relatively evaluate the quality of the effects and
+There will be four variants of interactable windows, and each of them will
+behave differently; users will be asked to compare the differences between
+them and overall evaluate relatively the quality of the effects and
 immersion into the virtual world.
 
 * Window A -- only visual effect of blowing wind
@@ -237,42 +238,42 @@ Three variants of the fireplaces will be similar to windows:
 * Fireplace F -- visual and sound effect of burning fire + temperature change
   indication by coloring the screen with orange color
 * Fireplace G -- visual and sound effect of burning fire + OpenHVR
-  external effect using infrared heater, simulating actual heat coming
-  out of the position of the burning fire
+  external effect using the infrared heater, simulating actual heat coming
+  out of burning fire's position
 
 After performing all the tasks, users will be asked to evaluate the
-effects of burning fire, and asked additional questions.
+effects of burning fire and additional questions.
 
 ==== Questions
 
-* On a scale 0-10 (0 worst, 10 best) evaluate the level of immersion and quality
+* "On a scale of 0-10 (0 worst, 10 best) evaluate the level of immersion and quality
   of effects in the virtual environment when breaking the window, relatively
-  between the windows A/B/C/D.
-* On a scale 0-10 (0 worst, 10 best) evaluate the level of immersion and quality
+  between the windows A/B/C/D."
+* "On a scale of 0-10 (0 worst, 10 best) evaluate the level of immersion and quality
   of effects in the virtual environment when lighting up the fireplace, relatively
-  between the fireplaces E/F/G.
+  between the fireplaces E/F/G."
 
 ==== Additional questions
 
-* Did the wind effect at window D affect your comfort while using VR?
-* Did the heat effect at fireplace G affect your comfort while using VR?
-* Did the special effects (at D or G) changed any way negatively your experience
-  compared to effects without using the OpenHVR system (A-C, E, F)?
-* Do you have any suggestions? What were you thinking about, while performing
-  the test?
+* "Did the wind effect at window D affect your comfort while using VR?"
+* "Did the heat effect at fireplace G affect your comfort while using VR?"
+* "Did the special effects (at D or G) negatively affected your experience
+  compared to effects without using the OpenHVR system (A-C, E, F)?"
+* "Do you have any suggestions? What were you thinking about while performing
+  the test?"
 
 ==== Results
 
 All testers successfully performed the test. Some of them asked to
-restart the test, because they weren't able to focus on correct objects,
-forgotten the differences, or simply weren't able to properly evaluate the
-differences. Re-running of the test doesn't seem to negatively affect the
-test results.
+restart the test because they were not able to focus on correct objects,
+forgotten the differences, or simply were not able to evaluate the
+differences properly. Re-running of the test does not seem to affect the
+test results negatively.
 
-.Ongoing user testing. Tester in front of the lit fireplace (G) in virtual world.
+.Ongoing user testing. Tester in front of the lit fireplace (G) in the virtual world.
 image::IMG_5249.jpeg[]
 
-Following table lists collected answers on questions about immersion level and
+The following table lists collected answers on questions about immersion level and
 quality of the effects.
 
 .Collected data of tester's evaluation of effects on scale 0-10
@@ -293,33 +294,33 @@ Apart from the numeric results, users were asked additional questions.
 None of the users reported any negative effects while experiencing the special
 effects.
 
-.Ongoing user testing. Tester standing in front of the window (D) in virtual world.
+.Ongoing user testing. Tester is standing in front of the window (D) in the virtual world.
 image::vlcsnap-2020-05-22-16h41m28s649.jpg[]
 
 Following is the list of relevant comments, that some testers reported
-(loosely translated from Czech language):
+(loosely translated from the Czech language):
 
-* "I've noticed that the smoke was coming out of the walls. This
+* "I have noticed that the smoke was coming out of the walls, which
   lowered the immersion for me."
-* "At window C, I thought I've felt a little of wind,
-  that wasn't at all corresponding to what I saw."
-* "Because of the visual effect, I was expecting much stronger wind
+* "At window C, I thought I had felt a little wind,
+  that was not at all corresponding to what I saw."
+* "Because of the visual effect, I was expecting a much stronger wind
   effect."
-* "I think the fan in the real world was at wrong location, than the
+* "I think the fan in the real world was at the wrong location from the
   window in the virtual world."
-* "I saw the infrared heater before beginning of the test, and I was
-  little scared that I might get burned."
-* "I didn't see any difference between B and C, I just noticed, that
+* "I saw the infrared heater before the beginning of the test, and I was
+  a little scared that I might get burned."
+* "I did not see any difference between B and C. I have just noticed that
   some of them had glass shards and some not."
-* "I didn't like the quality level of graphics."
+* "I did not like the quality level of graphics."
 * "The infrared heater positively surprised me."
-* "I felt like the sound was coming from different places, than they actually
+* "I felt like the sound was coming from different places than they actually
    were at."
 * "The windows were much more interesting and entertaining, but the fireplace
-   was much more believeable and immersive."
+   was much more believable and immersive."
 
-Overall users were satisfied with the experience. Some of the users reported,
-that they didn't like the graphical appearance of the environment.
-Unfortunately, most of the users weren't able to distinguish the difference
-between the window B and C, and fireplace A and B. Almost everyone reported
+Overall, users were satisfied with the experience. Some of the users reported
+that they did not like the graphical appearance of the environment.
+Unfortunately, most of the users were not able to distinguish the difference
+between windows B and C, and fireplaces A and B. Almost everyone reported
 difficulties with this matter.

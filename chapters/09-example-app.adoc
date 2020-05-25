@@ -3,29 +3,29 @@
 To demonstrate the abilities of the system, an example VR application
 was created.
 
-In the application, user can walk around the virtual room and interact with
-various items inside the room. Some of the items are equipped with OpenHVR
-effects. Each of example effect use is described below.
+In the application, the user can walk around the virtual room and interact with
+various items inside the room. Some of the items equip the OpenHVR
+effects. Each example effect use is described below.
 
-This example application will be used in one of the user tests, where
-participants will be asked about overall opinion on the system and its
-immersiveness.
+One of the user tests will use this example application, where
+participants will be asked about an overall opinion on the system and
+how immersive it is.
 
-3D models and materials was created using Microsoft Maquette
-footnote:[VR prototyping tool, allowing fast building of spatial environments https://maquette.ms]
-and for interactions with various items inside the 3D worlds, Unity's
-XR Interaction Toolkit library was used. This library allows users to
-intuitively pick items with their hands and iteract with them (e.g. throw them
-or put somewhere).
+The 3D models and materials were created using Microsoft Maquette
+footnote:[VR prototyping tool, allowing a fast building of spatial environments https://maquette.ms]
+and Unity's XR Interaction Toolkit library provides the ability to 
+interact with various items inside the 3D worlds. This library allows users to
+pick items with their hands and iteract with them intuitively (e.g., throwing them
+or putting them somewhere).
 
-Created models are very basic and overall there wasn't much focus on design
+The created models are very basic; there was not much of a focus on the design
 of the models or making the scene photorealistic. Because of the limited time,
 the scene design is functional and simplistic, not beautiful.
 
-By making this example application, the OpenHVR system was validated and proved, that
-it can be used as a whole and works for desired purpose. Application is using
+By making this example application, the OpenHVR system was validated and proved
+to work as a whole and can be used for the desired purpose. The application uses
 all parts of the system -- the server must be running, the devices must be
-connected and tracked their positions. Application is producing effects
+connected and tracked their positions. The application is producing effects
 using those devices, so the Unity plug-in must be used to produce the effects.
 
 .Screenshot of the example application scene
@@ -34,13 +34,13 @@ image::test-room.png[]
 === Testing entities
 
 The example application could be used for user testing. For those purposes,
-two main testing entities are included within the scene of the application.
+the application scene includes two main testing entities.
 
 ==== Windows
 
 There are multiple breakable windows in the room. Each of the interactable
-window can be set to produce various combinations of effects. Any combination
-of following effects can be turned on or off, according to testing
+windows can be set to produce various combinations of effects. Any combination
+of the following effects can be turned on or off, according to testing
 scenario requirements:
 
 * Visual effect of blowing wind
@@ -58,7 +58,7 @@ image::test-room-windows.png[]
 ==== Fireplaces
 
 The virtual room will have multiple fireplaces. Users can grab a match and
-start a fire. When fire is started, similarily to the windows, an optional
+start a fire. When a fire is started, similarily to the windows, an optional
 combination of effects will start:
 
 * Visual effect of fire
