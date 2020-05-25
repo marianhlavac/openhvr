@@ -1,36 +1,46 @@
-== Proof of Concept results
+\chapter{Proof of Concept results}
 
 In April 2019, a proof of concept was performed as the coursework for the MI-MPR
-course at FIT CTU<<poc>>. During the course, testing hardware was assembled,
+course at FIT CTU\hyperlink{poc}{}. During the course, testing hardware was assembled,
 and a simple Unity script was implemented.
+
 
 The work shortly discussed the motivation and inspiration for the idea,
 specified some goals, and presented a simple use-case of the system. In one of the
 chapters, it defined some expected results and projected a work schedule.
 Opportunities for various experiments were proposed.
 
+
 Lastly, the implementation and results were described. The implementation
 focused solely on wind simulation, as it is the most accessible and affordable
 effect to simulate and perform tests on.
 
+
 Some of the expected problems or experiment opportunities include, for example,
 a need for taking in consideration the actuation time of the devices producing
 the effects, or possibility of inability to reach the desired quality of effect
-simulation, caused by having not enough fans around the user to simulate 
+simulation, caused by having not enough fans around the user to simulate
 full 360-directional wind effects.
 
+
 The hardware consisted of two 3D-printed fan bodies, two DC toy motors and Arduino
-UNO controlling the fans using PWM footnote:[Pulse Width Modulation]. Inside
+UNO controlling the fans using PWM \footnote{Pulse Width Modulation}. Inside
 the VR world, a red dot represented a wind source. Fan positions were manually
 input. Unity plugin was constantly sending relative positions between the
 wind source and fan positions to the Arduino board.
 
-.Photograph of the prototype setup. In the background, a Unity application can be seen. Red ball defines the wind source.
-image::IMG_1891.jpeg[Photo of the POC setup]
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/IMG_1891.jpeg}
+\caption{}
+
+\end{figure}
 
 For simplicity, the VR application was not room-scaled, but in the
 user sitting/standing mode, and worked only on a 2-dimensional plane for
 computing the direction differences between sources and effect devices.
 
+
 The work successfully proved that such a system could be created and laid down
 the foundations for transforming the idea into a master thesis project.
+

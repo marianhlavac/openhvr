@@ -1,0 +1,122 @@
+\chapter{Designing the System}
+
+The name "OpenHVR" was chosen as a codename and project name, under which
+all source codes will be publicly available. The name emphasizes the open-source
+essence of the project, and HVR stands for "Haptics in VR". A simple logo, to
+go with the name, was also designed.
+
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/openhvrlogo.png}
+\caption{}
+
+\end{figure}
+
+\hypertarget{x-components-cooperation}{\subsection*{Components cooperation}}
+The following simple diagram is picturing the system components and the
+communication between them.
+
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/openhvr-diagram.pdf}
+\caption{}
+
+\end{figure}
+
+
+\hypertarget{x-configurator-tool-wireframe-prototype}{\subsection*{Configurator Tool wireframe prototype}}
+As a first step in designing the Configurator Tool, a wireframe prototype
+has been designed. Configurator Tool user interface will consist of only
+two interactive screens — the main screen and screen for adding a new device.
+On the main screen, the user will be able to see an overview of the room configuration,
+manage (move, update, remove) effect devices, and will see the system’s status.
+The "New device screen" will be displayed after clicking on the "Add device"
+button at the main screen.
+
+
+The prototype pictures layout of the user interface.
+
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/wireframe-1-dash.pdf}
+\caption{}
+
+\end{figure}
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/wireframe-2-editing.pdf}
+\caption{}
+
+\end{figure}
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/wireframe-3-adding.pdf}
+\caption{}
+
+\end{figure}
+
+\hypertarget{x-rest-api-design}{\subsection*{REST API Design}}
+Following is a list of resources available at the server’s API endpoint.
+With short descriptions it represents a simple draft of functions provided 
+by the server component.
+Concrete resource and schemas documentation derived
+directly from the implementation, is present
+in \hyperlink{./13-developer-guide#server-api}{} of the
+Developer Guide chapter.
+
+
+\begin{description}
+
+\item[GET /devices/]Returns a list of registered effect devices in the current room configuration,
+together with their properties (e.g., location, rotation, name).
+
+\item[POST /devices/]Registers a new effect device in the room.
+
+\item[GET /devices/drivers]Returns a list of currently available drivers. New drivers can be added only
+by extending the source code of the server.
+
+\item[GET /devices/{deviceId}]Returns details about a specific device.
+
+\item[PUT /devices/{deviceId}]Updates specific device properties (e.g., location, rotation, name).
+
+\item[DELETE /devices/{deviceId}]Removes registration of the device from the room configuration.
+
+\item[POST /effects/]Requests a new effect performance. This resource is meant to be requested by the
+client each time there is an event happening in the VR scene, which should also
+produce an accompanying effect in the room. The parameters sent by the client
+(i.e., type of the effect, duration, location and direction, range) are used
+by the server to calculate which effect devices need to be instructed and sends
+the instructions to them.
+
+\item[DELETE /effects/]Immediately cancels all previously requested effect performances. Useful when
+the scene needs to be cleared, or, for any reason, it needs to be reassured that
+no devices are producing any effects (for example, when quitting the VR
+application).
+
+\item[DELETE /effects/{effectId}]Immediately cancels a specific, previously requested effect performance.
+Canceling specific performances is needed only when infinite duration
+was specified when requesting. Otherwise, the effect will end after the
+duration, and there is no need to cancel it.
+
+\item[GET /effects/types]Returns list of available types of effects. Client applications can request
+this list at their startup and raise a warning at the client-side if VR
+application is requesting an effect that is not available.
+
+\item[GET /system/status]Returns system status.
+
+\end{description}
+
+
+\hypertarget{x-api-security}{\subsection*{API Security}}
+The server will not support authentication, and all resources will be publicly
+available. It is expected that each server will serve a single instance of
+a virtual reality set-up and will run on a local network without public access.
+Should the user ever be concerned about unwanted access to the system, the server
+will support IP whitelisting
+\footnote{IP Whitelisting is a common name for the process of filtering requests by the sender IP address and letting through only the requests with senders listed on the "whitelist".}.
+
+
+The security of each of the device depends on the software and firmware provided
+with the smart device itself. Drivers included in the OpenHVR server should
+support secure connection too. Tasmota firmware supports username and
+password authentication.

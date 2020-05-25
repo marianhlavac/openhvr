@@ -2,13 +2,21 @@
 % arara: xelatex
 % arara: xelatex
 \documentclass[thesis=M,english,hidelinks]{template/FITthesis}[2019/12/23]
-\usepackage[utf8]{inputenc} % LaTeX source encoded as UTF-8
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
 
 % \usepackage{subfig} %subfigures
 % \usepackage{amsmath} %advanced maths
 % \usepackage{amssymb} %additional math symbols
-
+\usepackage{gensymb}
+\usepackage{pdfpages}
 \usepackage{dirtree} %directory tree visualisation
+
+\DeclareUnicodeCharacter{2009}{ }
+\DeclareUnicodeCharacter{200B}{ }
+\linespread{1.2}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.5em}
 
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
@@ -41,20 +49,29 @@
 % \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 
+\includepdf[pages={1}]{assets/assignment.pdf}
+
 \setsecnumdepth{part}
-\chapter{Introduction}
 
-
+\input{chapters/01-introduction}
+\input{chapters/02-virtual-reality}
+\input{chapters/03-current-state-of-effects}
+\input{chapters/04-existing-solutions}
+\input{chapters/05-analysis}
+\input{chapters/06-proof-of-concept}
+\input{chapters/07-design}
+\input{chapters/08-implementation}
+\input{chapters/09-example-app}
+\input{chapters/10-user-testing}
+\input{chapters/11-conclusion}
+\input{chapters/12-future-works}
+\input{chapters/13-install-guide}
+\input{chapters/14-developer-guide}
+\input{chapters/15-attachments}
 
 \setsecnumdepth{all}
-\chapter{State-of-the-art}
-
-\chapter{Analysis and design}
-
-\chapter{Realisation}
 
 \setsecnumdepth{part}
-\chapter{Conclusion}
 
 
 \bibliographystyle{template/iso690}

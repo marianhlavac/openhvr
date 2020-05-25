@@ -1,4 +1,4 @@
-== Analytical evaluation of the system
+\chapter{Analytical evaluation of the system}
 
 In this chapter, the system components and functionalities are being analyzed.
 The functionality definition is preceded by the analysis of the human senses.
@@ -6,27 +6,38 @@ Each human sense is evaluated and decided if it is suitable to produce effects
 that affect those senses. The results of this analysis are then used for
 deciding what kind of effects the application will produce.
 
+
 The system consists of the following components:
 
-* Communication Server
-* Configurator Tool
-* Unity Plug-in
+
+\begin{itemize}
+
+\item Communication Server
+
+\item Configurator Tool
+
+\item Unity Plug-in
+
+\end{itemize}
+
 
 For each of the listed components, functional and non-functional requirements
 were constructed. At the end of this chapter, various communication protocols
 are assessed to help pick an appropriate way of communication between devices,
 server, and the VR application.
 
-=== Assessment of human senses
 
+\hypertarget{x-assessment-of-human-senses}{\subsection*{Assessment of human senses}}
 To correctly assess all possible suitable effects that can be produced, all externally affectable human senses have been listed, and each assessed,
 if it is possible and appropriate to produce effects that can affect those senses.
+
 
 The work is focused primarily on external effects. Inner senses, such as
 hunger, thirst, or proprioception (sense of body motion), are neither
 easily affectable by the standard electronics, but they also might not be safe
 and comfortable for users to affect. The moral point of view
 might also be in the way.
+
 
 We are taking into consideration following human external tactile senses:
 Visual (sight), Auditory (hearing), Somatosensory (touch), Olfaction (smell),
@@ -35,22 +46,31 @@ be further divided into Mechanoreception (skin touch), Nociception (pain), and
 Thermoception (heat). Each of them is assessed more in detail further in this
 chapter.
 
+
 The process of affecting each sense has been evaluated by difficulty,
 price, ergonomics, and safety. There might be various reasons why some
 effects are not suitable for the use-case of this work.
 Each of the senses is evaluated by categorizing into three types of results:
 
-* *Suitable* -- it might be appropriate to create effects affecting this sense,
-* *Irrelevant* -- even though it might be appropriate to affect this sense,
+
+\begin{itemize}
+
+\item \textbf{Suitable} — it might be appropriate to create effects affecting this sense,
+
+\item \textbf{Irrelevant} — even though it might be appropriate to affect this sense,
 there are reasons why it will not have any effect,
-* *Not Suitable* -- affecting such sense is inappropriate.
 
-==== Irrelevant: Visual (sight)
+\item \textbf{Not Suitable} — affecting such sense is inappropriate.
 
+\end{itemize}
+
+
+\hypertarget{x-irrelevant:-visual-(sight)}{\subsubsection*{Irrelevant: Visual (sight)}}
 Since all VR users are wearing a headset that completely blocks
 all visual perceptions from the real world and "replaces" them by the visuals
 created on the display of the VR headset, visual effects produced externally
 will have no effect on the user.
+
 
 Outside of the scope of this work, there might be an opportunity for experiments
 to provide effects for people who are not using the VR headset and are
@@ -58,98 +78,106 @@ just watching. Such a situation can happen in VR arcades or simply
 just between a group of people, where just one of them is wearing the VR headset.
 By creating visual effects in sync with the VR
 simulation, others can find watching someone else experiencing the experience
-more enjoyable and entertaining. Nevertheless, for the time being and purposes 
+more enjoyable and entertaining. Nevertheless, for the time being and purposes
 of this work, visual effects are considered as irrelevant.
 
-==== Suitable: Auditory (hearing)
 
-There might be the same argument as for the visuals --
-the majority of virtual reality headsets are already equipped with
+\hypertarget{x-suitable:-auditory-(hearing)}{\subsubsection*{Suitable: Auditory (hearing)}}
+There might be the same argument as for the visuals — the majority of virtual reality headsets are already equipped with
 headphones, and if not, users often use own headphones for
 enhanced immersion in the virtual reality worlds.
 Spatial audio
-footnote:[Spatial audio is a full sphere surround-sound technique that uses a dimensional approach to audio to mimic the way we hear in real life. <<spaudio>>]
+\footnote{Spatial audio is a full sphere surround-sound technique that uses a dimensional approach to audio to mimic the way we hear in real life. \hyperlink{spaudio}{}}
 makes a real difference and is achieved usually using the headphones.
 Surround sound is not typical for current virtual reality systems.
 
+
 However, there is still one opportunity for enhancing the experience with sound.
 It is particularly beneficial while using headphones. The typical frequency
-response of headphones is from 20Hz to 20KHz <<freqresp>>, but it is obvious
+response of headphones is from 20Hz to 20KHz \hyperlink{freqresp}{}, but it is obvious
 that lower ranges of frequencies produced by headphones are often much
 less powerful and can not create large vibrations that can be felt by a whole
 body. This type of effect partially belongs to somatosensory senses, because
-lower frequencies can not only be heard but also felt. Creating large 
-vibrations with bass speakers can simulate large thuds or explosions 
+lower frequencies can not only be heard but also felt. Creating large
+vibrations with bass speakers can simulate large thuds or explosions
 happening within the virtual world, which can create such an effect.
 
-==== Suitable: Direct contact
 
+\hypertarget{x-suitable:-direct-contact}{\subsubsection*{Suitable: Direct contact}}
 Simulating the touch is difficult. There are, for example, many receptors on
 human fingers, which helps us feel various structures of solid
 objects. We can touch solid objects and feel the feedback. By squeezing the
-object, we can deduce the solid object's rigidity, and all this
+object, we can deduce the solid object’s rigidity, and all this
 information is very difficult to simulate and communicate to users from
 virtual to the real world.
 
+
 Some of the touch simulations are possible, as explored
-in the xref:./03-current-state-of-effects.adoc#hapticexp[third chapter], but all
+in the \hyperlink{./03-current-state-of-effects#hapticexp}{}, but all
 of them are simulated by wearing various wearable equipment (gloves, suits),
-or accessories attached to the user's body.
+or accessories attached to the user’s body.
+
 
 Suitable are those machines that can produce effects externally (without an
 all-time direct contact with the user), so they do not interfere with the VR
 experience and can still create direct contact with the user when required.
+
 
 Regarding direct touch, this work will be primarily
 focused rather on wind simulation, direct pressure contact with the user will
 be left to potential future works, as there are currently not known any
 machines, that would fit into the description.
 
-==== Suitable: Feeling of moving air
 
+\hypertarget{x-suitable:-feeling-of-moving-air}{\subsubsection*{Suitable: Feeling of moving air}}
 Humans are overall good at detecting winds and their direction. Our body hair
 helps a lot. Moving air around using electronics is also very easy; fans
 are specialized devices used primarily for moving the air.
+
 
 Wind effects are very suitable and easily achievable as an effect that can
 enhance virtual experiences. They are relatively safe, cheap to produce,
 directional, and easily controllable.
 
-==== Not Suitable: Feeling of wetness
 
+\hypertarget{x-not-suitable:-feeling-of-wetness}{\subsubsection*{Not Suitable: Feeling of wetness}}
 Another way to cause skin sensations is to make the user feel the humidity.
 The ability to disperse water in the room might drastically enhance immersion
 in the virtual environment. Imagine a virtual reality scene where standing
 next to the sea or standing in the rainy weather.
 
-Inspiration for this comes from these so-called "5D Cinemas" -- a business
+
+Inspiration for this comes from these so-called "5D Cinemas" — a business
 place (widely popular in shopping malls in the Czech Republic) offering
 enhanced cinema experience. It uses a combination of 3D stereoscopic
 pictures with various enhancing effects, and among the others, it provides
 a small water jet, which squirts small amounts of water to simulate a
-situation in the scene in the movie, for example, a water splash. <<5dcin>>
+situation in the scene in the movie, for example, a water splash. \hyperlink{5dcin}{}
+
 
 It is important to acknowledge that the environment in those "5D Cinemas"
-is more controlled and ready for such conditions -- their equipment
+is more controlled and ready for such conditions — their equipment
 is water-proof and safe to splash with water. The guests are not
 wearing expensive equipment on their heads, or if so, the equipment is
 most probably water-proof, and therefore splashing water in the room will not
 pose a risk of damaging the equipment.
 
+
 In the case of a typical virtual reality set-up, none of the equipment is ready
-for contact with water or high humidity levels. For example -- both the
-_Oculus Rift_ virtual reality headset and the _Oculus Touch_ virtual reality
+for contact with water or high humidity levels. For example — both the
+\emph{Oculus Rift} virtual reality headset and the \emph{Oculus Touch} virtual reality
 controllers have maximum operating humidity stated at 95% RH (non-condensing)
-<<orhswg>>.
+\hyperlink{orhswg}{}.
 
-==== Not suitable: Nociception (pain)
 
+\hypertarget{x-not-suitable:-nociception-(pain)}{\subsubsection*{Not suitable: Nociception (pain)}}
 Pain simulation made with electronic devices is possible. Electric currents can
 induce pain of various amounts, depending on the amount of electric current
-flowing through the body. <<elepain>>
+flowing through the body. \hyperlink{elepain}{}
 Equipment inducing pain electrically are available for consumers
 (e.g., tasers, paralyzers, electric shock toys) and it is possible to
 incorporate them to generate pain effects for VR simulation.
+
 
 While pain simulation might greatly enhance virtual reality immersion
 (especially in military simulators or computer games on war topics),
@@ -157,187 +185,200 @@ such devices also require direct contact with the user and, again,
 it might affect user comfort when using the system and might get in between
 when experiencing VR experience and affect it negatively.
 
+
 However, the main concerns and reasons to discard such effects are the
-safety and morality of such a device. Thus, such experiments will not be 
+safety and morality of such a device. Thus, such experiments will not be
 a part of this work for obvious reasons.
 
-==== Suitable: Thermoception (heat)
 
+\hypertarget{x-suitable:-thermoception-(heat)}{\subsubsection*{Suitable: Thermoception (heat)}}
 When kept in safe ranges, heat can help users to get more information about the
 current scene in the virtual environment and distinguish between various conditions
 happening in such scenes.
 
+
 The feeling of shining sun or heat coming from a cozy fireplace placed in the
 virtual world can be simulated using heating elements placed in the real world.
+
 
 The only risk relates particularly to safety measures, as heating elements are
 a potential fire risk, and securing electronic devices producing heat effects
 must be emphasized.
 
-==== Suitable: Olfaction (smell)
 
+\hypertarget{x-suitable:-olfaction-(smell)}{\subsubsection*{Suitable: Olfaction (smell)}}
 To the current date, simulation of smell can be categorized as something unusual
 or experimental. There are various attempts to simulate smell with electronic
 devices; some projects are directly related to Virtual Reality technologies.
 
+
 As researched in
-xref:./03-current-state-of-effects.adoc#feelreal[the third chapter],
+\hyperlink{./03-current-state-of-effects#feelreal}{},
 one approach to solving the problem was based on smell
 cartridges that emit the smells by heating them with heating elements.
-The main disadvantage of such a system is the need for maintenance -- the
+The main disadvantage of such a system is the need for maintenance — the
 cartridges need to be replaced, which might turn up to be costly in the
 long-term.
+
 
 Concluding from the performed research, we still have too little
 knowledge of how to simulate any smell precisely, or how to affect our organs
 sensing smell. Currently, creating smell effects can be reliably achieved
 only by heating perfume cartridges.
 
+
 Although somewhat limited, such devices can be used for producing a simulation
 of virtual world smells.
 
-==== Not Suitable: Gustation (taste)
 
+\hypertarget{x-not-suitable:-gustation-(taste)}{\subsubsection*{Not Suitable: Gustation (taste)}}
 Similarly to smell simulation, stimulating taste receptors electronically is
 complicated as well. Although experiments can be considered more successful
 compared to electronic smell simulation (mainly because of easier access
-to taste receptors), it is still an early experiment. <<stsie>>
+to taste receptors), it is still an early experiment. \hyperlink{stsie}{}
+
 
 Even if experiments were advanced and in a usable state, it would
-require the user to have some kind of electronic device attached to the user's
+require the user to have some kind of electronic device attached to the user’s
 tongue. Such attachment might be uncomfortable for the user, especially when
 used for long periods of time. Given the little potential of enhancing virtual
 reality with taste, the negative effects will most probably balance out
 the positive ones.
+
 
 We can expect development in this field in the future. Imagine a product
 for end-users, that is safe and comfortable for long use and uses wireless
 technology. But until such a product exists, working with taste simulation
 in the current state is not suitable for the project.
 
-==== Not suitable: Equilibrioception (balance)
 
+\hypertarget{x-not-suitable:-equilibrioception-(balance)}{\subsubsection*{Not suitable: Equilibrioception (balance)}}
 To this date, we do not record any electronic device that could
 directly affect body balance and simulate its state.
 
-We know too little about controlling the body balance, and overall, 
-it might not be a good idea to affect the user's balance. Losing
+
+We know too little about controlling the body balance, and overall,
+it might not be a good idea to affect the user’s balance. Losing
 balance might result in users falling and damaging the equipment (headset and
 controllers) or damaging the equipment in the room around the user.
 
-VR systems are constantly fighting with user's balance problems,
+
+VR systems are constantly fighting with user’s balance problems,
 affecting balance perceptors could potentially be
 counter-productive in efforts to eliminate motion sickness.
 
+
 Affecting user balance is considered as not suitable.
 
-==== Overview
 
+\hypertarget{x-overview}{\subsubsection*{Overview}}
 As a result of this assessment, a system for external effects for VR experience
-enhancement can focus on four senses stimulation -- hearing, touch, heat,
+enhancement can focus on four senses stimulation — hearing, touch, heat,
 and smell.
 
+
 For simplicity, this work will be focusing on just two of the mentioned suitable
-effects -- wind and heat.
-
-[cols="4,7,3,5",options="header"]
-.Overview Table of Results
-|===
-3+| Sense | Result
-3+| Visual (sight) | Irrelevant
-3+| Auditory (hearing) | *Suitable*
-.4+| Somatosensory .3+| Mechanoreception (skin touch) | Direct contact | *Suitable*
-| Moving air | *Suitable*
-| Wetness, fluids | Not Suitable
-2+| Nociception (pain) | Not Suitable
-3+| Thermoception (heat) | *Suitable*
-3+| Olfaction (smell) | *Suitable*
-3+| Gustation (taste) | Not Suitable
-3+| Equilibrioception (balance) | Not Suitable
-|===
+effects — wind and heat.
 
 
-[[viableappl]]
-=== Viable electrical appliances
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Visual (sight) & Irrelevant \\ 
+Auditory (hearing) & \textbf{Suitable} \\ 
+Somatosensory & Mechanoreception (skin touch) & Direct contact & \textbf{Suitable} \\ 
+Moving air & \textbf{Suitable} \\ 
+Wetness, fluids & Not Suitable \\ 
+Nociception (pain) & Not Suitable \\ 
+Thermoception (heat) & \textbf{Suitable} \\ 
+Olfaction (smell) & \textbf{Suitable} \\ 
+Gustation (taste) & Not Suitable \\ 
+Equilibrioception (balance) & Not Suitable \\ 
+\hline
+\end{tabular}
+\end{center}
 
+\hypertarget{x-viable-electrical-appliances}{\subsection*{Viable electrical appliances}}
 Provided with the senses appropriate to affect, now it is important to determine
 which electrical appliances can be used for creating effects that can trigger mentioned senses.
 
+
 We set categories of effects in the following table, and from now on will
 refer to these effects by the category names.
+
 
 For each category, a suitable type of electrical appliance is picked. Later in
 analytical parts of the work, specific devices will be chosen, according to
 current options.
 
-[[appltable]]
-[options="header"]
-.Electrical appliances corresponding to senses
-|===
-| Sense | Category |  Affectable by
-.3+| Auditory (hearing) .3+| *Vibrations* | Large speakers
-| Subwoofer speakers
-| Vibration generators/motors
-| Somatosensory, Mechanoreception (touch) | *Wind* | Pedestal fans
-.2+| Thermoception (heat) .2+| *Heat* | Heaters
-| Infrared heaters
-| Olfaction (smell) | *Smell* | Perfume dispensers
-|===
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Auditory (hearing) & \textbf{Vibrations} & Large speakers \\ 
+Subwoofer speakers \\ 
+Vibration generators/motors \\ 
+Somatosensory, Mechanoreception (touch) & \textbf{Wind} & Pedestal fans \\ 
+Thermoception (heat) & \textbf{Heat} & Heaters \\ 
+Infrared heaters \\ 
+Olfaction (smell) & \textbf{Smell} & Perfume dispensers \\ 
+\hline
+\end{tabular}
+\end{center}
 
 Appliance must be able to be controller programmatically over a computer network,
 to act as a dynamic effect generator.
 
-There are appliances available on the market that are marked as "smart". 
+
+There are appliances available on the market that are marked as "smart".
 Briefly speaking, it means that the appliance
-can connect to other devices wired or wirelessly for data exchange. <<wisd>>
+can connect to other devices wired or wirelessly for data exchange. \hyperlink{wisd}{}
 Such devices, in most cases, can send information they collect over
 the network (e.g., weather stations collecting weather data, making them readable
-on user's smartphones), or able to listen to commands and perform various 
+on user’s smartphones), or able to listen to commands and perform various
 kinds of actions (e.g., turn off a desk lamp, unlock door).
+
 
 There are two ways to approach the selection of appliances. Either the
 appliance can be smart and provide an interface of commands that can be sent, or
-it can be a typical appliance connected via so-called "smart wall sockets" --
-devices that can turn off the electrical power to appliances.
+it can be a typical appliance connected via so-called "smart wall sockets" — devices that can turn off the electrical power to appliances.
+
 
 The main disadvantage of using a specialized smart device is the necessity of
 working with different interfaces. There must be explicit
 support in the server code for specific products.
+
 
 The main disadvantage the smart wall socket is the limitation in
 control of the appliances. Fundamentally, the appliance can be either turned on or off.
 This approach does not allow precise control of the fan speeds or the power output
 of heaters.
 
-=== Analysis of the appliances used
 
-According to <<appltable,Table 2>> and taking into consideration the
-options available while working on the project, we will be using **fans
-and infrared heaters**
+\hypertarget{x-analysis-of-the-appliances-used}{\subsection*{Analysis of the appliances used}}
+According to \hyperlink{appltable}{Electrical appliances corresponding to senses} and taking into consideration the
+options available while working on the project, we will be using \textbf{fans
+and infrared heaters}
 to create wind currents and sources of heat, respectively.
 
+
 Fans and infrared heaters will be controlled by a smart wall plug
-and will be in two states -- off and on. For each of the selected appliance
+and will be in two states — off and on. For each of the selected appliance
 type, a set of properties will be defined
 or measured and set as a "effect device properties" in the configuration
 software. Such measurements will be taken as a part of the user testing.
 
-[cols="3,10,3",options="header"]
-.Table of Effect Device Properties
-|===
-| Property | Description | Expected values
 
-| Actuation time
-| The time the device needs to go from a turned-off state to
-  a turned-on state.
-| seconds
-
-| Directionality and range
-| The range and direction span of the area in
-  which can be the effect experienced by the user.
-| seconds
-|===
-
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Actuation time & The time the device needs to go from a turned-off state to
+  a turned-on state. & seconds \\ 
+Directionality and range & The range and direction span of the area in
+  which can be the effect experienced by the user. & seconds \\ 
+\hline
+\end{tabular}
+\end{center}
 
 The fact that the appliances differ by manufacturer, model, and type,
 makes the measurements specific to each individual device.
@@ -345,24 +386,26 @@ For example, it is expected that the spin-up time
 (actuation time) and range of wind effect produced by various pedestal fans
 will be different, as such properties heavily depend on the power of the fan.
 
+
 For the testing environment built for this work, approximate measures will be
 taken, and they will be provided in the configuration software as optional
 recommended defaults. Administrators will be allowed
 to measure their appliances by themselves and configure the properties with
 their measured values.
 
+
 The system presented in this work focuses more
 on accessible hardware, open-source and non-proprietary solutions, and
 the opportunity for more people to build their effect system in DIY style.
 
-[cfganl]
-=== Configurator tool analysis
 
+\hypertarget{x-configurator-tool-analysis}{\subsection*{Configurator tool analysis}}
 Configurator Tool (alternatively "Room Configurator") is a web application that
 can be used to
 input properties of the room, in which the VR experience will take place.
-The application should provide convenient GUI footnote:[Graphical User Interface]
+The application should provide convenient GUI \footnote{Graphical User Interface}
 for users to easily configure the system for their room and VR set-up.
+
 
 Through this application, users will define the location, rotation, type, and
 additional configuration for each effect device placed in the room. The application
@@ -370,141 +413,147 @@ can also be used for various general configurations that might arise from
 the implementation process, that could not be mentioned in the analysis.
 
 
-==== Functional requirements
-
-===== **User wants to configure his room for use with OpenHVR system** [CFG-F1]
-
-Before using the OpenHVR system in a new space, 
+\hypertarget{x-functional-requirements}{\subsubsection*{Functional requirements}}
+\hypertarget{x-\textbf{user-wants-to-configure-his-room-for-use-with-openhvr-system}-[cfg-f1]}{\paragraph*{\textbf{User wants to configure his room for use with OpenHVR system} [CFG-F1]}}
+Before using the OpenHVR system in a new space,
 the room properties must be configured with the configurator tool.
 
-===== **User wants to add an effect device into the configuration** [CFG-F2]
 
+\hypertarget{x-\textbf{user-wants-to-add-an-effect-device-into-the-configuration}-[cfg-f2]}{\paragraph*{\textbf{User wants to add an effect device into the configuration} [CFG-F2]}}
 Each device placed into a room that the user intends to use for producing the effects
 must be connected with the communication server, and its type must be specified.
+
 
 Additionally, more configuration might be required, depending on the type
 of the device (such as any kinds of thresholds, or hardware limitations)
 
-===== **User wants to define a location of added effect device** [CFG-F3]
 
+\hypertarget{x-\textbf{user-wants-to-define-a-location-of-added-effect-device}-[cfg-f3]}{\paragraph*{\textbf{User wants to define a location of added effect device} [CFG-F3]}}
 Each device in a room that the administrator configured,
 must have location and rotation (pose) information.
 
-===== **User wants to input location information using one of the tracked controller in virtual reality space** [CFG-F4]
 
+\hypertarget{x-\textbf{user-wants-to-input-location-information-using-one-of-the-tracked-controller-in-virtual-reality-space}-[cfg-f4]}{\paragraph*{\textbf{User wants to input location information using one of the tracked controller in virtual reality space} [CFG-F4]}}
 Additionally, to manually input location values, for user convenience,
 the application will allow using a tracked controller to input the location at
 various places for locating the effect
 devices and mapping between the real world coordinate system and virtual
 world coordinate system.
 
-==== Non-Functional requirements
 
-===== **User interface must be fast and responsive** [CFG-N1]
-
+\hypertarget{x-non-functional-requirements}{\subsubsection*{Non-Functional requirements}}
+\hypertarget{x-\textbf{user-interface-must-be-fast-and-responsive}-[cfg-n1]}{\paragraph*{\textbf{User interface must be fast and responsive} [CFG-N1]}}
 To provide satisfying user experience, the user interface should be fast and
 responsive. The user interface should display loading progress and inform users
 about currently ongoing actions.
 
-===== **User interface must follow WCAG 2.1** [CFG-N2]
 
+\hypertarget{x-\textbf{user-interface-must-follow-wcag-2.1}-[cfg-n2]}{\paragraph*{\textbf{User interface must follow WCAG 2.1} [CFG-N2]}}
 The user interface must follow WCAG 2.1
-footnote:[Web Content Accessibility Guidelines (WCAG) 2.1 https://www.w3.org/TR/WCAG21/]
+\footnote{Web Content Accessibility Guidelines (WCAG) 2.1 \href{https://www.w3.org/TR/WCAG21/}{https://www.w3.org/TR/WCAG21/}}
 guidelines to provide an accessible user interface.
 
-[serveranl]
-=== Communication Server analysis
 
+\hypertarget{x-communication-server-analysis}{\subsection*{Communication Server analysis}}
 Communication Server is a web server, that acts as an intermediary component,
 passing information between devices producing effects and the computer with
 running VR simulation. This server holds data about room configuration,
 status, and location of the effect devices and overall status of the system.
 
-It must provide API footnote:[Application Programming Interface] to enable
+
+It must provide API \footnote{Application Programming Interface} to enable
 information exchange between the computer running the simulation and devices
 producing the effects.
 
-==== Functional requirements
 
-===== **User wants to save a new configuration.** [SRV-F1]
-
+\hypertarget{x-functional-requirements}{\subsubsection*{Functional requirements}}
+\hypertarget{x-\textbf{user-wants-to-save-a-new-configuration.}-[srv-f1]}{\paragraph*{\textbf{User wants to save a new configuration.} [SRV-F1]}}
 After creating or editing a configuration in Configurator Tool, the user
 want to save his changes and apply the effects.
 
-[[srv-f2]]
-===== **Unity plug-in will send information containing instructions for reproducing current scene effects** [SRV-F2]
 
-Each effect happening inside the VR scene will be described as an effect 
+\hypertarget{x-\textbf{unity-plug-in-will-send-information-containing-instructions-for-reproducing-current-scene-effects}-[srv-f2]}{\paragraph*{\textbf{Unity plug-in will send information containing instructions for reproducing current scene effects} [SRV-F2]}}
+Each effect happening inside the VR scene will be described as an effect
 instruction. Using such instruction, the plug-in will create a request on the server to
 reproduce described effects in the real world.
 
-===== **Effect devices will expect instructions on how to behave** [SRV-F3]
 
+\hypertarget{x-\textbf{effect-devices-will-expect-instructions-on-how-to-behave}-[srv-f3]}{\paragraph*{\textbf{Effect devices will expect instructions on how to behave} [SRV-F3]}}
 All running effect devices will individually expect instructions for their
-behavior. The server must receive instructions coming from Unity plug-in (in <<srv-f2,SRV-F2>>)
+behavior. The server must receive instructions coming from Unity plug-in (in \hyperlink{srv-f2}{\textbf{Unity plug-in will send information containing instructions for reproducing current scene effects} [SRV-F2]})
 and decide which devices will receive instructions and what content of the
 instruction will be.
+
 
 Practically speaking, if Unity plug-in asks to blow wind from the northern side of
 the room, the server will determine which fans are located on the northern side
 and send them instruction to start or stop spinning.
 
-==== Non-Functional requirements
 
-**The server should be fast and responsive.** [SRV-N1]
+\hypertarget{x-non-functional-requirements}{\subsubsection*{Non-Functional requirements}}
+\textbf{The server should be fast and responsive.} [SRV-N1]
 
-**The server should provide a standardized programming interface (RESTful API).** [SRV-N2]
 
-[unityanl]
-=== Unity Plug-in analysis
+\textbf{The server should provide a standardized programming interface (RESTful API).} [SRV-N2]
 
+
+\hypertarget{x-unity-plug-in-analysis}{\subsection*{Unity Plug-in analysis}}
 Current VR applications do not provide any standardized way
 of gathering detailed environmental information about the simulation.
 Most often, such details are not generally simulated by the application
 (for example, not all VR applications simulate wind currents or
 temperature in the scene).
 
+
 For providing such information to the OpenHVR system, so that it can
 reproduce virtual scene conditions in the real world, a custom Unity plug-in
 will be implemented.
 
-This plug-in will interoperate with Unity's Transforms
-footnote:[Unity's built-in components implementing the scene graph and defining location and rotation of the objects.]
-to determine the effect location. Thanks to the 
-componential architecture of the game engine, the plug-in can provide 
+
+This plug-in will interoperate with Unity’s Transforms
+\footnote{Unity’s built-in components implementing the scene graph and defining location and rotation of the objects.}
+to determine the effect location. Thanks to the
+componential architecture of the game engine, the plug-in can provide
 a component object, that can be attached to any game object.
 Developers can then use the component in the same way as they use the other
 components.
 
-.Picture of Unity componential architecture visible in the Unity Editor UI.
-image::unity-components.png[]
+
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/unity-components.png}
+\caption{}
+
+\end{figure}
 
 Plug-in components will be very similar to current existing components, which
-developers are used to. For example -- the definition of vibration effect can be
+developers are used to. For example — the definition of vibration effect can be
 very similar to defining a 3D audio source in Unity.
+
 
 In the same way, developers will be able to fine-tune the effect type and
 its range.
 
-.3D Audio source set in a Unity Engine scene. The speaker icon defines the location of the sound source, and the blue sphere defines the strength (range) of the 3D sound.
-image::unity-audio.png[]
 
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/unity-audio.png}
+\caption{}
 
-==== Functional requirements
+\end{figure}
 
-===== **Developer wants to produce an effect at some location in the game world** [PLG-F1]
-
+\hypertarget{x-functional-requirements}{\subsubsection*{Functional requirements}}
+\hypertarget{x-\textbf{developer-wants-to-produce-an-effect-at-some-location-in-the-game-world}-[plg-f1]}{\paragraph*{\textbf{Developer wants to produce an effect at some location in the game world} [PLG-F1]}}
 Using the component provided by the Unity plug-in, the developer will attach
 a component to any object with a Transform component. The Transform component
-will provide the location of the effect in the game world. The developer will 
-set and trigger an effect by sending signals to the component provided with 
+will provide the location of the effect in the game world. The developer will
+set and trigger an effect by sending signals to the component provided with
 the plug-in.
 
-===== **Developer wants to use reference points of existing devices in the game world** [PLG-F1]
 
+\hypertarget{x-\textbf{developer-wants-to-use-reference-points-of-existing-devices-in-the-game-world}-[plg-f1]}{\paragraph*{\textbf{Developer wants to use reference points of existing devices in the game world} [PLG-F1]}}
 The developer can receive
 positions and rotations of effect devices to produce effects in the
 game world better.
+
 
 This function will be, for example, used in the example app. Location points of
 fans will be collected, and one of them will be picked and used to alter
@@ -512,99 +561,100 @@ the position of the virtual window (it will help to pick the correct wall positi
 including the height of the window). Depending on the configured fan size,
 the window size will be adjusted too.
 
-==== Non-Functional requirements
 
-===== **Provided resources will be standardized among the Unity Engine environment** [PLG-N1]
-
+\hypertarget{x-non-functional-requirements}{\subsubsection*{Non-Functional requirements}}
+\hypertarget{x-\textbf{provided-resources-will-be-standardized-among-the-unity-engine-environment}-[plg-n1]}{\paragraph*{\textbf{Provided resources will be standardized among the Unity Engine environment} [PLG-N1]}}
 For the implementation of the plug-in, native tools, UI elements, and properties
 will be used to achieve creating an interface between Unity and OpenHVR.
 Interface and tools should feel familiar for Unity developers.
 
-=== OpenHVR System analysis
 
+\hypertarget{x-openhvr-system-analysis}{\subsection*{OpenHVR System analysis}}
 Users will often come into contact with the system as a whole. End-users
 often will not distinguish between the specific parts or components. From such
 users, specific requirements arise. These requirements are not coupled with
 any specific component, but rather imposes requirements on the system as a whole.
 
-==== Functional requirements
 
-===== **User wants to enhance his virtual reality experience and immersion by feeling special effects in his room** [SYS-F1]
-
+\hypertarget{x-functional-requirements}{\subsubsection*{Functional requirements}}
+\hypertarget{x-\textbf{user-wants-to-enhance-his-virtual-reality-experience-and-immersion-by-feeling-special-effects-in-his-room}-[sys-f1]}{\paragraph*{\textbf{User wants to enhance his virtual reality experience and immersion by feeling special effects in his room} [SYS-F1]}}
 This functional requirement is the primary functionality of the system.
 
 
-==== Non-Functional requirements
-
-===== **User wants the effects not to affect his virtual reality experience negatively** [SYS-N1]
-
+\hypertarget{x-non-functional-requirements}{\subsubsection*{Non-Functional requirements}}
+\hypertarget{x-\textbf{user-wants-the-effects-not-to-affect-his-virtual-reality-experience-negatively}-[sys-n1]}{\paragraph*{\textbf{User wants the effects not to affect his virtual reality experience negatively} [SYS-N1]}}
 OpenHVR should not affect the original virtual reality experience in any
 negative way. For example, no such effect, produced by the system, should ever
 constrain users from experiencing some parts of the original VR experience.
 
-===== **OpenHVR should not put excessive pressure on system resources of the computer running VR applications** [SYS-N2]
 
+\hypertarget{x-\textbf{openhvr-should-not-put-excessive-pressure-on-system-resources-of-the-computer-running-vr-applications}-[sys-n2]}{\paragraph*{\textbf{OpenHVR should not put excessive pressure on system resources of the computer running VR applications} [SYS-N2]}}
 Regarding system resources, VR applications are very demanding. It must be
 made sure that OpenHVR will not use excessive amounts of system resources,
 to keep the VR applications running smoothly.
 
-=== Means of communication analysis
 
+\hypertarget{x-means-of-communication-analysis}{\subsection*{Means of communication analysis}}
 It was established that the effect devices would communicate over a computer network.
 There are many network protocols, with different properties. The chapter will
 analyze possible communication protocols and tools for communication
 between smart devices, web servers, and VR applications.
 
-==== Art-Net
 
+\hypertarget{x-art-net}{\subsubsection*{Art-Net}}
 Firstly let us focus on a protocol that would seem to be the best for controlling
 physical devices, such as lights or fans. Art-Net is a network protocol for
 the distribution of data over an Ethernet network. It supports the connection of DMX
 devices, which are most often used for stage lights. It uses a UDP-based packet
-structure. <<artnet>>
+structure. \hyperlink{artnet}{}
+
 
 Art-Net is mostly used for lighting live performances. The first version,
-"Art-Net I", was released in 1998. The latest 4th version released 
+"Art-Net I", was released in 1998. The latest 4th version released
 in September 2016
 is called "Art-Net 4". Art-Net is hence matured and widely used in the
 entertainment industry.
+
 
 Unfortunately, the majority of equipment supporting Art-Net is
 professional-grade, built to be very reliable, which raises the price point
 by a lot and makes them unavailable for a typical consumer.
 
-==== MQTT
 
+\hypertarget{x-mqtt}{\subsubsection*{MQTT}}
 MQTT is a lightweight messaging protocol for small sensors and mobile devices,
-optimized for high-latency or unreliable networks. <<mqtthp>> It is
+optimized for high-latency or unreliable networks. \hyperlink{mqtthp}{} It is
 based on a publish-subscribe concept, and the messages are sorted into a "topics",
 devices can subscribe to messages published under a topic, or publish
 a message into the topic.
+
 
 Considering the fact, that the devices will generally be a smart home
 electronics, MQTT might be a good choice, because many of them have built-in
 support for MQTT or use MQTT as the primary protocol for communication.
 
+
 The main disadvantage of MQTT is the unreliability in terms of latency.
 It heavily depends on the implementation of MQTT on each of the device and on
 the implementation of the MQTT server. The latency range is usually
 in tens or hundreds of milliseconds for the most popular implementations,
-<<mqttlat>> which is sufficient, but the unpredictability is making MQTT
+\hyperlink{mqttlat}{} which is sufficient, but the unpredictability is making MQTT
 less suitable for use with real-time effects.
 
-==== HTTP (RESTful)
 
+\hypertarget{x-http-(restful)}{\subsubsection*{HTTP (RESTful)}}
 The most straightforward way of communication between devices would be to use
 HTTP protocol, which is the most widespread protocol used in computer networks
-and is used every day by billions of users. <<httpsrv>>
+and is used every day by billions of users. \hyperlink{httpsrv}{}
+
 
 A small disadvantage might be the versatility of the HTTP protocol. There would be
 a need for a standardized API for communication between devices and with the
 server. To mitigate this disadvantage, a RESTful API can be designed to provide
 the standardized API with expectable results.
 
+
 REST (REpresentational State Transfer) is an architectural style for developing
 web services and their interfaces. It defines constraints and conventions to
 offer greater performance, scalability, simplicity, and a more uniform interface.
-<<restdef>> RESTful API is an API that conforms to the REST architectural style.
-
+\hyperlink{restdef}{} RESTful API is an API that conforms to the REST architectural style.

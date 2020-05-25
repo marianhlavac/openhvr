@@ -1,44 +1,51 @@
-== Virtual reality
+\chapter{Virtual reality}
 
 Many definitions describe the term "virtual reality" (shortly VR) differently.
 Some of them are older and define virtual reality as follows:
 
-> Virtual reality is electronic simulation of environments experienced via
+\begin{quotation}
+Virtual reality is electronic simulation of environments experienced via
 head mounted eye goggles and wired clothing enabling the end user to interact
 in realistic three-dimensional situations (Coates, 1992)
+\end{quotation}
 
 Newer definitions define VR as:
 
-> The use of computer technology to create an interactive three-dimensional
+
+\begin{quotation}
+The use of computer technology to create an interactive three-dimensional
 world in which the objects have a sense of spatial presence;
 virtual environment, and virtual world are synonyms for virtual reality.
 (Department of Defense, 2018)
+\end{quotation}
 
 The age of the first definition is apparent, but whether accepting older or newer
 definition, the majority of them define VR as a kind of
 virtual world that can be viewed, explored, or experienced by the user.
 
+
 Virtual reality is sometimes mistakenly confused with Augmented Reality (AR).
 For unenlightened people, these terms (VR and AR) can be hard to distinguish,
 not to mention the other terms used in the industry, such as MR and XR
 (mixed reality and extended reality, respectively). There is a very straightforward
-way to differentiate VR from AR -- VR is known to replace elements
+way to differentiate VR from AR — VR is known to replace elements
 (visual, sound) to provide full immersion in a completely different virtual
-world, whereas AR often adds elements to the real world <<vrar>>.
-The clearest example would be to compare the _HTC Vive_ VR headset with
-_Microsoft HoloLens_ AR headset -- Vive blocks the view entirely, putting
-a screen in front of the eyes, while HoloLens is equipped with a holographic 
+world, whereas AR often adds elements to the real world \hyperlink{vrar}{}.
+The clearest example would be to compare the \emph{HTC Vive} VR headset with
+\emph{Microsoft HoloLens} AR headset — Vive blocks the view entirely, putting
+a screen in front of the eyes, while HoloLens is equipped with a holographic
 display, which is transparent and allows to see through.
+
 
 It is also essential to acknowledge, that virtual reality does not always mean
 putting a headset on the head and controllers in the heads, as most of the
 contemporary hardware users would expect. Especially in
 early VR experiments, the visuals could be provided by projecting the images
-on four walls surrounding the user (as in popular CAVE system <<cave>>) and
+on four walls surrounding the user (as in popular CAVE system \hyperlink{cave}{}) and
 using surround sound for the spatial audio.
 
-=== Contemporary hardware
 
+\hypertarget{x-contemporary-hardware}{\subsection*{Contemporary hardware}}
 The days of low-resolution, high-latency displays and expensive, unavailable,
 and unprecise hardware sensors are long gone. Nowadays, VR headsets are
 sold as consumer products and are available to almost everyone. They are
@@ -46,44 +53,49 @@ equipped with high-frequency refresh-rate displays, fast and low-latency
 gyroscopes, and other high-end electronics components invented in the last
 decades.
 
+
 Current consumer VR headsets features, among other components,
 a high resolution displays with refresh speeds often reaching 90Hz, gyroscopes
-with up to 0.01° rotation precision, and stereo headphones with 3D sound.
+with up to 0.01\degree rotation precision, and stereo headphones with 3D sound.
 Location tracking of the VR system can reach up to sub-millimetric precision
-<<vivenasa>>, and motion-to-photon latency
-footnote:[Latency measured between headset motion and photons emitted from the display.]
-on some headsets range between 2-7 milliseconds. <<mtpltc>> <<xinwiki>>
+\hyperlink{vivenasa}{}, and motion-to-photon latency
+\footnote{Latency measured between headset motion and photons emitted from the display.}
+on some headsets range between 2-7 milliseconds. \hyperlink{mtpltc}{} \hyperlink{xinwiki}{}
 VR headsets offer such precise tracking abilities, that it is suitable even
-for research purposes and scientific projects <<vivepbsr>>, and therefore
+for research purposes and scientific projects \hyperlink{vivepbsr}{}, and therefore
 it should not be surprising that VR is a popular topic to research.
 
-.Photo of modern VR headset (Sony Playstation VR) (CC BY-NC 2.0)
-image::25688530252_e56eee6e9d_b.jpg[Sony Playstation]
 
-=== Uses of virtual reality
+\begin{figure}[h]{}
+\centering\includegraphics[width=2.5truein]{assets/25688530252_e56eee6e9d_b.jpg}
+\caption{}
 
+\end{figure}
+
+\hypertarget{x-uses-of-virtual-reality}{\subsection*{Uses of virtual reality}}
 The investments made to AR and VR technologies suggest
 that the most popular application of AR/VR is in the entertainment industry,
 followed
 by training situations, industrial maintenance and retail showcases.
-<<statistavr>>
+\hyperlink{statistavr}{}
+
 
 Advancements in haptic feedback allow for better surgery training using
-VR simulations <<vhfcrmisvrt>>. Though no exact data proving performance gains
+VR simulations \hyperlink{vhfcrmisvrt}{}. Though no exact data proving performance gains
 were not published yet, it can be expected that thanks to the correct haptic
 feedback, VR training might become superior, compared to traditional
-training methods. <<vrsrgr>>
+training methods. \hyperlink{vrsrgr}{}
 
-=== Developing for virtual reality
 
+\hypertarget{x-developing-for-virtual-reality}{\subsection*{Developing for virtual reality}}
 The contemporary state of virtual reality development tools is undoubtfully
 coupled to the videogame industry, together with the procedures and practices.
 It should not be surprising that the most popular tools for creating
 VR applications are game engines and frameworks.
 
-The current most notable popular game engines with the support of creating VR
-applications are: Unity footnote:[https://unity3d.com] by
-Unity Technologies, Unreal Engine footnote:[https://unrealengine.com] by
-Epic Games, or Godot Engine, the open-source engine developed by the community
-under the MIT license. footnote:[https://godotengine.org] <<slantvr>>
 
+The current most notable popular game engines with the support of creating VR
+applications are: Unity \footnote{\href{https://unity3d.com}{https://unity3d.com}} by
+Unity Technologies, Unreal Engine \footnote{\href{https://unrealengine.com}{https://unrealengine.com}} by
+Epic Games, or Godot Engine, the open-source engine developed by the community
+under the MIT license. \footnote{\href{https://godotengine.org}{https://godotengine.org}} \hyperlink{slantvr}{}

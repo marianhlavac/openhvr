@@ -1,7 +1,0 @@
-== Developer guide
-
-[[server-api]]
-=== Server API documentation
-
-For reference only. Latest API Documentation can be browsed after running
-the server at address `http://[SERVER_IP]/docs`.
