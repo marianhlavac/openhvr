@@ -1,4 +1,4 @@
-name: Render thesis with LaTeX
+name: Build
 on:
   push:
     branches: [ master ]
@@ -15,7 +15,7 @@ jobs:
     - name: Prerender
       run: pdflatex DP_Hlavac_Marian_2020
     - name: Compose Bibliography with bibtex
-      uses: bibtex DP_Hlavac_Marian_2020.aux
+      run: bibtex DP_Hlavac_Marian_2020.aux
     - name: Final render
       run: pdflatex DP_Hlavac_Marian_2020
     - name: Upload PDF as artifact
