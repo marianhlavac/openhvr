@@ -93,3 +93,5 @@ include::chapters/15-attachments.adoc[]
 - [[[dom]]] https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
 - [[[sencormanual]]] Sencor SFN4047WH User Manual
 - [[[sscd]]] https://en.wikipedia.org/wiki/Source-to-source_compiler
+- [[[shipments]]] https://www.statista.com/statistics/671403/global-virtual-reality-device-shipments-by-vendor/
+- [[[vrmsize]]] https://www.statista.com/statistics/591181/global-augmented-virtual-reality-market-size/
