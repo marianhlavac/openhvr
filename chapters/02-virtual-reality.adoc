@@ -14,7 +14,7 @@ world in which the objects have a sense of spatial presence;
 virtual environment, and virtual world are synonyms for virtual reality.
 (Department of Defense, 2018)
 
-The age of the first definition is apparent, but whether using older or newer
+The age of the first definition is apparent, but whether accepting older or newer
 definition, the majority of them define VR as a kind of
 virtual world that can be viewed, explored, or experienced by the user.
 
@@ -35,7 +35,7 @@ putting a headset on the head and controllers in the heads, as most of the
 contemporary hardware users would expect. Especially in
 early VR experiments, the visuals could be provided by projecting the images
 on four walls surrounding the user (as in popular CAVE system <<cave>>) and
-using surround sound system for the spatial audio.
+using surround sound for the spatial audio.
 
 === Contemporary hardware
 

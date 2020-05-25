@@ -8,7 +8,7 @@ various items inside the room. Some of the items equip the OpenHVR
 effects. Each example effect use is described below.
 
 One of the user tests will use this example application, where
-participants will be asked about an overall opinion on the system and
+participants will be asked about an overall opinion on the experience and
 how immersive it is.
 
 The 3D models and materials were created using Microsoft Maquette
@@ -22,7 +22,7 @@ The created models are very basic; there was not much of a focus on the design
 of the models or making the scene photorealistic. Because of the limited time,
 the scene design is functional and simplistic, not beautiful.
 
-By making this example application, the OpenHVR system was validated and proved
+By making this example application, the OpenHVR project was validated and proved
 to work as a whole and can be used for the desired purpose. The application uses
 all parts of the system -- the server must be running, the devices must be
 connected and tracked their positions. The application is producing effects

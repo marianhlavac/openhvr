@@ -30,22 +30,22 @@ some of the projects mentioned in this chapter are not directly relevant
 to VR, but can be theoretically used for enhancing it.
 
 If we think about the characteristic properties of these haptic feedback
-devices, it seems that most of them are attached directly to the
+accessories, it seems that most of them are attached directly to the
 user (hand gloves, hand controllers, head attached devices, or full-body wearables)
 or interacting with him/her directly in some way. There is an opportunity to explore
-the "external" feedback devices, that affects the environment, rather than
+the "external" feedback accessories, that affects the environment, rather than
 the user directly.
 
 ---
 
 The latest research in the field of hand haptics comes from Carneige Mellon
 University in USA. With their project *Wireality*, they chose a different
-approach and instead of gloves, they put a set of wires connected from their
-device to the user's fingers. The wires are moving freely and can be locked
+approach and instead of gloves, they put a set of wires connected from the
+accessory to the user's fingers. The wires are moving freely and can be locked
 in a position when needed. This solution claims to be non-expensive and 
 have low power consumption. <<wireality>>
 
-.Visualization of how Wireality system looks and works (Photo courtesy of Carnegie Mellon University)
+.Visualization of how Wireality accessory looks and works (Photo courtesy of Carnegie Mellon University)
 image::wireality.png[Wireality]
 
 In 2016, the research staff of the Imagineering Institute of Malaysia
@@ -73,7 +73,7 @@ watch closely in the future.
 
 === Commercial products providing haptic feedback
 
-Haptic feedback devices do not have to end in the experimental state.
+Haptic feedback accessories do not have to end in the experimental state.
 Many companies started to develop commercial products providing haptic feedback.
 
 "Haptic suits" (also known as "tactile suits") are wearable

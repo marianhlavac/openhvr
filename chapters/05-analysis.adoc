@@ -4,7 +4,7 @@ In this chapter, the system components and functionalities are being analyzed.
 The functionality definition is preceded by the analysis of the human senses.
 Each human sense is evaluated and decided if it is suitable to produce effects
 that affect those senses. The results of this analysis are then used for
-deciding what kind of effect the system will produce.
+deciding what kind of effects the application will produce.
 
 The system consists of the following components:
 
@@ -19,11 +19,10 @@ server, and the VR application.
 
 === Assessment of human senses
 
-To correctly assess all possible suitable effects that can be produced by the
-system, all externally affectable human senses have been listed, and each assessed,
+To correctly assess all possible suitable effects that can be produced, all externally affectable human senses have been listed, and each assessed,
 if it is possible and appropriate to produce effects that can affect those senses.
 
-The system is focused primarily on external effects. Inner senses, such as
+The work is focused primarily on external effects. Inner senses, such as
 hunger, thirst, or proprioception (sense of body motion), are neither
 easily affectable by the standard electronics, but they also might not be safe
 and comfortable for users to affect. The moral point of view
@@ -38,7 +37,7 @@ chapter.
 
 The process of affecting each sense has been evaluated by difficulty,
 price, ergonomics, and safety. There might be various reasons why some
-effects are not suitable for the use-case of our system.
+effects are not suitable for the use-case of this work.
 Each of the senses is evaluated by categorizing into three types of results:
 
 * *Suitable* -- it might be appropriate to create effects affecting this sense,
@@ -48,7 +47,7 @@ there are reasons why it will not have any effect,
 
 ==== Irrelevant: Visual (sight)
 
-Since all VR users are using a headset that completely blocks
+Since all VR users are wearing a headset that completely blocks
 all visual perceptions from the real world and "replaces" them by the visuals
 created on the display of the VR headset, visual effects produced externally
 will have no effect on the user.
@@ -56,7 +55,7 @@ will have no effect on the user.
 Outside of the scope of this work, there might be an opportunity for experiments
 to provide effects for people who are not using the VR headset and are
 just watching. Such a situation can happen in VR arcades or simply
-just between a group of people, where just one of them is using the VR headset.
+just between a group of people, where just one of them is wearing the VR headset.
 By creating visual effects in sync with the VR
 simulation, others can find watching someone else experiencing the experience
 more enjoyable and entertaining. Nevertheless, for the time being and purposes 
@@ -71,7 +70,7 @@ enhanced immersion in the virtual reality worlds.
 Spatial audio
 footnote:[Spatial audio is a full sphere surround-sound technique that uses a dimensional approach to audio to mimic the way we hear in real life. <<spaudio>>]
 makes a real difference and is achieved usually using the headphones.
-Surround sound systems are not typical for current virtual reality systems.
+Surround sound is not typical for current virtual reality systems.
 
 However, there is still one opportunity for enhancing the experience with sound.
 It is particularly beneficial while using headphones. The typical frequency
@@ -94,17 +93,17 @@ virtual to the real world.
 
 Some of the touch simulations are possible, as explored
 in the xref:./03-current-state-of-effects.adoc#hapticexp[third chapter], but all
-of them are simulated by using various wearable equipment (gloves, suits),
-or devices attached to the user's body.
+of them are simulated by wearing various wearable equipment (gloves, suits),
+or accessories attached to the user's body.
 
-Suitable are those devices that can produce effects externally (without an
+Suitable are those machines that can produce effects externally (without an
 all-time direct contact with the user), so they do not interfere with the VR
 experience and can still create direct contact with the user when required.
 
-Regarding direct touch, the system created within this work will be primarily
+Regarding direct touch, this work will be primarily
 focused rather on wind simulation, direct pressure contact with the user will
 be left to potential future works, as there are currently not known any
-devices, that would fit into the description.
+machines, that would fit into the description.
 
 ==== Suitable: Feeling of moving air
 
@@ -132,7 +131,7 @@ situation in the scene in the movie, for example, a water splash. <<5dcin>>
 
 It is important to acknowledge that the environment in those "5D Cinemas"
 is more controlled and ready for such conditions -- their equipment
-is water-proof and safe to splash with water. Users of such systems are not
+is water-proof and safe to splash with water. The guests are not
 wearing expensive equipment on their heads, or if so, the equipment is
 most probably water-proof, and therefore splashing water in the room will not
 pose a risk of damaging the equipment.
@@ -145,10 +144,10 @@ controllers have maximum operating humidity stated at 95% RH (non-condensing)
 
 ==== Not suitable: Nociception (pain)
 
-Pain simulation using electronic devices is possible. Electric currents can
+Pain simulation made with electronic devices is possible. Electric currents can
 induce pain of various amounts, depending on the amount of electric current
 flowing through the body. <<elepain>>
-Devices inducing pain electrically are available for consumers
+Equipment inducing pain electrically are available for consumers
 (e.g., tasers, paralyzers, electric shock toys) and it is possible to
 incorporate them to generate pain effects for VR simulation.
 
@@ -178,7 +177,7 @@ must be emphasized.
 ==== Suitable: Olfaction (smell)
 
 To the current date, simulation of smell can be categorized as something unusual
-or experimental. There are various attempts to simulate smell using electronic
+or experimental. There are various attempts to simulate smell with electronic
 devices; some projects are directly related to Virtual Reality technologies.
 
 As researched in
@@ -207,7 +206,7 @@ to taste receptors), it is still an early experiment. <<stsie>>
 Even if experiments were advanced and in a usable state, it would
 require the user to have some kind of electronic device attached to the user's
 tongue. Such attachment might be uncomfortable for the user, especially when
-using for long periods of time. Given the little potential of enhancing virtual
+used for long periods of time. Given the little potential of enhancing virtual
 reality with taste, the negative effects will most probably balance out
 the positive ones.
 
@@ -226,8 +225,8 @@ it might not be a good idea to affect the user's balance. Losing
 balance might result in users falling and damaging the equipment (headset and
 controllers) or damaging the equipment in the room around the user.
 
-Virtual reality systems are constantly fighting with user's balance problems,
-affecting perception systems affecting balance could potentially be
+VR systems are constantly fighting with user's balance problems,
+affecting balance perceptors could potentially be
 counter-productive in efforts to eliminate motion sickness.
 
 Affecting user balance is considered as not suitable.
@@ -285,17 +284,16 @@ current options.
 | Olfaction (smell) | *Smell* | Perfume dispensers
 |===
 
-Device must be able to be controller programmatically over a computer network,
+Appliance must be able to be controller programmatically over a computer network,
 to act as a dynamic effect generator.
 
-There are devices available on the market that are marked as "smart". 
-Briefly speaking, it means that the device
-is connected to other devices wired or wirelessly for data exchange. <<wisd>>
+There are appliances available on the market that are marked as "smart". 
+Briefly speaking, it means that the appliance
+can connect to other devices wired or wirelessly for data exchange. <<wisd>>
 Such devices, in most cases, can send information they collect over
 the network (e.g., weather stations collecting weather data, making them readable
-on user's smartphones), or able to listen to commands sent to this devices
-from other devices, and perform some kind of actions (e.g., a command to
-turn off a desk lamp).
+on user's smartphones), or able to listen to commands and perform various 
+kinds of actions (e.g., turn off a desk lamp, unlock door).
 
 There are two ways to approach the selection of appliances. Either the
 appliance can be smart and provide an interface of commands that can be sent, or
@@ -304,10 +302,10 @@ devices that can turn off the electrical power to appliances.
 
 The main disadvantage of using a specialized smart device is the necessity of
 working with different interfaces. There must be explicit
-support in the server code for specific smart devices.
+support in the server code for specific products.
 
-The main disadvantage of using the smart wall socket is the limitation in
-control of the devices. Fundamentally, the devices can be either turned on or off.
+The main disadvantage the smart wall socket is the limitation in
+control of the appliances. Fundamentally, the appliance can be either turned on or off.
 This approach does not allow precise control of the fan speeds or the power output
 of heaters.
 
@@ -318,7 +316,7 @@ options available while working on the project, we will be using **fans
 and infrared heaters**
 to create wind currents and sources of heat, respectively.
 
-Fans and infrared heaters will be controlled using a smart wall plug
+Fans and infrared heaters will be controlled by a smart wall plug
 and will be in two states -- off and on. For each of the selected appliance
 type, a set of properties will be defined
 or measured and set as a "effect device properties" in the configuration
@@ -349,7 +347,7 @@ will be different, as such properties heavily depend on the power of the fan.
 
 For the testing environment built for this work, approximate measures will be
 taken, and they will be provided in the configuration software as optional
-recommended defaults. Future users of the system will be allowed
+recommended defaults. Administrators will be allowed
 to measure their appliances by themselves and configure the properties with
 their measured values.
 
@@ -368,16 +366,16 @@ for users to easily configure the system for their room and VR set-up.
 
 Through this application, users will define the location, rotation, type, and
 additional configuration for each effect device placed in the room. The application
-can also be used for various general system configurations that might arise after
-the implementation, that could not be mentioned in the analysis.
+can also be used for various general configurations that might arise from
+the implementation process, that could not be mentioned in the analysis.
 
 
 ==== Functional requirements
 
 ===== **User wants to configure his room for use with OpenHVR system** [CFG-F1]
 
-Before using the system in a new space, the room properties must be configured
-using the configurator tool.
+Before using the OpenHVR system in a new space, 
+the room properties must be configured with the configurator tool.
 
 ===== **User wants to add an effect device into the configuration** [CFG-F2]
 
@@ -389,12 +387,12 @@ of the device (such as any kinds of thresholds, or hardware limitations)
 
 ===== **User wants to define a location of added effect device** [CFG-F3]
 
-Each device in a room that the user connected to the system and defined its type
+Each device in a room that the administrator configured,
 must have location and rotation (pose) information.
 
 ===== **User wants to input location information using one of the tracked controller in virtual reality space** [CFG-F4]
 
-Additionally, to manually inputting location values, for user convenience,
+Additionally, to manually input location values, for user convenience,
 the application will allow using a tracked controller to input the location at
 various places for locating the effect
 devices and mapping between the real world coordinate system and virtual
@@ -431,7 +429,7 @@ producing the effects.
 ===== **User wants to save a new configuration.** [SRV-F1]
 
 After creating or editing a configuration in Configurator Tool, the user
-want to save his changes and apply its effects on the OpenHVR system.
+want to save his changes and apply the effects.
 
 [[srv-f2]]
 ===== **Unity plug-in will send information containing instructions for reproducing current scene effects** [SRV-F2]
@@ -466,13 +464,15 @@ Most often, such details are not generally simulated by the application
 (for example, not all VR applications simulate wind currents or
 temperature in the scene).
 
-For providing such information to the OpenHVR system, so that the system can
+For providing such information to the OpenHVR system, so that it can
 reproduce virtual scene conditions in the real world, a custom Unity plug-in
 will be implemented.
 
-This plug-in will interoperate with Unity's Transform system to determine the
-effect location. Thanks to the componential architecture of the game engine,
-the plug-in can provide a component object, that can be attached to any game object.
+This plug-in will interoperate with Unity's Transforms
+footnote:[Unity's built-in components implementing the scene graph and defining location and rotation of the objects.]
+to determine the effect location. Thanks to the 
+componential architecture of the game engine, the plug-in can provide 
+a component object, that can be attached to any game object.
 Developers can then use the component in the same way as they use the other
 components.
 
@@ -517,16 +517,15 @@ the window size will be adjusted too.
 ===== **Provided resources will be standardized among the Unity Engine environment** [PLG-N1]
 
 For the implementation of the plug-in, native tools, UI elements, and properties
-will be used to achieve creating an interface between Unity and OpenHVR system.
+will be used to achieve creating an interface between Unity and OpenHVR.
 Interface and tools should feel familiar for Unity developers.
 
 === OpenHVR System analysis
 
 Users will often come into contact with the system as a whole. End-users
-often will not distinguish between the specific parts of the system. From such
-users, specific requirements will arise. These requirements are not coupled with
-any specific component of the system, but rather imposes requirements on
-the system as a whole.
+often will not distinguish between the specific parts or components. From such
+users, specific requirements arise. These requirements are not coupled with
+any specific component, but rather imposes requirements on the system as a whole.
 
 ==== Functional requirements
 
@@ -539,14 +538,14 @@ This functional requirement is the primary functionality of the system.
 
 ===== **User wants the effects not to affect his virtual reality experience negatively** [SYS-N1]
 
-The system should not affect the original virtual reality experience in any
+OpenHVR should not affect the original virtual reality experience in any
 negative way. For example, no such effect, produced by the system, should ever
 constrain users from experiencing some parts of the original VR experience.
 
 ===== **OpenHVR should not put excessive pressure on system resources of the computer running VR applications** [SYS-N2]
 
 Regarding system resources, VR applications are very demanding. It must be
-made sure that the OpenHVR system will not use excessive amounts of system resources,
+made sure that OpenHVR will not use excessive amounts of system resources,
 to keep the VR applications running smoothly.
 
 === Means of communication analysis

@@ -1,12 +1,12 @@
 == Future works
 
 The main appeal for a follow-up work is to create an actual VR application
-using the OpenHVR system practically. The example application presented in this
+utilizing the OpenHVR project practically. The example application presented in this
 work is only for testing and presentation purposes and can't be considered as
 full VR experience with enriched environmental effects.
 
-It also might be interesting to think about configurable limitations of the
-system by the administrator.
+It also might be interesting to think about configurable limitations specified
+by the administrator.
 Some effects can consume a lot of electricity (especially space heaters)
 and currently developers designing the effects aren't limited in how many
 effects can be turned on at the same time and for how long.
