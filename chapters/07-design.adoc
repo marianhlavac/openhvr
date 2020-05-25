@@ -1,8 +1,8 @@
 == Designing the System
 
-A name "OpenHVR" was chosen as a codename and project name, under which
-all source codes will be publicly available. Name emphasizes the open-source
-essence of the project, and HVR means "Haptics in VR". Simple logo, to 
+The name "OpenHVR" was chosen as a codename and project name, under which
+all source codes will be publicly available. The name emphasizes the open-source
+essence of the project, and HVR stands for "Haptics in VR". A simple logo, to 
 go with the name, was also designed.
 
 .Logo designed for OpenHVR
@@ -10,30 +10,30 @@ image::openhvrlogo.png[OpenHVR Logo]
 
 === Components cooperation
 
-Following simple diagram is picturing the system components and the
+The following simple diagram is picturing the system components and the
 communication between them.
 
-.Simple Diagram picturing the overview of system functionality
+.Simple diagram picturing the overview of system functionality
 image::openhvr-diagram.svg[]
-<1> Administrator is user that configures the system and performs the
+<1> Administrator is a user that configures the system and performs the
 first set-up.
-<2> VR User is user experiencing VR application. This user can (and often will
-be) the same user as the Administrator.
+<2> VR User is a user experiencing VR application. This user can (and often will
+be) the same as the Administrator.
 <3> Configurator Tool (as described in chapter <<cfganl,5.4>>).
 <4> VR Application written in Unity Engine (or possibly later other supported
-frameworks and game engines), that is using OpenHVR Unity Plug-in
+frameworks and game engines) which use OpenHVR Unity Plug-in
 <5> Unity plug-in (as described in chapter <<unityanl,5.6>>).
-<6> Effect Devices registered in setup instance of OpenHVR System.
+<6> Effect Devices registered in set-up instance of OpenHVR System.
 <7> OpenHVR Communication Server (as described in chapter <<serveranl,5.5>>).
 
 === Configurator Tool wireframe prototype
 
-As as first step of designing the Configurator Tool, a wireframe prototype
+As a first step in designing the Configurator Tool, a wireframe prototype
 has been designed. Configurator Tool user interface will consist of only
-two interactive screens -- the main screen and screen for creating new device.
-On the main screen, user will be able to see overview of the room configuration,
-manage (move, update, remove) effect devices and will see the status of the
-system. The new device screen will be displayed after clicking on "new device"
+two interactive screens -- the main screen and screen for adding a new device.
+On the main screen, the user will be able to see an overview of the room configuration,
+manage (move, update, remove) effect devices, and will see the system's status. 
+The "New device screen" will be displayed after clicking on the "Add device"
 button at the main screen.
 
 The prototype pictures layout of the user interface.
@@ -51,15 +51,15 @@ image::wireframe-3-adding.svg[]
 
 Following is a list of resources available at the API endpoint, with short
 descriptions is a simple draft of functions provided by the server
-component and is a part of pre-implementation design.
-Precise resource and schemas documentation, which is derived
-directly from the implementation can be later found
+component and is a part of the pre-implementation design.
+Precise resource and schemas documentation derived
+directly from the implementation, is present
 in xref:./13-developer-guide.adoc#server-api[Chapter 13.1] of the
 Developer Guide chapter.
 
 GET /devices/::
 Returns a list of registered effect devices in the current room configuration,
-together with their properties (such as location, etc.).
+together with their properties (e.g., location, rotation, name).
 
 POST /devices/::
 Registers a new effect device in the room.
@@ -72,50 +72,51 @@ GET /devices/{deviceId}::
 Returns details about a specific device.
 
 PUT /devices/{deviceId}::
-Updates specific device properties (such as its location, name description, etc.)
+Updates specific device properties (e.g., location, rotation, name).
 
 DELETE /devices/{deviceId}::
 Removes registration of the device from the room configuration.
 
 POST /effects/::
-Requests new effect performance. This resource is meant to be requested by the
-client each time there is an event happening in the VR scene, that should also
-produce acompanying effect in the room. Using parameters from client
-(location, type of effect, strength, duration, etc.), the server will calculate
-which effect devices needs to be instructed and send the instructions to them.
+Requests a new effect performance. This resource is meant to be requested by the
+client each time there is an event happening in the VR scene, which should also
+produce an accompanying effect in the room. The parameters sent by the client
+(i.e., type of the effect, duration, location and direction, range) are used 
+by the server to calculate which effect devices need to be instructed and sends 
+the instructions to them.
 
 DELETE /effects/::
 Immediately cancels all previously requested effect performances. Useful when
-scene needs to be cleared or for any reason it needs to be reassured that
-no devices are producing any effects (for example when quitting the VR
+the scene needs to be cleared, or, for any reason, it needs to be reassured that
+no devices are producing any effects (for example, when quitting the VR
 application).
 
 DELETE /effects/{effectId}::
 Immediately cancels a specific, previously requested effect performance.
-Cancelling specific performances is needed only when infinite duration
-was specified when requesting. Otherwise the effect will end after the
-duration and there is no need to cancel it.
+Canceling specific performances is needed only when infinite duration
+was specified when requesting. Otherwise, the effect will end after the
+duration, and there is no need to cancel it.
 
 GET /effects/types::
 Returns list of available types of effects. Client applications can request
-this list at their startup and raise a warning at the client-side, if VR
-application is requesting effect that is not available.
+this list at their startup and raise a warning at the client-side if VR
+application is requesting an effect that is not available.
 
 GET /system/status::
 Returns system status.
 
 === API Security
 
-The server will not support authentication and all resources will be publicly
-available. It is expected, that each server will serve single instance of
-virtual reality setup and will be run on local network without public access.
-Should user ever be concerned about unwanted access to the system, the server
+The server will not support authentication, and all resources will be publicly
+available. It is expected that each server will serve a single instance of
+a virtual reality set-up and will run on a local network without public access.
+Should the user ever be concerned about unwanted access to the system, the server
 will support IP whitelisting
-footnote:[IP Whitelisting is common name for the process of filtering
+footnote:[IP Whitelisting is a common name for the process of filtering
 requests by the sender IP address and letting through only the requests
-of the set of IP address, that are specified on the "whitelist".].
+with senders listed on the "whitelist".].
 
-Securing of each of the device depends on the software and firmware provided
+The security of each of the device depends on the software and firmware provided
 with the smart device itself. Drivers included in the OpenHVR server should
 support secure connection too. Tasmota firmware supports username and
 password authentication.
