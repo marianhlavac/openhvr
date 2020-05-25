@@ -11,7 +11,7 @@ followed by the description of the configurator and the plug-in. Lastly, the cho
 of the hardware used for testing the system is discussed.
 
 
-\hypertarget{x-communication-server}{\subsection*{Communication Server}}
+\hypertarget{x-communication-server}{\section{Communication Server}}
 For the implementation of the server, the
 \textbf{Go} \footnote{The Go Programming Language \href{http://golang.org}{http://golang.org}} language was
 chosen. The design of the language is not considered a modern
@@ -35,13 +35,13 @@ filesystem persistence of data. Conveniently, the Beego framework has built-in
 ORM support for SQLite databases.
 
 
-\hypertarget{x-unit-tests}{\subsubsection*{Unit tests}}
+\hypertarget{x-unit-tests}{\subsection{Unit tests}}
 For unit testing, Convey \footnote{\href{https://github.com/smartystreets/goconvey}{https://github.com/smartystreets/goconvey}}
 library is used. Unit tests cover the functions in models, helper functions,
 and others.
 
 
-\hypertarget{x-device-drivers}{\subsubsection*{Device drivers}}
+\hypertarget{x-device-drivers}{\subsection{Device drivers}}
 To support the future extendability of the communication server, a concept named
 "drivers" has been implemented. This concept allows other developers to write
 request handlers to extend the server’s abilities further.
@@ -63,7 +63,7 @@ drivers, a resource \texttt{GET /devices/drivers} exists, which returns a list
 of currently supported drivers.
 
 
-\hypertarget{x-configurator-tool}{\subsection*{Configurator Tool}}
+\hypertarget{x-configurator-tool}{\section{Configurator Tool}}
 The assumptions when designing the configurator tool suggested that it will
 be a web application. The web application will allow configuring the system
 on a computer or mobile device. Since the server will provide REST API,
@@ -104,7 +104,7 @@ from other languages, so for example, it is not possible
 to use TypeScript to write Svelte application with strongly typed code.
 
 
-\hypertarget{x-note-on-input-with-tracked-controllers}{\subsubsection*{Note on input with tracked controllers}}
+\hypertarget{x-note-on-input-with-tracked-controllers}{\subsection{Note on input with tracked controllers}}
 For the satisfaction of the requirement CFG-F4, the process of the system configuration
 ended up being split between two parts of the OpenHVR system — the central part is the front-end web application described
 in this chapter. Additionally, a helper tool written in Unity has been added,
@@ -127,7 +127,7 @@ the same way as the front-end application. More details about the helper tool
 can be found in the following chapter.
 
 
-\hypertarget{x-unity-plug-in}{\subsection*{Unity Plug-in}}
+\hypertarget{x-unity-plug-in}{\section{Unity Plug-in}}
 Game scripts are used to extend the behavior of Unity applications. Even though
 we call this component a "plug-in", in reality, it consists just of a
 set of scripts and related assets, that can be imported into an existing
@@ -146,7 +146,7 @@ the UI of the Unity editor. The plug-in leverages this advantage, as it can
 create an easy to use UI for developers to define and launch effects.
 
 
-\hypertarget{x-gizmos}{\subsubsection*{Gizmos}}
+\hypertarget{x-gizmos}{\subsection{Gizmos}}
 Gizmos are editor icons used in Unity Editor and they are used for
 visual aid and visual debugging. \hyperlink{gizmos}{}
 With these icons, developers can see the game objects, that are
@@ -170,7 +170,7 @@ a familiar user interface.
 
 \end{figure}
 
-\hypertarget{x-location-helper-script}{\subsubsection*{Location helper script}}
+\hypertarget{x-location-helper-script}{\subsection{Location helper script}}
 For easy and precise determination of effect devices locations and rotations
 relative to the VR coordinate frame, a Unity helper script was created.
 
@@ -187,8 +187,8 @@ be updated by visiting all devices in the room and pressing the button at
 correct locations.
 
 
-\hypertarget{x-implementation-notes}{\subsection*{Implementation notes}}
-\hypertarget{x-versioning}{\subsubsection*{Versioning}}
+\hypertarget{x-implementation-notes}{\section{Implementation notes}}
+\hypertarget{x-versioning}{\subsection{Versioning}}
 For versioning of the source code, Git
 \footnote{Git is a distributed version control system \href{https://git-scm.com}{https://git-scm.com}}
 was used, together with Git LFS for
@@ -196,7 +196,7 @@ storing larger assets (such as textures, models, and pictures)
 , for the implementation of the example application.
 
 
-\hypertarget{x-docker-support}{\subsubsection*{Docker support}}
+\hypertarget{x-docker-support}{\subsection{Docker support}}
 Built binaries and configuration setup are packaged into Docker
 \footnote{Docker is container platform, using OS-level virtualization to deliver programs in packages called containers \href{https://docker.com}{https://docker.com}}
 images, that can be easily and quickly run on any machine.
@@ -210,12 +210,12 @@ the necessity of configuring the Go compiler and compiling it.
 More information is present in the \hyperlink{13-install-guide}{}.
 
 
-\hypertarget{x-hardware-used}{\subsection*{Hardware used}}
+\hypertarget{x-hardware-used}{\section{Hardware used}}
 In this chapter, specific hardware selection, which will be used for testing the
 system’s implementation, is presented.
 
 
-\hypertarget{x-esp-01s-relay-boards}{\subsubsection*{ESP-01S relay boards}}
+\hypertarget{x-esp-01s-relay-boards}{\subsection{ESP-01S relay boards}}
 One of the cheapest variants to make electronic appliance controllable
 remotely is connecting them via ESP-01S relay boards with ESP8266 chips.
 These boards can be bought very cheaply at popular online marketplaces
@@ -239,7 +239,7 @@ of the chip. The advantages of the alternative firmware are described
 in one of the following chapters.
 
 
-\hypertarget{x-sonoff-smart-relays}{\subsubsection*{Sonoff Smart Relays}}
+\hypertarget{x-sonoff-smart-relays}{\subsection{Sonoff Smart Relays}}
 When looking for a more safe and certified solution, while still staying in
 low-cost requirements, smart relays manufactured by company Sonoff
 seem to be a great choice. The model "Sonoff Basic" is certified for 10 A load,
@@ -265,7 +265,7 @@ by voltages in the range 100-240V AC.
 
 \end{figure}
 
-\hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsubsection*{Tasmota — alternative firmware for ESP8266-based devices}}
+\hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
 Tasmota is an alternative open-source firmware for ESP8266-based devices.
 As of April 2020, there are currently over 1180 devices supported \hyperlink{tasdirec}{},
 which also includes many commercial consumer electronics based on ESP8266 chip,
@@ -289,7 +289,7 @@ steps, how to flash firmware to ESP8266 device are mentioned in the
 Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
 
 
-\hypertarget{x-results}{\subsection*{Results}}
+\hypertarget{x-results}{\section{Results}}
 All three components of the system are implemented and specific hardware
 for the testing environment was selected.
 
