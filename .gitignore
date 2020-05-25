@@ -1,2 +1,9 @@
-book.pdf
-book.html
+build
+*.aux
+*.lof
+*.log
+*.out
+*.pdf
+*.toc
+*.bbl
+*.blg

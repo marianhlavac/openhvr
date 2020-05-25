@@ -296,7 +296,7 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 % 					\else
 % 						\ClassError{FITthesis}{Department unspecified}{Specify the department using the \department command.}
 % 					\fi
-% 				} & \hfill\includegraphics[width=.16\textwidth]{cvut-logo-bw}
+% 				} & \hfill\includegraphics[width=.16\textwidth]{template/cvut-logo-bw}
 % 			\end{tabular*}
 % 		\end{center}
 % 		
@@ -340,7 +340,7 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 \DeclareRobustCommand{\titlepage}{
         \begin{titlingpage}
         \noindent
-        \if\@lang1{\includegraphics[width=0.5\textwidth]{cvut-logo-bw}}\else\if\@lang2{\includegraphics[width=0.5\textwidth]{cvut-logo-bw}}\else{\includegraphics[width=0.5\textwidth]{cvut-logo-bw-en}}\fi\fi
+        \if\@lang1{\includegraphics[width=0.5\textwidth]{template/cvut-logo-bw}}\else\if\@lang2{\includegraphics[width=0.5\textwidth]{template/cvut-logo-bw}}\else{\includegraphics[width=0.5\textwidth]{template/cvut-logo-bw-en}}\fi\fi
         
         \vfill
 		
