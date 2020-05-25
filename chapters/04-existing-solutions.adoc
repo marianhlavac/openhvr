@@ -81,7 +81,7 @@ content utilizing modern tools, frameworks, and game engines.
 
 To produce haptic effects in real-world mapped to virtual reality worlds,
 the room needs to be configured first.
-That is why the system described in this work will need a configuration utility.
+It's the reason why the OpenHVR system will need a configuration utility.
 Software related to room configuration is evaluated, whether it is relevant
 to virtual reality, IoT, or none of them. It is focused on user interface and functionalities.
 The results of this short research of existing solutions

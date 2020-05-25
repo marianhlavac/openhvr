@@ -171,12 +171,11 @@ perfect alignment).
 
 Unfortunately, the results collected at the user testing sessions 
 **do not seem to bear the desired informational values**.
-There might have been an error in the execution of the test. It is suspected that
+There was an error in the execution of the test. It is suspected that
 the tracking and real world's mapping to the virtual world were done
 incorrectly, and therefore the results do not give the correct answers to
-questions that led to this test.
-
-xref:15-attachments.adoc#att2[Attachment 2] contains the collected data.
+questions that led to this test. xref:15-attachments.adoc#att2[Attachment 2] 
+contains the collected data.
 
 The correct determination of wind source height was not the primary
 objective to test. Because testers were not correctly instructed on this matter,
@@ -185,7 +184,7 @@ height, and some of them tried to determine the height correctly.
 To fix the measured data, the upward axis information from the vectors was
 removed, and data are analyzed only on 2D-plane (view from top).
 Conveniently this makes the data easier to visualize, but even this
-process did not fix the errors in measured data.
+processing was not able to fix the error in measured data.
 
 It is not possible to draw any conclusion from this test. Theoretically, the
 test should be valid and correct execution of the test should give the
