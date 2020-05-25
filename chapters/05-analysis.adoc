@@ -476,8 +476,8 @@ the plug-in can provide a component object, that can be attached to any game obj
 Developers can then use the component in the same way as they use the other
 components.
 
-.Display of Unity components in the UI of Unity Engine. NAHRADIT VLASTNIM
-image::unity-plugin-for-android-10-638.jpg[]
+.Picture of Unity componential architecture visible in the Unity Editor UI.
+image::unity-components.png[]
 
 Plug-in components will be very similar to current existing components, which
 developers are used to. For example -- the definition of vibration effect can be
@@ -486,8 +486,8 @@ very similar to defining a 3D audio source in Unity.
 In the same way, developers will be able to fine-tune the effect type and
 its range.
 
-.3D Audio source set in a Unity Engine scene. The speaker icon defines the source location of the sound, and the blue sphere defines the strength (range) of the 3D sound. NAHRADIT VLASTNIM
-image::75955-screen-audiosource.png[]
+.3D Audio source set in a Unity Engine scene. The speaker icon defines the location of the sound source, and the blue sphere defines the strength (range) of the 3D sound.
+image::unity-audio.png[]
 
 
 ==== Functional requirements

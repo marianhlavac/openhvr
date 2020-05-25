@@ -12,7 +12,7 @@ them again. The test was performed at Faculty of Information Technology, using
 Oculus Rift VR headset with Oculus Touch tracked controllers.
 
 .Prepared room with equipment for the user testing at FIT CTU.
-image::D87C202E-5B1F-41D8-BC2C-C24E87E10382_1_105_c.jpeg[]
+image::IMG_5238.jpeg[]
 
 === Devices property measuring
 
@@ -102,7 +102,7 @@ h| Median | 2865 ms
 
 
 .One of the testers performing the fan spinup test
-image::photo-test-act.jpeg[]
+image::IMG_5242.jpeg[]
 
 ==== Fan spread range
 
@@ -269,8 +269,8 @@ forgotten the differences, or simply weren't able to properly evaluate the
 differences. Re-running of the test doesn't seem to negatively affect the
 test results.
 
-.Ongoing user testing. Tester standing in front of the lit fireplace (G) in virtual world.
-image::EB2A9E90-78CC-4158-B5B4-109A8267A5B8_1_105_c.jpeg[]
+.Ongoing user testing. Tester in front of the lit fireplace (G) in virtual world.
+image::IMG_5249.jpeg[]
 
 Following table lists collected answers on questions about immersion level and
 quality of the effects.

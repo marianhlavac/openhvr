@@ -28,7 +28,8 @@ all parts of the system -- the server must be running, the devices must be
 connected and tracked their positions. Application is producing effects
 using those devices, so the Unity plug-in must be used to produce the effects.
 
-{SCREENSHOT SCENY}
+.Screenshot of the example application scene
+image::test-room.png[]
 
 === Testing entities
 
@@ -51,7 +52,8 @@ The room also contains interactable pieces of stones. Users can grab those
 stones and throw them at the windows to break them. After breaking the window,
 the effects will run.
 
-{SCREENSHOT OKNA}
+.Screenshot of the windows inside the example application scene
+image::test-room-windows.png[]
 
 ==== Fireplaces
 
@@ -64,4 +66,6 @@ combination of effects will start:
 * Orange warm screen colorization to indicate the change of temperature
 * OpenHVR heat effect at the location of the fireplace
 
-{SCREENSHOT KRBU}
+
+.Screenshot of the fireplaces inside the example application scene
+image::test-room-fireplaces.png[]

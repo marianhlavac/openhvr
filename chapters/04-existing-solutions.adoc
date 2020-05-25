@@ -166,7 +166,7 @@ Xcape.io is a software used for automating escape rooms
 footnote:[An escape room is a popular entertainment game, where players are locked
 in a room, and through puzzles are challenged to escape the room in a time limit.].
 Although this software's relevance might seem far away,
-the similarity lies in the system's utilization of IoT devices
+the similarity lies in the system's utilization of multiple IoT devices
 connected together to provide the automation. Users can connect various
 devices and set their behavior.
 
@@ -176,6 +176,6 @@ therefore supports any device that uses MQTT as a communication protocol.
 The system can be scripted to perform a variety of tasks. It is available
 for free as an open-source project on GitHub.
 
-.Screenshot of xcape.io {NAHRADIT VLASTNIM}
-image::xcape.png[]
-
+* The user interface is very simple and bare.
+* There is no information about the location of connected devices.
+* MQTT allows the connection of various types of devices.

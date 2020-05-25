@@ -129,8 +129,6 @@ Through C# scripts, Unity offers developers great abilities to extend the UI of
 the Unity editor. The plug-in greatly leverages this advantage, as it can
 create an easy to use UI for developers to define and launch effects.
 
-{SCREENSHOT UNITY PLUGINU}
-
 ==== Gizmos
 
 Gizmos are Unity's editor icons and are used for a visual aid and visual
@@ -164,9 +162,6 @@ By using this tool, each time the room layout changes, user can start this
 script, select the devices one by one and for each of them just tap
 the trigger button with controller on the correct location and with the
 correct rotation.
-
-.Screenshot of ongoing configuration of the room using the Unity helper
-{SCREENSHOT MEASURE SCENY}
 
 === Implementation notes
 
@@ -236,7 +231,7 @@ channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
 
 .Connected Sonoff DUAL R2 with two channels
-image::A6E50433-B4B3-4031-ADEF-19D60369ECF4_1_105_c.jpeg[]
+image::IMG_5236.jpeg[]
 
 ==== Tasmota -- alternative firmware for ESP8266-based devices
 
@@ -274,11 +269,10 @@ For using with Unity game engine a set of scripts, called for our purposes
 as the "plug-in" was also implemented.
 
 .Screenshot of running server and the room configurator on the same machine
-{INCLUDE SCREENSHOT 1}
+image::running-server.png[]
 
-.Detailed screenshot of resulting UI of room configurator
-{INCLUDE SCREENSHOT 2}
+.More detailed screenshot of the resulting UI of room configurator
+image:configurator-ui.png[]
 
-.Screenshot of Unity plugin used for the example scene
-{INCLUDE SCREENSHOT 3, UNITY PLUGIN ALE NE NA EXAMPLE APP SCENE, TA JETSTE
-NEEXISTUJE}
+.Screenshot of Unity plug-in usage. A directional wind effect is set to simulate wind blowing from the virtual window.
+image:openhvr-unity-plugin-usage.png[]

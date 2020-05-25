@@ -18,3 +18,6 @@ enhancing user experience and VR immersion using surrounding environmental
 effects distributed in the room, where the VR experience is happening in
 the real world.
 
+To denote the system created in this work in the text further, a codename
+"OpenHVR" was chosen as a name of this project. More information about the
+name in Chapter 7.

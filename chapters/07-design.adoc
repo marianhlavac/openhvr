@@ -1,9 +1,9 @@
 == Designing the System
 
 A name "OpenHVR" was chosen as a codename and project name, under which
-all source codes will be publicly available. This name will be also further
-mentioned in the text, carrying meaning of the actual system, that results from
-this work.
+all source codes will be publicly available. Name emphasizes the open-source
+essence of the project, and HVR means "Haptics in VR". Simple logo, to 
+go with the name, was also designed.
 
 .Logo designed for OpenHVR
 image::openhvrlogo.png[OpenHVR Logo]
