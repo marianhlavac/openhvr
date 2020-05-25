@@ -1,9 +1,9 @@
 build
-*.aux
-*.lof
-*.log
-*.out
-*.pdf
-*.toc
-*.bbl
-*.blg
+/*.aux
+/*.lof
+/*.log
+/*.out
+/*.pdf
+/*.toc
+/*.bbl
+/*.blg
