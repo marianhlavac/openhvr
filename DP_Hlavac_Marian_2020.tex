@@ -18,6 +18,9 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1.5em}
 
+\setlrmarginsandblock{3.5cm}{2.5cm}{*}
+\checkandfixthelayout 
+
 % % list of acronyms
 % \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
 % \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
@@ -27,21 +30,21 @@
 % EDIT THIS
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
-\department{Department of \ldots (SPECIFY)}
-\title{Thesis title (SPECIFY)}
-\authorGN{Your Given Name(s) (SPECIFY)} %author's given name/names
-\authorFN{Your Family Name (surname, SPECIFY)} %author's surname
-\author{Your Name (SPECIFY)} %author's name without academic degrees
-\authorWithDegrees{Your Name \& degrees} %author's name with academic degrees
-\supervisor{Your Supervisor's Name (SPECIFY)}
-\acknowledgements{THANKS (remove entirely in case you do not with to thank anyone)}
+\department{Department of Software Engineering}
+\title{Surrounding Environment Effects in Virtual Reality}
+\authorGN{Marián} %author's given name/names
+\authorFN{Hlaváč} %author's surname
+\author{Marián Hlaváč} %author's name without academic degrees
+\authorWithDegrees{Bc. Marián Hlaváč} %author's name with academic degrees
+\supervisor{Ing. Jiří Chludil}
+\acknowledgements{THANKS.}
 \abstractEN{Summarize the contents and contribution of your work in a few sentences in English language.}
 \abstractCS{V n{\v e}kolika v{\v e}t{\' a}ch shr{\v n}te obsah a p{\v r}{\' i}nos t{\' e}to pr{\' a}ce v {\v c}esk{\' e}m jazyce.}
 \placeForDeclarationOfAuthenticity{Prague}
-\keywordsCS{Replace with comma-separated list of keywords in Czech.}
-\keywordsEN{Replace with comma-separated list of keywords in English.}
+\keywordsCS{virtuální realita, internet of things, webové technologie, Unity Engine}
+\keywordsEN{virtual reality, internet of things, web technologies, Unity Engine}
 \declarationOfAuthenticityOption{1} %select as appropriate, according to the desired license (integer 1-6)
-% \website{http://site.example/thesis} %optional thesis URL
+\website{https://github.com/mmajko/openhvr} %optional thesis URL
 
 
 \begin{document}
@@ -49,11 +52,11 @@
 % \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 
-\includepdf[pages={1}]{assets/assignment.pdf}
 
 \setsecnumdepth{part}
-
 \input{chapters/01-introduction}
+
+\setsecnumdepth{all}
 \input{chapters/02-virtual-reality}
 \input{chapters/03-current-state-of-effects}
 \input{chapters/04-existing-solutions}
@@ -63,15 +66,13 @@
 \input{chapters/08-implementation}
 \input{chapters/09-example-app}
 \input{chapters/10-user-testing}
+
+\setsecnumdepth{part}
 \input{chapters/11-conclusion}
 \input{chapters/12-future-works}
 \input{chapters/13-install-guide}
 \input{chapters/14-developer-guide}
 \input{chapters/15-attachments}
-
-\setsecnumdepth{all}
-
-\setsecnumdepth{part}
 
 
 \bibliographystyle{template/iso690}
