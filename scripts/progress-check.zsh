@@ -33,8 +33,8 @@ CHARS=$(find . -name "*.adoc" -type f | xargs wc -c | awk -F ' ' '{sum += $1} EN
 TARGET_CHARS=$((1800 * 100))
 
 find . -iname "*.adoc" -type f -exec sh -c 'cat "$0" >> /tmp/freqtmp' {} \;
-MOST_REPEATING_EXCLUDE="(the|and|for|are|with)"
-REPEATS=$(cat /tmp/freqtmp | grep -hEo "\w{3,}" | sort | uniq -c | sort -r | grep -vE $MOST_REPEATING_EXCLUDE | head -n 8)
+MOST_REPEATING_EXCLUDE="(The|the|and|for|are|with)"
+REPEATS=$(cat /tmp/freqtmp | grep -hEo "\w{3,}" | sort | uniq -c | sort -r | grep -vE $MOST_REPEATING_EXCLUDE | head -n 32)
 MOST_REPEATING_WORD=$(echo $REPEATS | head -n 1 | awk -F ' ' '{print $2}')
 MOST_REPEATING_FREQ=$(echo $REPEATS | head -n 1 | awk -F ' ' '{print $1}')
 rm /tmp/freqtmp
