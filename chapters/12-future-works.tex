@@ -1,35 +1,37 @@
 \chapter{Future works}
-The main appeal for a follow-up work is to create an actual VR application
-utilizing the OpenHVR project practically. The example application presented in this
-work is only for testing and presentation purposes and can’t be considered as
-full VR experience with enriched environmental effects.
-
+The main appeal for follow-up work is to create an actual VR application
+utilizing the OpenHVR project practically. The example application presented 
+in this work is only for testing and presentation purposes and is not considered
+as a full VR experience with enriched environmental effects.
 
 It also might be interesting to think about configurable limitations specified
 by the administrator.
-Some effects can consume a lot of electricity (especially space heaters)
-and currently developers designing the effects aren’t limited in how many
-effects can be turned on at the same time and for how long.
+Some effects might consume a considerable amount of electricity (especially
+true for space heaters), and currently, developers designing the effects are
+not limited in how many effects they can turn on at the same time and for how
+long.
 
+The failed execution of the fan direction test should be redone. The test
+should give the desired results by paying attention to accurate tracking and
+mapping real-world devices to virtual coordinates.
 
-{TODO} The direction test should be performed again and better, with …​
+\section{WebXR}
 
-
-\hypertarget{x-webxr-web-configurator}{\section{WebXR web configurator}}
 WebXR capabilities could be incorporated into the Configurator Tool.
-User would not need to use the Unity Helper for Configurator to accurately
-mark positions of effect devices. He/she would see the room
-size and properties in the Web Configurator directly and
-in real-time. Using headset or just the controllers he would then define
-the effect devices positions and rotations. On the other hand, the support in
-browsers for WebXR is still very experimental (as of April 2020 \hyperlink{webxr}{}) and
-most importantly, it is not certain that the space coordinate frame of
-WebXR applications will be exactly the same as the space coordinate frame
-of OpenVR or Oculus applications (to be used in Unity applications).
+Users would not need to use the Unity Helper for Configurator to mark positions
+of effect devices accurately. He/she would see the room
+size and properties in the Web Configurator in real-time. Using a headset or
+just the controllers, he/she would define the effect devices' positions and
+rotations the same way as with the plug-in. 
 
+On the other hand, the support in browsers for WebXR is still very experimental,
+and more importantly, it is not guaranteed that the space coordinate frame
+of WebXR applications will be the same as the space coordinate frame of OpenVR
+or other runtime applications.
 
-\hypertarget{x-service-discovery}{\section{Service discovery}}
-Unity Plug-in should be able to automatically discover the OpenHVR server.
-This feature would mitigate the necessity to manually specify IP address
-of computer with the running OpenHVR server instance. Such feature would
-greatly enhance the user experience.
+\section{Service discovery}
+
+Unity Plug-in should be able to discover the OpenHVR server automatically. 
+This feature would mitigate the necessity to manually specify the IP address
+of the computer running the OpenHVR server instance. Such a feature might
+significantly enhance the user experience.
