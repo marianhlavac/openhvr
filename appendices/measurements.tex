@@ -1,9 +1,21 @@
-\chapter{Appendices}
+\chapter{Measured data}
 
-\section*{Appendix A: Measurements of the "fan spin-up" test}
+\label{appx:a}
+\section*{Measurements of the "fan spin-up" test}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Tester A & 2908 ms & 2744 ms & 2432 ms & 2644 ms \\
+    Tester B & 3704 ms & 2709 ms & 2844 ms & 2886 ms \\
+    Tester C & 3953 ms & 2966 ms & 2800 ms & 2722 ms \\
+    Tester H & 3676 ms & 2566 ms & 3122 ms & 2911 ms \\
+    \hline
+\end{tabular}
+\end{center}
 
 \label{appx:b}
-\section*{Appendix B: Results of the failed "fan direction" test}
+\section*{Results of the failed "fan direction" test}
 Following table contains the calculated magnitudes of vector differences \texttt{d}
 for each collected user’s sample, originally collected with the
 height information (Y-axis not removed)
@@ -21,15 +33,13 @@ Tester H & 0,3276841 & 0,352311 & 0,3917351 & 0,1454643 & 0,4060867 & 0,2452434 
 \end{tabular}
 \end{center}
 
+\begin{figure}[h]{}
+\centering\includegraphics[width=\textwidth]{assets/direction-results.pdf}
+\caption{Chart visualizing real fan positions vs. testers input}
+\end{figure}
+
 Colors define the target fans written in uppercase letters and colors
 (red fan A, green fan B, blue fan C, purple fan D),
 lowercase letters stands for individual testers and their results. This data
 have Y-axis information removed and is visualized on a 2D-plane
 (viewed from top).
-
-
-\begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/direction-results.pdf}
-\caption{}
-
-\end{figure}

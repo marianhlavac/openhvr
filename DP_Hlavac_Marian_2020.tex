@@ -91,7 +91,6 @@
 \input{chapters/12-future-works}
 \input{chapters/13-install-guide}
 \input{chapters/14-developer-guide}
-\input{chapters/15-appendices}
 
 
 \bibliographystyle{template/iso690}
@@ -100,32 +99,12 @@
 \setsecnumdepth{all}
 \appendix
 
-\chapter{Acronyms}
-\begin{description}
-	\item[GUI] Graphical user interface
-	\item[XML] Extensible markup language
-\end{description}
-
-
-\chapter{Contents of enclosed CD}
-
-%change appropriately
-
-\begin{figure}
-	\dirtree{%
-		.1 readme.txt\DTcomment{the file with CD contents description}.
-		.1 exe\DTcomment{the directory with executables}.
-		.1 src\DTcomment{the directory of source codes}.
-		.2 wbdcm\DTcomment{implementation sources}.
-		.2 thesis\DTcomment{the directory of \LaTeX{} source codes of the thesis}.
-		.1 text\DTcomment{the thesis text directory}.
-		.2 thesis.pdf\DTcomment{the thesis text in PDF format}.
-		.2 thesis.ps\DTcomment{the thesis text in PS format}.
-	}
-\end{figure}
+\input{appendices/measurements.tex}
+\input{appendices/acronyms.tex}
+\input{appendices/cd-contents.tex}
 
 \cleardoublepage
-\listoffigures*
+\listoffigures
 
 \cleardoublepage
 \listoftablescond
