@@ -17,12 +17,12 @@ For the implementation of the server, the
 chosen. The design of the language is not considered a modern
 language’s design, but on the other hand, it is
 suited for writing performant server web applications, and easy
-to learn and write the code. \hyperlink{gogbu}{}
+to learn and write the code. \cite{gogbu}
 
 
 For the rapid development of the REST API, the \textbf{Beego} \footnote{\href{https://beego.me}{https://beego.me}}
 framework was picked. It offers MVC architecture, URL routing abilities, ORM,
-and other modules for the easy development of a webserver. \hyperlink{beego}{}
+and other modules for the easy development of a webserver.
 
 
 For persisting the data, \textbf{SQLite} \footnote{\href{https://www.sqlite.org/}{https://www.sqlite.org/}}
@@ -76,13 +76,13 @@ There is not much choice when picking a language for client-side applications
 to run in current browsers. One of the currently
 emerging candidates — \textbf{WebAssembly} \footnote{\href{https://webassembly.org}{https://webassembly.org}} — binary instruction format for web browsers, can be considered as
 a present-day alternative to JavaScript. Even though WebAssembly is
-currently available in almost all modern browsers \hyperlink{wasmroadmap}{}, frameworks
+currently available in almost all modern browsers \cite{wasmroadmap}, frameworks
 and tools are rather new and many are in early experimental states.
 
 
 For the implementation, \textbf{JavaScript} language was picked, because
 of existing mature tools and frameworks. It is known that WebAssembly
-is much faster than Javascript \hyperlink{wasmfast}{}, but given the nature of the
+is much faster than Javascript \cite{wasmfast}, but given the nature of the
 application, it is fairly safe to say that using JavaScript, the application
 will be fast enough to satisfy the \hyperlink{./05-analysis}{}
 (\emph{User interface must be fast and responsive})
@@ -94,12 +94,12 @@ To build the user interface more quickly, it was decided to use a UI framework.
 that can help build the configurator UI much faster and make the application
 more reliable. Unlike other UI frameworks for JavaScript, Svelte offers
 faster DOM updates
-\footnote{The Document Object Model (DOM) is a programming interface for HTML and XML documents. \hyperlink{dom}{}}
+\footnote{The Document Object Model (DOM) is a programming interface for HTML and XML documents. \cite{dom}}
 , less unnecessary data transfers
 to clients, and the framework code is run at build time rather than at runtime on
-client’s browsers. \hyperlink{svelteblog}{} On the other side, Svelte does not officially
+client’s browsers. \cite{svelteblog} On the other side, Svelte does not officially
 support transpilation
-\footnote{Transpiler is a source code translator, that does not translate code into bytecode or assembly (as typical compilers do), but translates code to different source code of the same or different language (for example TypeScript -> JavaScript) \hyperlink{sscd}{}}
+\footnote{Transpiler is a source code translator, that does not translate code into bytecode or assembly (as typical compilers do), but translates code to different source code of the same or different language (for example TypeScript -> JavaScript) \cite{sscd}}
 from other languages, so for example, it is not possible
 to use TypeScript to write Svelte application with strongly typed code.
 
@@ -136,7 +136,7 @@ or new Unity project and used.
 
 For scripting, the Unity Engine gives a choice between three languages — C\#, UnityScript \footnote{UnityScript is a special variant of JavaScript}, and
 Boo. From these three, the first one is the most popular and the most
-feature-rich with the most complex binding to the Unity API. \hyperlink{unityblog}{}
+feature-rich with the most complex binding to the Unity API. \cite{unityblog}
 Because of those reasons, the immediate choice of language for this
 project was C\#.
 
@@ -148,7 +148,7 @@ create an easy to use UI for developers to define and launch effects.
 
 \hypertarget{x-gizmos}{\subsection{Gizmos}}
 Gizmos are editor icons used in Unity Editor and they are used for
-visual aid and visual debugging. \hyperlink{gizmos}{}
+visual aid and visual debugging. \cite{gizmos}
 With these icons, developers can see the game objects, that are
 typically not visible in the scene.
 
@@ -267,7 +267,7 @@ by voltages in the range 100-240V AC.
 
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
 Tasmota is an alternative open-source firmware for ESP8266-based devices.
-As of April 2020, there are currently over 1180 devices supported \hyperlink{tasdirec}{},
+As of April 2020, there are currently over 1180 devices supported \cite{tasdirec},
 which also includes many commercial consumer electronics based on ESP8266 chip,
 that can be disassembled and "hacked" by flashing the alternative firmware
 (such devices, unfortunately, will lose their warranty).

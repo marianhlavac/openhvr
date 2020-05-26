@@ -28,7 +28,8 @@ server, and the VR application.
 
 
 \hypertarget{x-assessment-of-human-senses}{\section{Assessment of human senses}}
-To correctly assess all possible suitable effects that can be produced, all externally affectable human senses have been listed, and each assessed,
+To correctly assess all possible suitable effects that can be produced, all 
+externally affectable human senses have been listed, and each assessed,
 if it is possible and appropriate to produce effects that can affect those senses.
 
 
@@ -87,14 +88,15 @@ There might be the same argument as for the visuals — the majority of virt
 headphones, and if not, users often use own headphones for
 enhanced immersion in the virtual reality worlds.
 Spatial audio
-\footnote{Spatial audio is a full sphere surround-sound technique that uses a dimensional approach to audio to mimic the way we hear in real life. \hyperlink{spaudio}{}}
+\footnote{Spatial audio is a full sphere surround-sound technique that uses a 
+dimensional approach to audio to mimic the way we hear in real life. \cite{spaudio}}
 makes a real difference and is achieved usually using the headphones.
 Surround sound is not typical for current virtual reality systems.
 
 
 However, there is still one opportunity for enhancing the experience with sound.
 It is particularly beneficial while using headphones. The typical frequency
-response of headphones is from 20Hz to 20KHz \hyperlink{freqresp}{}, but it is obvious
+response of headphones is from 20Hz to 20KHz \cite{freqresp}, but it is obvious
 that lower ranges of frequencies produced by headphones are often much
 less powerful and can not create large vibrations that can be felt by a whole
 body. This type of effect partially belongs to somatosensory senses, because
@@ -112,8 +114,7 @@ information is very difficult to simulate and communicate to users from
 virtual to the real world.
 
 
-Some of the touch simulations are possible, as explored
-in the \hyperlink{./03-current-state-of-effects#hapticexp}{}, but all
+Some of the touch simulations are possible, as explored in the third chapter, but all
 of them are simulated by wearing various wearable equipment (gloves, suits),
 or accessories attached to the user’s body.
 
@@ -152,7 +153,7 @@ place (widely popular in shopping malls in the Czech Republic) offering
 enhanced cinema experience. It uses a combination of 3D stereoscopic
 pictures with various enhancing effects, and among the others, it provides
 a small water jet, which squirts small amounts of water to simulate a
-situation in the scene in the movie, for example, a water splash. \hyperlink{5dcin}{}
+situation in the scene in the movie, for example, a water splash. \cite{5dcin}
 
 
 It is important to acknowledge that the environment in those "5D Cinemas"
@@ -167,13 +168,13 @@ In the case of a typical virtual reality set-up, none of the equipment is ready
 for contact with water or high humidity levels. For example — both the
 \emph{Oculus Rift} virtual reality headset and the \emph{Oculus Touch} virtual reality
 controllers have maximum operating humidity stated at 95% RH (non-condensing)
-\hyperlink{orhswg}{}.
+\cite{orhswg}.
 
 
 \hypertarget{x-not-suitable:-nociception-(pain)}{\subsection{Not suitable: Nociception (pain)}}
 Pain simulation made with electronic devices is possible. Electric currents can
 induce pain of various amounts, depending on the amount of electric current
-flowing through the body. \hyperlink{elepain}{}
+flowing through the body.
 Equipment inducing pain electrically are available for consumers
 (e.g., tasers, paralyzers, electric shock toys) and it is possible to
 incorporate them to generate pain effects for VR simulation.
@@ -212,8 +213,7 @@ or experimental. There are various attempts to simulate smell with electronic
 devices; some projects are directly related to Virtual Reality technologies.
 
 
-As researched in
-\hyperlink{./03-current-state-of-effects#feelreal}{},
+As researched in the third chapter,
 one approach to solving the problem was based on smell
 cartridges that emit the smells by heating them with heating elements.
 The main disadvantage of such a system is the need for maintenance — the
@@ -235,7 +235,7 @@ of virtual world smells.
 Similarly to smell simulation, stimulating taste receptors electronically is
 complicated as well. Although experiments can be considered more successful
 compared to electronic smell simulation (mainly because of easier access
-to taste receptors), it is still an early experiment. \hyperlink{stsie}{}
+to taste receptors), it is still an early experiment. \cite{stsie}
 
 
 Even if experiments were advanced and in a usable state, it would
@@ -252,7 +252,7 @@ technology. But until such a product exists, working with taste simulation
 in the current state is not suitable for the project.
 
 
-\hypertarget{x-not-suitable:-equilibrioception-(balance)}{\subsection{Not suitable: Equilibrioception (balance)}}
+\subsection{Not suitable: Equilibrioception (balance)}
 To this date, we do not record any electronic device that could
 directly affect body balance and simulate its state.
 
@@ -332,7 +332,7 @@ to act as a dynamic effect generator.
 
 There are appliances available on the market that are marked as "smart".
 Briefly speaking, it means that the appliance
-can connect to other devices wired or wirelessly for data exchange. \hyperlink{wisd}{}
+can connect to other devices wired or wirelessly for data exchange. \cite{wisd}
 Such devices, in most cases, can send information they collect over
 the network (e.g., weather stations collecting weather data, making them readable
 on user’s smartphones), or able to listen to commands and perform various
@@ -341,7 +341,8 @@ kinds of actions (e.g., turn off a desk lamp, unlock door).
 
 There are two ways to approach the selection of appliances. Either the
 appliance can be smart and provide an interface of commands that can be sent, or
-it can be a typical appliance connected via so-called "smart wall sockets" — devices that can turn off the electrical power to appliances.
+it can be a typical appliance connected via so-called "smart wall sockets" — 
+devices that can turn off the electrical power to appliances.
 
 
 The main disadvantage of using a specialized smart device is the necessity of
@@ -356,7 +357,7 @@ of heaters.
 
 
 \hypertarget{x-analysis-of-the-appliances-used}{\section{Analysis of the appliances used}}
-According to \hyperlink{appltable}{Electrical appliances corresponding to senses} and taking into consideration the
+According to Table X.X and taking into consideration the
 options available while working on the project, we will be using \textbf{fans
 and infrared heaters}
 to create wind currents and sources of heat, respectively.
@@ -606,7 +607,7 @@ Firstly let us focus on a protocol that would seem to be the best for controllin
 physical devices, such as lights or fans. Art-Net is a network protocol for
 the distribution of data over an Ethernet network. It supports the connection of DMX
 devices, which are most often used for stage lights. It uses a UDP-based packet
-structure. \hyperlink{artnet}{}
+structure. \cite{artnet}
 
 
 Art-Net is mostly used for lighting live performances. The first version,
@@ -623,10 +624,10 @@ by a lot and makes them unavailable for a typical consumer.
 
 \hypertarget{x-mqtt}{\subsection{MQTT}}
 MQTT is a lightweight messaging protocol for small sensors and mobile devices,
-optimized for high-latency or unreliable networks. \hyperlink{mqtthp}{} It is
+optimized for high-latency or unreliable networks.  It is
 based on a publish-subscribe concept, and the messages are sorted into a "topics",
 devices can subscribe to messages published under a topic, or publish
-a message into the topic.
+a message into the topic.\cite{mqtthp}
 
 
 Considering the fact, that the devices will generally be a smart home
@@ -638,14 +639,14 @@ The main disadvantage of MQTT is the unreliability in terms of latency.
 It heavily depends on the implementation of MQTT on each of the device and on
 the implementation of the MQTT server. The latency range is usually
 in tens or hundreds of milliseconds for the most popular implementations,
-\hyperlink{mqttlat}{} which is sufficient, but the unpredictability is making MQTT
+\cite{mqttlat} which is sufficient, but the unpredictability is making MQTT
 less suitable for use with real-time effects.
 
 
 \hypertarget{x-http-(restful)}{\subsection{HTTP (RESTful)}}
 The most straightforward way of communication between devices would be to use
 HTTP protocol, which is the most widespread protocol used in computer networks
-and is used every day by billions of users. \hyperlink{httpsrv}{}
+and is used every day by billions of users. \cite{httpsrv}
 
 
 A small disadvantage might be the versatility of the HTTP protocol. There would be
@@ -657,4 +658,4 @@ the standardized API with expectable results.
 REST (REpresentational State Transfer) is an architectural style for developing
 web services and their interfaces. It defines constraints and conventions to
 offer greater performance, scalability, simplicity, and a more uniform interface.
-\hyperlink{restdef}{} RESTful API is an API that conforms to the REST architectural style.
+\cite{restdef} RESTful API is an API that conforms to the REST architectural style.
