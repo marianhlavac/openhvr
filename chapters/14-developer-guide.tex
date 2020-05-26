@@ -1,1 +1,96 @@
 \chapter{Developer Guide}
+
+This chapter briefly describe how developers can extend the functionalities
+of the OpenHVR system, or use the Unity plug-in to fit the effects 
+into their virtual reality applications and games.
+
+To understand some of the server code, an experience with the Beego framework
+is required. To learn more about the Beego framework, visit the
+\hyperlink{https://beego.me/docs/intro/}{Beego Documentation} on their official
+website.\footnote{https://beego.me is the official Beego framework website.}
+
+\section{Writing new device driver}
+
+Directory \verb|openhvr-server/devicedrivers| contains implementations of
+device drivers. To add new drives, create a new file with a new function,
+that conform to following interface:
+
+\begin{verbatim}
+    package devicedrivers
+
+    import "github.com/mmajko/openhvr-server/models"
+
+    func FooDriver(device *models.Device, request *models.EffectRequest) error {
+        ...
+    }
+\end{verbatim}
+
+Implemented driver then must be registered in file \verb|openhvr-server/main.go|
+on line 26. Example:
+
+\begin{verbatim}
+    ...
+    devicedrivers.RegisterDriver("name_of_the_driver", devicedrivers.FooDriver)
+    ...
+\end{verbatim}
+
+\section{Server API documentation}
+
+The Beego framework can automatically generate API developer documentation.
+To read the documentation, run the developer server using the \verb|bee| command
+(can be installed using command \verb|go get -u github.com/beego/bee|)
+
+Run the developement server with the \verb|-downdoc=true -gendoc=true| arguments
+
+\begin{verbatim}
+    bee run -downdoc=true -gendoc=true
+\end{verbatim}
+
+then visit the address \verb|http://localhost:47023/docs| to read the
+documentation.
+
+The generated documentation can be also found on the enclosed CD of the thesis.
+
+\section{Using the Unity plug-in}
+
+Download the Unity package file \verb|openhvr.unitypackage| from the GitHub
+repository or enclosed CD.
+
+In Unity Editor, open contextual menu and select 
+\verb|Assets| > \verb|Import Package| > \verb|Custom package...| and select
+the \verb|openhvr.unitypackage| file.
+
+In the scene, where the OpenHVR effects are desired to be used, create an empty
+game object and add a new \verb|OpenHVR Manager| component to it.
+
+Test the functionality by turning on the debug mode in the manager and running
+the game. In the console a message will appear, reporting if the connection
+to the OpenHVR server is successful.
+
+To display OpenHVR devices and access their locations from in-game, attach
+the \verb|OpenHVR Devices Enumerator| component to any game object.
+
+To run a OpenHVR effect, attach the \verb|OpenHVR Effect Source| component to
+any game object. For each effect you can set the following properties:
+
+\begin{description}
+    \item[Duration] The duration of the effect in seconds.
+    \item[Effect Type] Type of the effect to produce.
+    \item[Range] Determines the size of the sphere representing the effect range.
+    If you want to turn on multiple devices at once, you can make the range larger.
+    \item[Directional] If turned on, the effect will be directional and will
+    be applied only to devices in the correct direction.
+    \item[Play on Awake] The effect will start when the game object is created.
+\end{description}
+
+The position and direction of the effect source is determined by the values
+present in the \verb|Transform| component of your game object.
+
+To control the effect programatically, a following public methods in the
+\verb|OpenHVREffect| class can be accessed:
+
+\begin{description}
+    \item[void Play()] Starts the effect for the specified duration.
+    \item[void Cancel()] Immediately cancel the effect.
+    \item[bool IsPlaying()] Returns \verb|true| if the effect is currently playing.
+\end{description}

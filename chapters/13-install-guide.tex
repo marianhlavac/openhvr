@@ -1,1 +1,117 @@
 \chapter{Install Guide}
+
+The purpose of this chapter is to guide administrators through the process
+of instalation of the OpenHVR system.
+
+\section{Server installation}
+
+Users are offered two ways to install OpenHVR server. Installation of the
+server contains the configuration tool and is not needed to install separately.
+
+\subsection{Install using Docker image}
+
+The easiest way to install OpenHVR server is to run Docker image, which is
+publicly available in the Docker Hub\footnote{https://hub.docker.com/}
+container registry. The requirement is to have Docker Engine of version 2.2 or
+newer installed on your computer. 
+
+Run the image using the following command:
+
+\begin{verbatim}
+    docker run -d --mount \
+    source=od,destination=/go/src/github.com/mmajko/openhvr-server/_data \
+    -p 47023:47023 marianhlavac/openhvr
+\end{verbatim}
+
+The command will run the server on port 47023, and the configuration tool will
+be available at \verb|http://localhost:47023|
+
+\subsection{Install manually}
+
+If you do not prefer Docker, you can compile the server manually and run it.
+
+You will need to install the following requirements:
+
+\begin{itemize}
+    \item Go Tool command-line utility (version 1.13 or newer)
+    \item Node.js JavaScript runtime (version 13.11 or newer) 
+    \item NPM package manager (version 6.14 or newer)
+\end{itemize}
+
+To learn how to obtain an installation of Go tools, refer to the
+\hyperlink{https://golang.org/doc/install}{Installation Instructions} at the
+official Go website.\footnote{https://golang.org is the official Go website.}
+
+Navigate to the directory containing the OpenHVR server source code named
+\verb|openhvr-server|. In the directory run the following command to build the
+server executable:
+
+\begin{verbatim}
+    go build main.go
+\end{verbatim}
+
+The library dependencies required for the build will be automatically downloaded.
+
+After the build process is finished, you can find an executable in the current
+directory.
+
+Go to the \verb|configurator-tool| directory, which can be found in the current
+working directory, and install the configurator tool dependencies using the npm's
+\verb|install| command,
+
+\begin{verbatim}
+    npm install
+\end{verbatim}
+
+and build it with following command:
+
+\begin{verbatim}
+    npm run build
+\end{verbatim}
+
+The built files will appear in the \verb|./public/build| directory.
+
+Before running the server, make sure the \verb|_data| directory exists inside
+the \verb|openhvr-server| directory, and run the compiled executable.
+
+\begin{verbatim}
+    ./main
+\end{verbatim}
+
+\section{Effect device preparation}
+
+Before your electrical appliance can be used for producing the effects
+within the OpenHVR system, it needs to be configured first.
+
+\textbf{NOTE:} Make sure that the device is connected properly. Only a qualified
+person should be allowed to install electronics working with higher voltages, to avoid
+damaging the equipment or other risks.
+
+\subsection{Flash the Tasmota firmware}
+
+The device must be flashed with the Tasmota firmware on the chip of the
+device.
+The appliance itself must be based on the ESP8266 chip, or connected to a 
+smart relay or switch, which is based on the ESP8266 chip. To check if your
+device is compatible with Tasmota firmware, consult the 
+\hyperlink{https://templates.blakadder.com}{Tasmota Devices Templates Repository}
+which lists all supported devices.
+
+\textbf{TIP:} Some devices are difficult to flash, requires soldering on the
+pins of the chip or other sophisticated methods of flashing. If you are not
+experienced with electronics, leave the flashing process to someone
+more experienced or try searching for a pre-flashed devices on the market.
+
+\subsection{Add the device to OpenHVR}
+
+After your device is ready and running the Tasmota firmware, it needs to be
+connected to the same LAN as the OpenHVR server. Determine its IP address and
+open OpenHVR configuration tool.
+
+Press the \textit{Add Device} button, select the type of effects this device
+will be producing, and enter the connection details of your device into
+the form. If you do not yet know the position and rotation of the device, you
+can keep the fields empty. Select appropriate driver for controlling the
+appliance. Specify connection parameter, if neccessary. If you have multi-channel
+Tasmota device, the parameter must be equal to the channel name 
+(e.g., \verb|Power1| for the first channel, \verb|Power2| for the second one).
