@@ -52,8 +52,7 @@ The following diagram pictures the data flow of the incoming effect request.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/drivers-diagram.pdf}
-\caption{}
-
+\caption{Simplified program diagram of the device driver behavior when an effect request is received}
 \end{figure}
 
 Devices will register at the initialization of the server (in the server code).
@@ -166,7 +165,7 @@ a familiar user interface.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/icon-series.png}
-\caption{}
+\caption{Designed series of Gizmos icons for use in Unity editor}
 
 \end{figure}
 
@@ -206,9 +205,7 @@ Users are given a choice to compile the server manually, or if their machine has
 Docker installed, they can download the images and run them without
 the necessity of configuring the Go compiler and compiling it.
 
-
-More information is present in the \hyperlink{13-install-guide}{}.
-
+More information on how to install with Docker is present in the Install Guide.
 
 \hypertarget{x-hardware-used}{\section{Hardware used}}
 In this chapter, specific hardware selection, which will be used for testing the
@@ -261,13 +258,13 @@ by voltages in the range 100-240V AC.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=0.8\textwidth]{assets/IMG_5236.jpeg}
-\caption{}
+\caption{Sonoff DUAL R2 with two relay channels}
 
 \end{figure}
 
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
 Tasmota is an alternative open-source firmware for ESP8266-based devices.
-As of April 2020, there are currently over 1180 devices supported \cite{tasdirec},
+As of April 2020, there are currently over 1180 devices supported\cite{tasdirec},
 which also includes many commercial consumer electronics based on ESP8266 chip,
 that can be disassembled and "hacked" by flashing the alternative firmware
 (such devices, unfortunately, will lose their warranty).
@@ -283,11 +280,9 @@ any compatible FTDI device. There are many existing tools (e.g., esptool.py
 that provides simple and easy to use command-line
 interface for flashing new firmware to the device. Detailed description and
 steps, how to flash firmware to ESP8266 device are mentioned in the
-\hyperlink{./12-install-guide}{}.
-
+Install Guide.
 
 Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
-
 
 \hypertarget{x-results}{\section{Results}}
 All three components of the system are implemented and specific hardware
@@ -300,18 +295,21 @@ OpenHVR was created. The web application is client-side and is included with
 the OpenHVR Server. The server is hosting static files,
 including the client-side application.
 For using with Unity game engine, a set of scripts denoted as "Unity Plug-in"
-was also implemented.
-
+was also implemented. The devices communicate over HTTP API because the
+latencies of MQTT was unsatisfactory for the real-time connections. 
+Nonetheless, the support for MQTT can be added later as a feature.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/running-server.png}
-\caption{}
-
+\caption{Screenshot of running server and the room configurator on the same machine}
 \end{figure}
 
-\textbf{More detailed screenshot of the resulting UI of room configurator.} 
+\begin{figure}[h]{}
+\centering\includegraphics[width=\textwidth]{assets/configurator-ui.png}
+\caption{Detailed screenshot of the resulting UI of room configurator}
+\end{figure}
 
-
-\textbf{Screenshot of Unity plug-in usage. A directional wind effect is set to simulate wind blowing from the virtual window..} 
-
-
+\begin{figure}[h]{}
+\centering\includegraphics[width=\textwidth]{assets/openhvr-unity-plugin-usage.png}
+\caption{Screenshot of Unity plug-in in use; the directional wind effect is set to simulate wind blowing from the virtual window.}
+\end{figure}

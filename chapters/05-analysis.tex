@@ -280,23 +280,26 @@ and smell.
 For simplicity, this work will be focusing on just two of the mentioned suitable
 effects — wind and heat.
 
-
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{figure}
+\begin{tabular}{|l|l|l|l|}
 \hline
-Visual (sight) & Irrelevant \\ 
-Auditory (hearing) & \textbf{Suitable} \\ 
-Somatosensory & Mechanoreception (skin touch) & Direct contact & \textbf{Suitable} \\ 
-Moving air & \textbf{Suitable} \\ 
-Wetness, fluids & Not Suitable \\ 
-Nociception (pain) & Not Suitable \\ 
-Thermoception (heat) & \textbf{Suitable} \\ 
-Olfaction (smell) & \textbf{Suitable} \\ 
-Gustation (taste) & Not Suitable \\ 
-Equilibrioception (balance) & Not Suitable \\ 
+\multicolumn{3}{|l|}{Visual (sight)} & Irrelevant \\ 
+\multicolumn{3}{|l|}{Auditory (hearing)} & \textbf{Suitable} \\ 
+\multirow{3}{*}{Somatosensory} & \multirow{2}{*}{Mechanoreception (skin touch)}  & Direct contact & \textbf{Suitable} \\ 
+& & Moving air & \textbf{Suitable} \\ 
+& \multicolumn{2}{|l|}{Wetness, fluids} & Not Suitable \\ 
+\multicolumn{3}{|l|}{Nociception (pain)} & Not Suitable \\ 
+\multicolumn{3}{|l|}{Thermoception (heat)} & \textbf{Suitable} \\ 
+\multicolumn{3}{|l|}{Olfaction (smell)} & \textbf{Suitable} \\ 
+\multicolumn{3}{|l|}{Gustation (taste)} & Not Suitable \\ 
+\multicolumn{3}{|l|}{Equilibrioception (balance)} & Not Suitable \\ 
 \hline
 \end{tabular}
+\caption{Overview table of assesment results}
+\end{figure}
 \end{center}
+
 
 \hypertarget{x-viable-electrical-appliances}{\section{Viable electrical appliances}}
 Provided with the senses appropriate to affect, now it is important to determine
@@ -522,7 +525,7 @@ components.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=0.9\textwidth]{assets/unity-components.png}
-\caption{}
+\caption{Screenshot of Unity componential architecture visible in the Unity Editor UI}
 
 \end{figure}
 
@@ -537,8 +540,7 @@ its range.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=0.9\textwidth]{assets/unity-audio.png}
-\caption{}
-
+\caption{3D Audio source set in a Unity Engine scene; the speaker icon defines the location of the sound source, and the blue sphere defines the strength (range) of the 3D sound.}
 \end{figure}
 
 \hypertarget{x-functional-requirements}{\subsection{Functional requirements}}
@@ -643,7 +645,7 @@ in tens or hundreds of milliseconds for the most popular implementations,
 less suitable for use with real-time effects.
 
 
-\hypertarget{x-http-(restful)}{\subsection{HTTP (RESTful)}}
+\subsection{HTTP (REST)}
 The most straightforward way of communication between devices would be to use
 HTTP protocol, which is the most widespread protocol used in computer networks
 and is used every day by billions of users. \cite{httpsrv}

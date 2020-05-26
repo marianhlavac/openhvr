@@ -84,7 +84,7 @@ content utilizing modern tools, frameworks, and game engines.
 
 
 \hypertarget{x-configurator-tools}{\section{Configurator tools}}
-To produce haptic effects in real-world mapped to virtual reality worlds,
+To produce effects in real-world mapped to virtual reality worlds,
 the room needs to be configured first.
 It’s the reason why the OpenHVR system will need a configuration utility.
 Software related to room configuration is evaluated, whether it is relevant
@@ -114,10 +114,9 @@ easily set room size and configure the play-space size and rotation.
 More information about SteamVR can be found online at
 \href{https://partner.steamgames.com/doc/features/steamvr/info}{SteamVR page in Steamworks Documentation}.
 
-
 \begin{figure}[h]{}
 \centering\includegraphics[width=0.8\textwidth]{assets/steamvr-setup-room-scale-9.jpg}
-\caption{}
+\caption{Screenshot of the room setup in SteamVR Room Setup utility}
 \end{figure}
 
 \begin{itemize}
@@ -139,28 +138,23 @@ other things placed in the room.
 on a 2-dimensional plane.
 \end{itemize}
 
-
 \hypertarget{x-oculus-rift-sensor-setup}{\subsection{Oculus Rift Sensor Setup}}
 Oculus Rift Sensor Setup is a configuration utility from Valve Corporation’s
 competitor — Facebook Inc. It is intended for use with their headsets
 product line named "Oculus".
 
-
 Since the Oculus Rift uses a different tracking method (it utilizes infrared cameras),
 the configuration utility is slightly different and takes a little more
 time to set up correctly.
-
 
 The cameras positions are displayed on a 2D visualization, similar
 to SteamVR Room Setup. The feedback of location is valuable, because the
 user configuring the system needs to know how to position the
 cameras, to achieve better tracking of the headset and the controllers.
 
-
 Overall, the configurator utility is very similar to SteamVR’s one, though it
 is less playful, and configuring the system takes more time (there are more steps
 involved).
-
 
 \begin{itemize}
 \item The user interface is modern and more formal.
@@ -173,11 +167,9 @@ as it sometimes can take quite an amount of time to position the cameras correct
 on a 2-dimensional plane.
 \end{itemize}
 
-
 \begin{figure}[h]{}
-\centering\includegraphics[width=0.8\textwidth]{assets/oculus-sensor.jpg}
-\caption{}
-
+\centering\includegraphics[width=0.8\textwidth]{assets/oculussetup.png}
+\caption{Screenshot of Oculus Rift Sensor Setup}
 \end{figure}
 
 \hypertarget{x-xcape.io}{\subsection{xcape.io}}
@@ -188,21 +180,14 @@ the similarity lies in the system’s utilization of multiple IoT accessories
 connected together to provide the automation. Users can connect various
 equipment to it and set their behavior.
 
-
 The software is using MQTT for communication. It can run a MQTT server and
 therefore supports any device that uses MQTT as a communication protocol.
-
 
 The system can be scripted to perform a variety of tasks. It is available
 for free as an open-source project on GitHub.
 
-
 \begin{itemize}
-
-\item The user interface is very simple and bare.
-
-\item There is no information about the location of connected devices.
-
-\item MQTT allows the connection of various types of devices.
-
+    \item The user interface is very simple and bare.
+    \item There is no information about the location of connected devices.
+    \item MQTT allows the connection of various types of devices.
 \end{itemize}
