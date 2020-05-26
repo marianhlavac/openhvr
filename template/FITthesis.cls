@@ -66,7 +66,7 @@
 \setsecnumdepth{subsubsection}
 
 % table of contents depth (memoir-style settings)
-\settocdepth{subsubsection}
+\settocdepth{section}
 
 % chapter head design (memoir-style settings)
 \chapterstyle{madsen}
@@ -525,13 +525,8 @@ sp\^ osobom, ktor\'y nezni\v zuje hodnotu Diela (vr\'atane komer\v cn\'eho vyu\v
 	\abstractpage
 
 	\cleardoublepage
+	\setcounter{tocdepth}{1}
 	\tableofcontents*
-
-	\cleardoublepage
-	\listoffigures*
-
-	\cleardoublepage
-	\listoftablescond
 
 	\pagestyle{ruled}
 	\mainmatter

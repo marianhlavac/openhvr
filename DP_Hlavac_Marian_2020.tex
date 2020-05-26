@@ -5,27 +5,19 @@
 \usepackage[utf8]{inputenc} 
 \usepackage[T1]{fontenc}
 
-% \usepackage{subfig} %subfigures
-% \usepackage{amsmath} %advanced maths
-% \usepackage{amssymb} %additional math symbols
 \usepackage{gensymb}
 \usepackage{pdfpages}
-\usepackage{dirtree} %directory tree visualisation
+\usepackage{dirtree}
 
 \DeclareUnicodeCharacter{2009}{ }
 \DeclareUnicodeCharacter{200B}{ }
-\linespread{1.2}
+\linespread{1.1}
 \setlength{\parindent}{0em}
-\setlength{\parskip}{1.5em}
+\setlength{\parskip}{1em}
 
 \setlrmarginsandblock{3.5cm}{3cm}{*}
-\setulmarginsandblock{3.5cm}{*}{1}
+\setulmarginsandblock{3cm}{*}{1}
 \checkandfixthelayout 
-
-% % list of acronyms
-% \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
-% \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
-% \makeglossaries
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % EDIT THIS
@@ -33,26 +25,51 @@
 
 \department{Department of Software Engineering}
 \title{Surrounding Environment Effects in Virtual Reality}
-\authorGN{Marián} %author's given name/names
-\authorFN{Hlaváč} %author's surname
-\author{Marián Hlaváč} %author's name without academic degrees
-\authorWithDegrees{Bc. Marián Hlaváč} %author's name with academic degrees
+\authorGN{Marián} 
+\authorFN{Hlaváč} 
+\author{Marián Hlaváč}
+\authorWithDegrees{Bc. Marián Hlaváč}
 \supervisor{Ing. Jiří Chludil}
-\acknowledgements{THANKS.}
-\abstractEN{Summarize the contents and contribution of your work in a few sentences in English language.}
-\abstractCS{V n{\v e}kolika v{\v e}t{\' a}ch shr{\v n}te obsah a p{\v r}{\' i}nos t{\' e}to pr{\' a}ce v {\v c}esk{\' e}m jazyce.}
+\acknowledgements{I want to thank all testers, who accepted my invitation and participated 
+	in the user testing, despite the difficult current pandemic situation.
+
+	My thesis supervisor Ing. Jiří Chludil is also owed many thanks, 
+	as he helped me with revising the thesis text and provided the 
+	laboratory equipment to perform user testing and validation.
+
+	I am grateful for the initial help given by Ing. Tomáš Beneš, 
+	for consulting the work's hardware aspects, and for 
+	providing me with the equipment used for analysis.
+
+	Finally, my sincere thanks go to everyone closest to me,
+	for providing me with encouragement and moral support.
+}
+\abstractEN{The thesis describes the process of creating a system used for
+	enhancing virtual reality with haptic feedback and other external effects.
+	The primary objective is to create an open and easily extendable software
+	for controlling multiple IoT devices, which works together 
+	to provide virtual reality users with effects synchronized with the
+	virtual world. The results also include software tools 
+	for developers, which allows them to create more immersive 
+	and believable virtual reality experiences. 
+}
+\abstractCS{
+	Diplomová práce popisuje proces tvorby systému pro obohacení virtuální
+	reality hmatovou zpětnou vazbou a jinými externími efekty. Za primární cíl
+	si klade vytvořit otevřený a snadno rozšířitelný software pro ovládání
+	vícera IoT zařízení, které společně poskytují uživatelům virtuální reality
+	efekty synchronizované s virtuálními světy. Výsledek práce zahrnuje i
+	softwarové nástroje pro vývojáře, které jim umožňují vytvořit více
+	pohlcující a uvěřitelné zážitky ve virtuální realitě.
+}
 \placeForDeclarationOfAuthenticity{Prague}
 \keywordsCS{virtuální realita, internet of things, webové technologie, Unity Engine}
 \keywordsEN{virtual reality, internet of things, web technologies, Unity Engine}
-\declarationOfAuthenticityOption{1} %select as appropriate, according to the desired license (integer 1-6)
-\website{https://github.com/mmajko/openhvr} %optional thesis URL
+\declarationOfAuthenticityOption{1}
+\website{https://github.com/mmajko/openhvr}
 
 
 \begin{document}
-
-% \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
-% \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
-
 
 \setsecnumdepth{part}
 \input{chapters/01-introduction}
@@ -73,7 +90,7 @@
 \input{chapters/12-future-works}
 \input{chapters/13-install-guide}
 \input{chapters/14-developer-guide}
-\input{chapters/15-attachments}
+\input{chapters/15-appendices}
 
 
 \bibliographystyle{template/iso690}
@@ -83,7 +100,6 @@
 \appendix
 
 \chapter{Acronyms}
-% \printglossaries
 \begin{description}
 	\item[GUI] Graphical user interface
 	\item[XML] Extensible markup language
@@ -106,5 +122,11 @@
 		.2 thesis.ps\DTcomment{the thesis text in PS format}.
 	}
 \end{figure}
+
+\cleardoublepage
+\listoffigures*
+
+\cleardoublepage
+\listoftablescond
 
 \end{document}
