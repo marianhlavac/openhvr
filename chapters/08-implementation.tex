@@ -1,7 +1,7 @@
-\chapter{Implementation}
+\chapter{Implementation}\label{implementation}
 
-This chapter describes the process of implementing the OpenHVR system.
-As Chapter 4 stated, the system consists of three components: the
+This chapter describes the process of implementing the OpenHVR system. \\
+As chapter~\ref{analysis} stated, the system consists of three components: the
 Communication Server, Configuration UI, and Unity Plug-in. First, the process 
 of communication server implementation is described,
 followed by the same description of the configurator and the plug-in. 
@@ -10,18 +10,18 @@ Lastly, the choice of the hardware used for testing the system is listed.
 
 \hypertarget{x-communication-server}{\section{Communication Server}}
 For the implementation of the server, the
-\textbf{Go} \footnote{The Go Programming Language \href{http://golang.org}{http://golang.org}} language was
+\textbf{Go}\footnote{The Go Programming Language \href{http://golang.org}{http://golang.org}} language was
 chosen. Among experienced developers, the design of the language is not 
-considered as modern, \cite{gogbu} but on the other hand, it is
+considered as modern,\,\cite{gogbu} but on the other hand, it is
 suited for writing performant server web applications, and easy
 to learn and write the code. 
 
-For the rapid development of the REST API, the \textbf{Beego} \footnote{\href{https://beego.me}{https://beego.me}}
+For the rapid development of the REST API, the \textbf{Beego}\footnote{\href{https://beego.me}{https://beego.me}}
 framework was picked. It offers MVC architecture, URL routing abilities, ORM,
 and other modules for the easy development of a webserver.
 
 
-For persisting the data, \textbf{SQLite} \footnote{\href{https://www.sqlite.org/}{https://www.sqlite.org/}}
+For persisting the data, \textbf{SQLite}\footnote{\href{https://www.sqlite.org/}{https://www.sqlite.org/}}
 is used by the server as a database engine. SQLite 3 is
 a popular database, and it does not require any complicated installation
 (as opposed to, for example, PostgreSQL or MySQL) and can save all data into
@@ -30,7 +30,7 @@ it is not as performant as the mentioned alternatives. The server uses the
 filesystem persistence of data. Conveniently, the Beego framework has built-in
 ORM support for SQLite databases.
 
-For unit testing, Convey \footnote{\href{https://github.com/smartystreets/goconvey}{https://github.com/smartystreets/goconvey}}
+For unit testing, Convey\footnote{\href{https://github.com/smartystreets/goconvey}{https://github.com/smartystreets/goconvey}}
 library is used. Unit tests cover the functions in models, helper functions,
 and others.
 
@@ -68,38 +68,39 @@ all data.
 
 There is not much choice when picking a language for client-side applications
 to run in current browsers. One of the currently
-emerging candidates — \textbf{WebAssembly} \footnote{\href{https://webassembly.org}{https://webassembly.org}} — binary instruction format for web browsers, can be considered as
+emerging candidates — \textbf{WebAssembly}\footnote{\href{https://webassembly.org}{https://webassembly.org}} — binary instruction format for web browsers, can be considered as
 a present-day alternative to JavaScript. Even though WebAssembly is
-currently available in almost all modern browsers \cite{wasmroadmap}, frameworks
+currently available in almost all modern browsers,\,\cite{wasmroadmap} frameworks
 and tools are rather new and many are still in early experimental state.
 
 
 For the implementation, \textbf{JavaScript} language was picked, because
 of the existing mature tools and frameworks. It is known that WebAssembly
-is much faster than Javascript \cite{wasmfast}, but given the nature of the
+is much faster than Javascript,\,\cite{wasmfast} but given the nature of the
 application, it is fairly safe to say that using JavaScript, the application
-will be fast enough to satisfy the \hyperlink{./05-analysis}{}
+will be fast enough to satisfy the \hyperref[cfg-n1]{CFG-N1}
 (\emph{User interface must be fast and responsive})
 requirement.
 
 
 To build the user interface more quickly, it was decided to use a UI framework.
-\textbf{Svelte} \footnote{\href{https://svelte.dev}{https://svelte.dev}} is a modern web framework for JavaScript
+\textbf{Svelte}\footnote{\href{https://svelte.dev}{https://svelte.dev}} is a modern web framework for JavaScript
 that can help build the configurator UI much faster and make the application
 more reliable. Unlike other UI frameworks for JavaScript, Svelte offers
-faster DOM updates
-\footnote{Document Object Model (DOM) is a programming interface for HTML and XML documents. \cite{dom}}
+faster DOM updates\footnote{Document Object Model (DOM) is a programming interface for HTML and XML documents.\,\cite{dom}}
 , transfer less unnecessary data to clients, and the framework code is run 
-at build time rather than at runtime on client’s browsers. \cite{svelteblog} 
+at build time rather than at runtime on client’s browsers.\,\cite{svelteblog} 
 On the other side, Svelte does not officially
-support transpilation
-\footnote{Transpiler is a source code translator, that does not translate code into bytecode or assembly (as typical compilers do), but translates code to different source code of the same or different language (for example TypeScript -> JavaScript) \cite{sscd}}
+support transpilation\footnote{Transpiler is a source code translator, that does 
+not translate code into bytecode or assembly (as typical compilers do), but 
+translates code to different source code of the same or different language 
+(for example TypeScript -> JavaScript)\,\cite{sscd}}
 from other languages, so for example, it is not possible
 to use TypeScript to write Svelte application with strongly typed code.
 
 
-\hypertarget{x-note-on-input-with-tracked-controllers}{\subsection{Note on input with tracked controllers}}
-For the satisfaction of the requirement CFG-F4, the process of the system configuration
+\subsection{Note on input with tracked controllers}
+For the satisfaction of the requirement \hyperref[cfg-f4]{CFG-F4}, the process of the system configuration
 ended up being split between two parts of the OpenHVR system — the central part is the front-end web application described
 in this chapter. Additionally, a helper tool written in Unity has been added,
 which is now part of the Unity Plug-in. This tool is used for determining
@@ -121,7 +122,7 @@ the same way as the front-end application. More details about the helper tool
 can be found in the following chapter.
 
 
-\hypertarget{x-unity-plug-in}{\section{Unity Plug-in}}
+\section{Unity Plug-in}
 Game scripts are used to extend the behavior of Unity applications. Even though
 we call this component a ``plug-in'', in reality, it consists just of a
 set of scripts and related assets, that can be imported into an existing
@@ -131,7 +132,7 @@ or new Unity project and used.
 For scripting, the Unity Engine gives a choice between three languages — C\#, 
 UnityScript\footnote{UnityScript is a special variant of JavaScript}, and
 Boo. From these three, the first one is the most popular and the most
-feature-rich with the most complex binding to the Unity API. \cite{unityblog}
+feature-rich with the most complex binding to the Unity API.\,\cite{unityblog}
 Because of those reasons, the prompt choice of language was C\#.
 
 
@@ -140,9 +141,9 @@ the UI of the Unity editor. The plug-in leverages this advantage, as it can
 create an easy to use UI for developers to define and launch effects.
 
 
-\hypertarget{x-gizmos}{\subsection{Gizmos}}
+\subsection{Gizmos}
 Gizmos are editor icons used in Unity Editor and they are used for
-visual aid and visual debugging. \cite{gizmos}
+visual aid and visual debugging.\,\cite{gizmos}
 With these icons, developers can see the game objects, that are
 typically not visible in the scene.
 
@@ -155,7 +156,7 @@ For the OpenHVR plug-in, a set of icons were designed and are used for
 Unity prefabs, that developers might use when using the plug-in. The icons
 are designed to be similar to Unity’s default ones and therefore provide
 a familiar user interface, partially satisfying the 
-\hyperlink{plg-n1}{\textit{PLG-N1}} requirement.
+\hyperref[plg-n1]{PLG-N1} requirement.
 
 
 \begin{figure}[h]{}
@@ -184,16 +185,17 @@ correct locations.
 
 \hypertarget{x-implementation-notes}{\section{Implementation notes}}
 \hypertarget{x-versioning}{\subsection{Versioning}}
-For versioning of the source code, Git
-\footnote{Git is a distributed version control system \href{https://git-scm.com}{https://git-scm.com}}
+For versioning of the source code, Git\footnote{Git is a distributed version 
+control system \href{https://git-scm.com}{https://git-scm.com}}
 was used, together with Git LFS for
 storing larger assets (such as textures, models, and pictures)
 , for the implementation of the example application.
 
 
 \hypertarget{x-docker-support}{\subsection{Docker support}}
-Built binaries and configuration setup are packaged into Docker
-\footnote{Docker is container platform, using OS-level virtualization to deliver programs in packages called containers \href{https://docker.com}{https://docker.com}}
+Built binaries and configuration setup are packaged into Docker\footnote{Docker
+ is container platform, using OS-level virtualization to deliver programs in 
+ packages called containers \href{https://docker.com}{https://docker.com}}
 images, that can be easily and quickly run on any machine.
 
 
@@ -212,7 +214,7 @@ system’s implementation, is presented.
 ESP8266 is a low-cost microchip with TCP/IP stack and WiFi connection, 
 often used for rapid prototyping of IoT devices. It features
 a 32-bit 80MHz microprocessor with 32 KiB of instruction memory and 80 KiB for
-user data, and with up to 16 MiB of a flash storage. \cite{espspecs}
+user data, and with up to 16 MiB of a flash storage.\,\cite{espspecs}
 
 The integrated Wi-Fi module makes this chip suited for various IoT use-cases 
 and is used in many current commercial IoT products or development boards.
@@ -269,7 +271,7 @@ by voltages in the range 100-240V AC.
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
 Tasmota\footnote{https://tasmota.github.io/docs/} is an alternative open-source 
 firmware for ESP8266-based devices.
-As of April 2020, there are currently over 1180 devices supported\cite{tasdirec},
+As of April 2020, there are currently over 1180 devices supported,\cite{tasdirec}
 which also includes many commercial consumer electronics based on ESP8266 chip,
 that can be disassembled and ``hacked'' by flashing the alternative firmware
 (such devices, unfortunately, will lose their warranty).
@@ -280,11 +282,12 @@ interfaces for communication over the TCP/IP, utilizing multiple protocols
 
 The difficulty of flashing the firmware differs for each device. The programming pin
 on the ESP8266 chip must be pulled down to the ground and connected to a computer using
-any compatible FTDI device. There are many existing tools (e.g., esptool.py
-\footnote{\href{https://github.com/espressif/esptool}{https://github.com/espressif/esptool}})
+any compatible FTDI device. There are many existing tools (e.g., 
+esptool.py\footnote{\href{https://github.com/espressif/esptool}{https://github.com/espressif/esptool}})
 that provides simple and easy to use command-line
 interface for flashing a new firmware to the device. Detailed description and
-steps, how to prepare a ESP8266 device are mentioned in Appendix B (Install Guide).
+steps, how to prepare a ESP8266 device are mentioned in 
+\nameref{installguide} on page \pageref{installguide}.
 
 Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
 

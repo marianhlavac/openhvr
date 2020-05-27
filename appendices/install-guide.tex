@@ -1,4 +1,4 @@
-\chapter{Install Guide}
+\chapter{Install Guide}\label{installguide}
 
 The purpose of this chapter is to guide administrators through the process
 of instalation of the OpenHVR system.
@@ -11,9 +11,9 @@ server contains the configuration tool and is not needed to install separately.
 \subsection*{Install using Docker image}
 
 The easiest way to install OpenHVR server is to run Docker image, which is
-publicly available in the Docker Hub\footnote{https://hub.docker.com/}
+publicly available in the Docker Hub\footnote{\href{https://hub.docker.com/}{https://hub.docker.com/}}
 container registry. The requirement is to have Docker 
-Engine\footnote{https://docs.docker.com/get-docker/} of version 2.2 or
+Engine\footnote{\href{https://docs.docker.com/get-docker/}{https://docs.docker.com/get-docker/}} of version 2.2 or
 newer installed on your computer. 
 
 Run the image using the following command:
@@ -25,7 +25,7 @@ Run the image using the following command:
 \end{verbatim}
 
 The command will run the server on port 47023, and the configuration tool will
-be available at \verb|http://localhost:47023|
+be available at \verb|\href{http://localhost:47023}{http://localhost:47023}|
 
 \subsection*{Install manually}
 
@@ -41,8 +41,8 @@ You will need to install the following requirements:
 \end{itemize}
 
 To learn how to obtain an installation of Go tools, refer to the
-\hyperlink{https://golang.org/doc/install}{Installation Instructions} at the
-official Go website.\footnote{https://golang.org is the official Go website.}
+\href{https://golang.org/doc/install}{Installation Instructions} at the
+official Go website.\footnote{\href{https://golang.org}{https://golang.org} is the official Go website.}
 
 Navigate to the directory containing the OpenHVR server source code named
 \verb|openhvr-server|. In the directory run the following command to build the
@@ -96,7 +96,7 @@ firmware on the chip of the device.
 The appliance itself must be based on the ESP8266 chip, or connected to a 
 smart relay or switch, which is based on the ESP8266 chip. To check if your
 device is compatible with Tasmota firmware, consult the 
-\hyperlink{https://templates.blakadder.com}{Tasmota Devices Templates Repository}
+\href{https://templates.blakadder.com}{Tasmota Devices Templates Repository}
 which lists all supported devices.
 
 \textbf{TIP:} Some devices are difficult to flash, requires soldering on the

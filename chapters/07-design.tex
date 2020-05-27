@@ -1,4 +1,4 @@
-\chapter{Designing the System}
+\chapter{Designing the System}\label{design}
 
 The name `OpenHVR' was chosen as a codename and project name, under which
 all source codes will be publicly available. A simple logo to
@@ -25,11 +25,11 @@ can communicate using MQTT or UDP.
 \begin{enumerate}
     \item Administrator is a user that configures the system and performs the first setup.
     \item VR User is a user experiencing VR application. This user can the same as the Administrator.
-    \item Configurator Tool (as described in Chapter 4.4).
+    \item Configurator Tool (as described in Section~\ref{analysis:conftool}).
     \item VR Application written in Unity Engine (or possibly later other supported frameworks and game engines) which use OpenHVR Unity Plug-in
-    \item Unity plug-in (as described in Chapter 4.6).
+    \item Unity plug-in (as described in Section~\ref{analysis:plugin}).
     \item Effect Devices registered in setup instance of OpenHVR System.
-    \item OpenHVR Communication Server (as described in Chapter 4.5).
+    \item OpenHVR Communication Server (as described in Section~\ref{analysis:server}).
 \end{enumerate}
 \end{figure}
 
@@ -71,7 +71,7 @@ With short descriptions it represents a simple draft of functions provided
 by the server component and doesn't represent the final form of the API.
 Concrete resource and schemas documentation can be generated directly
 from the implementation. The instructions how to generate the documentation
-are present in Appendix C (Developer Guide).
+are present in \nameref{devguide} on page \pageref{devguide}.
 
 \begin{description}
 
@@ -120,8 +120,7 @@ The server will not support authentication, and all resources will be publicly
 available. It is expected that each server will serve a single instance of
 a virtual reality setup and will run on a local network without public access.
 Should the user ever be concerned about unwanted access to the system, the server
-will support IP whitelisting
-\footnote{IP Whitelisting is a common name for the process of filtering requests by the sender IP address and letting through only the requests with senders listed on the ``whitelist''.}.
+will support IP whitelisting\footnote{IP Whitelisting is a common name for the process of filtering requests by the sender IP address and letting through only the requests with senders listed on the ``whitelist''.}.
 
 
 The security of each of the device depends on the software and firmware provided

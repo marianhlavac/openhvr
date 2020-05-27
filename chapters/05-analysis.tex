@@ -1,4 +1,4 @@
-\chapter{Analytical evaluation of the system}
+\chapter{Analytical evaluation of the system}\label{analysis}
 
 In this chapter, the system components and functionalities are being analyzed.
 The functionality definition is preceded by the analysis of the human senses.
@@ -85,15 +85,14 @@ of this work, visual effects are considered as irrelevant.
 There might be the same argument as for the visuals — the majority of virtual reality headsets are already equipped with
 headphones, and if not, users often use own headphones for
 enhanced immersion in the virtual reality worlds.
-Spatial audio
-\footnote{Spatial audio is a full sphere surround-sound technique that uses a 
-dimensional approach to audio to mimic the way we hear in real life. \cite{spaudio}}
+Spatial audio\footnote{Spatial audio is a full sphere surround-sound technique that uses a 
+dimensional approach to audio to mimic the way we hear in real life.\,\cite{spaudio}}
 makes a real difference and is achieved usually using the headphones.
 Surround sound is not typical for current virtual reality systems.
 
 However, there is still one opportunity for enhancing the experience with sound.
 It is particularly beneficial while using headphones. The typical frequency
-response of headphones is from 20Hz to 20KHz \cite{freqresp}, but it is obvious
+response of headphones is from 20Hz to 20KHz,\,\cite{freqresp} but it is obvious
 that lower ranges of frequencies produced by headphones are often much
 less powerful and can not create large vibrations that can be felt by a whole
 body. This type of effect partially belongs to somatosensory senses, because
@@ -110,7 +109,7 @@ object, we can deduce the object’s rigidity, and all this
 information is very difficult to simulate and communicate to users from
 virtual to the real world.
 
-Some of the touch simulations are already possible, as explored in the third chapter, but all
+Some of the touch simulations are already possible, as explored in chapter~\ref{currentstate}, but all
 of them are simulated by wearing various wearable equipment (gloves, suits),
 or accessories attached to the user’s body.
 
@@ -141,7 +140,7 @@ place (widely popular in shopping malls in the Czech Republic) offering
 enhanced cinema experience. It uses a combination of 3D stereoscopic
 pictures with various enhancing effects; one of them is a small water jet, 
 which squirts small amounts of water to simulate a
-situation in the scene of the movie, for example, a water splash. \cite{5dcin}
+situation in the scene of the movie, for example, a water splash.\,\cite{5dcin}
 
 
 It is important to acknowledge that the environment in those 5D cinemas
@@ -154,7 +153,7 @@ pose a risk of damaging the equipment.
 In the case of a typical virtual reality setup, none of the equipment is ready
 for contact with water or high humidity levels. For example — both the
 \emph{Oculus Rift} virtual reality headset and the \emph{Oculus Touch} virtual reality
-controllers have maximum operating humidity stated at 95\% RH (non-condensing). 
+controllers have maximum operating humidity stated at 95\% RH (non-condensing).
 \cite{orhswg}
 
 
@@ -198,8 +197,8 @@ or experimental. There are various attempts to simulate smell with electronic
 devices; some projects are directly related to virtual reality technologies.
 
 
-As researched in the third chapter,
-one approach to solving the problem was based on smell
+As researched in chapter~\ref{currentstate} and~\ref{relatedwork},
+one approach to solving the problem is based on smell
 cartridges that emit the smells by heating them with heating elements.
 The main disadvantage of such a system is the need for maintenance — the
 cartridges need to be replaced, which might turn up to be costly in the
@@ -220,7 +219,7 @@ of virtual world smells.
 Similarly to smell simulation, stimulating taste receptors electronically is
 complicated as well. Although experiments can be considered more successful
 compared to electronic smell simulation (mainly because of easier access
-to taste receptors), it is still an early experiment. \cite{stsie}
+to taste receptors), it is still an early experiment.\,\cite{stsie}
 
 
 Even if experiments were advanced and in a usable state, it would
@@ -292,7 +291,7 @@ the mentioned senses.
 
 We set categories of effects in the following table, and from now on will
 refer to these effects by the category names. The choice of specific appliances
-is discussed in Chapter~7.
+is discussed in chapter~\ref{implementation}.
 
   \begin{table}[H]
   \catcode`\-=12
@@ -318,7 +317,7 @@ to act as a dynamic effect generator.
 
 There are appliances available on the market labeled as `smart'.
 Briefly speaking, it means that the appliance
-can connect to other devices wired or wirelessly for data exchange. \cite{wisd}
+can connect to other devices wired or wirelessly for data exchange.\,\cite{wisd}
 Such devices, in most cases, can send information they collect over
 the network (e.g., weather stations collecting weather data, making them readable
 on user’s smartphones), or able to listen to commands and perform various
@@ -339,7 +338,7 @@ control of the appliances. Fundamentally, the appliance can be either turned on 
 This approach does not allow to precisely control the fan speeds or the power output
 of heaters.
 
-\hypertarget{x-analysis-of-the-appliances-used}{\section{Analysis of the appliances used}}
+\section{Analysis of the appliances used}\label{analysis:appliances}
 According to Table 4.2 and taking into consideration the
 options available while working on the project, we will be using \textbf{fans
 and infrared heaters}
@@ -382,11 +381,11 @@ on accessible hardware, open-source and non-proprietary solutions, and
 the opportunity for more people to build their effect system in DIY style.
 
 
-\hypertarget{x-configurator-tool-analysis}{\section{Configurator tool analysis}}
+\section{Configurator tool analysis}\label{analysis:conftool}
 Configurator Tool (alternatively `Room Configurator') is a web application that
 can be used to input properties of the room and effect devices properties and
 connection details.
-The application should provide convenient GUI \footnote{Graphical User Interface}
+The application should provide convenient GUI\footnote{Graphical User Interface}
 for users to easily configure the system for their room and VR setup.
 
 
@@ -397,24 +396,24 @@ the implementation process, that could not be mentioned in the analysis.
 
 
 \subsection{Functional requirements}
-\hypertarget{x-\textbf{user-wants-to-configure-his-room-for-use-with-openhvr-system}-[cfg-f1]}{\paragraph*{\textbf{User wants to configure his room for use with OpenHVR system} [CFG-F1]}}
+\paragraph*{User wants to configure his room for use with OpenHVR system <CFG-F1>}
 Before using the OpenHVR system in a new space,
 the room properties must be configured with the configurator tool.
 
 
-\hypertarget{x-\textbf{user-wants-to-add-an-effect-device-into-the-configuration}-[cfg-f2]}{\paragraph*{\textbf{User wants to add an effect device into the room configuration} [CFG-F2]}}
+\paragraph*{User wants to add an effect device into the room configuration <CFG-F2>}
 Each device placed into a room that the user intends to use for producing the effects
 must be connected with the communication server, and its type must be specified.
 Additionally, more configuration might be required, depending on the type
 of the device (e.g., thresholds, relay/channel selection, hardware limitations)
 
 
-\hypertarget{x-\textbf{user-wants-to-define-a-location-of-added-effect-device}-[cfg-f3]}{\paragraph*{\textbf{User wants to define a location of added effect device} [CFG-F3]}}
+\paragraph*{User wants to define a location of added effect device <CFG-F3>}
 Each device in a room that the administrator configured,
 must have location and rotation (pose) information.
 
 
-\hypertarget{x-\textbf{user-wants-to-input-location-information-using-one-of-the-tracked-controller-in-virtual-reality-space}-[cfg-f4]}{\paragraph*{\textbf{User wants to input location information using one of the tracked controller in virtual reality space} [CFG-F4]}}
+\paragraph*{User wants to input location information using one of the tracked controller in virtual reality space <CFG-F4>}
 Additionally, to input location values, for user convenience,
 the application will allow using a tracked controller to input the location at
 various places for locating the effect
@@ -423,43 +422,49 @@ world coordinate system.
 
 
 \subsection{Non-Functional requirements}
-\hypertarget{x-\textbf{user-interface-must-be-fast-and-responsive}-[cfg-n1]}{\paragraph*{\textbf{User interface must be fast and responsive} [CFG-N1]}}
+
+\paragraph*{User interface must be fast and responsive <CFG-N1>}
 To provide satisfying user experience, the user interface should be fast and
 responsive. The user interface should display loading progress and inform users
 about currently ongoing actions.
 
 
-\hypertarget{x-\textbf{user-interface-must-follow-wcag-2.1}-[cfg-n2]}{\paragraph*{\textbf{User interface must follow WCAG 2.1} [CFG-N2]}}
-The user interface must follow WCAG 2.1
-\footnote{Web Content Accessibility Guidelines (WCAG) 2.1 \href{https://www.w3.org/TR/WCAG21/}{https://www.w3.org/TR/WCAG21/}}
+\paragraph*{User interface must follow WCAG 2.1 <CFG-N2>}
+The user interface must follow WCAG 2.1\footnote{Web Content Accessibility 
+Guidelines (WCAG) 2.1 \href{https://www.w3.org/TR/WCAG21/}{https://www.w3.org/TR/WCAG21/}}
 guidelines to provide an accessible user interface.
 
 
-\hypertarget{x-communication-server-analysis}{\section{Communication Server analysis}}
+\section{Communication Server analysis}\label{analysis:server}
+
 Communication Server is a web server, that acts as an intermediary component,
 passing information between the IoT devices and the computer with
 running VR application. This server holds data about room configuration,
 status, and location of the effect devices and overall status of the system.
 
-It must provide API \footnote{Application Programming Interface} to enable
+It must provide API\footnote{Application Programming Interface} to enable
 information exchange between the computer running the simulation and IoT devices.
 
 
 \subsection{Functional requirements}
-\hypertarget{x-\textbf{user-wants-to-save-a-new-configuration.}-[srv-f1]}{\paragraph*{\textbf{User wants to save a new configuration.} [SRV-F1]}}
+
+\paragraph*{User wants to save a new configuration. <SRV-F1>}
+\label{srv-f1}
 After creating or editing a configuration in Configurator Tool, the user
 want to save his changes and apply the effects.
 
 
-\hypertarget{x-\textbf{unity-plug-in-will-send-information-containing-instructions-for-reproducing-current-scene-effects}-[srv-f2]}{\paragraph*{\textbf{Unity plug-in will send information containing instructions for reproducing current scene effects} [SRV-F2]}}
+\paragraph*{Unity plug-in will send information containing instructions for reproducing current scene effects <SRV-F2>}
+\label{srv-f2}
 Each effect happening inside the VR scene will be described as an effect
 instruction. Using such instruction, the plug-in will create a request on the server to
 reproduce described effects in the real world.
 
 
-\hypertarget{x-\textbf{effect-devices-will-expect-instructions-on-how-to-behave}-[srv-f3]}{\paragraph*{\textbf{Effect devices will expect instructions on how to behave} [SRV-F3]}}
+\paragraph*{Effect devices will expect instructions on how to behave <SRV-F3>}
+\label{srv-f3}
 All running effect devices will individually expect instructions for their
-behavior. The server must receive instructions coming from Unity plug-in (in \hyperlink{srv-f2}{\textit{SRV-F2}})
+behavior. The server must receive instructions coming from Unity plug-in (in \hyperref[srv-f2]{SRV-F2})
 and decide which devices will receive instructions and what content of the
 instruction will be.
 Practically speaking, if Unity plug-in asks to blow wind from the northern side of
@@ -469,21 +474,23 @@ and send them instruction to start or stop spinning.
 \pagebreak
 
 \subsection{Non-Functional requirements}
-\textbf{The server should be fast and responsive.} [SRV-N1]
 
+\paragraph*{The server should be fast and responsive. <SRV-N1>}
+\label{srv-n1}
 Server will work with real-time data, and therefore, it should be fast and
 responsive. The server should utilize asynchronous code (using threads or 
 different methods) to be able handle multiple requests concurrently.
 
-\textbf{The server should provide a standardized programming interface (RESTful API).} [SRV-N2]
-
+\paragraph*{The server should provide a standardized programming interface (RESTful API). <SRV-N2>}
+\label{srv-n2}
 To help developers easily integrate the server functionalities with other 
 programs, the server will implement a RESTful API to provide more uniform
 programming interface. The term `RESTful API' is described more in
 Section 4.8.3.
 
 
-\hypertarget{x-unity-plug-in-analysis}{\section{Unity Plug-in analysis}}
+\section{Unity Plug-in analysis}\label{analysis:plugin}
+
 Current VR applications do not provide any standardized way
 of gathering detailed environmental information about the simulation.
 Most often, such details are not generally simulated by the application
@@ -494,8 +501,7 @@ For providing such information to the OpenHVR system, so that it can
 reproduce virtual scene conditions in the real world, a custom Unity plug-in
 will be implemented.
 
-This plug-in will interoperate with Unity’s Transforms
-\footnote{Unity’s built-in components implementing the scene graph and defining location and rotation of the objects.}
+This plug-in will interoperate with Unity’s Transforms\footnote{Unity’s built-in components implementing the scene graph and defining location and rotation of the objects.}
 to determine the effect location. Thanks to the
 componential architecture of the game engine, the plug-in can offer
 a component object, that can be attached to any game object.
@@ -522,14 +528,16 @@ the developers will be able to fine-tune the effect type and its range.
 \pagebreak
 
 \subsection{Functional requirements}
-\hypertarget{x-\textbf{developer-wants-to-produce-an-effect-at-some-location-in-the-game-world}-[plg-f1]}{\paragraph*{\textbf{Developer wants to produce an effect at some location in the game world} [PLG-F1]}}
+
+\paragraph*{Developer wants to produce an effect at some location in the game world <PLG-F1>}
+\label{plg-f1}
 Using the component provided by the Unity plug-in, the developer will attach
 a component to any object with a Transform component. The Transform component
 will give the location of the effect in the game world. The developer will
 set and trigger an effect by sending signals to the effect source component.
 
-
-\hypertarget{x-\textbf{developer-wants-to-use-reference-points-of-existing-devices-in-the-game-world}-[plg-f1]}{\paragraph*{\textbf{Developer wants to use reference points of existing devices in the game world} [PLG-F1]}}
+\paragraph*{Developer wants to use reference points of existing devices in the game world <PLG-F2>}
+\label{plg-f2}
 The developer can receive
 positions and rotations of effect devices to produce effects in the
 game world at better and more accurate positions.
@@ -539,13 +547,16 @@ the position of the virtual window (it will help to pick the correct wall positi
 including the height of the window).
 
 \subsection{Non-Functional requirements}
-\hypertarget{x-\textbf{provided-resources-will-be-standardized-among-the-unity-engine-environment}-[plg-n1]}{\paragraph*{\textbf{Provided resources will be standardized among the Unity Engine environment} [PLG-N1]}}
+
+\paragraph*{Provided resources will be standardized among the Unity Engine environment <PLG-N1>}
+\label{plg-n1}
 For the implementation of the plug-in, native tools, UI elements, and properties
 will be used to achieve creating an interface between Unity and OpenHVR.
 Interface and tools should feel familiar for Unity developers.
 
 
-\hypertarget{x-openhvr-system-analysis}{\section{OpenHVR System analysis}}
+\section{OpenHVR System analysis}
+
 Users will often come into contact with the system as a whole. End-users
 often cannot distinguish between the specific parts or components. From such
 users, specific requirements arise. These requirements are not coupled with
@@ -553,22 +564,27 @@ any specific component, but rather imposes requirements on the system as a whole
 
 
 \subsection{Non-Functional requirements}
-\paragraph*{\textbf{User wants the effects not affect his virtual reality experience negatively} [SYS-N1]}
+
+\paragraph*{User wants the effects not affect his virtual reality experience negatively <SYS-N1>}
+\label{sys-n1}
 OpenHVR should not affect the original virtual reality experience in any
 negative way. For example, no such effect, produced by the system, should ever
 constrain users from experiencing some parts of the original VR experience.
 
-\hypertarget{x-\textbf{openhvr-should-not-put-excessive-pressure-on-system-resources-of-the-computer-running-vr-applications}-[sys-n2]}{\paragraph*{\textbf{OpenHVR should not put excessive pressure on system resources of the computer running VR applications} [SYS-N2]}}
+\paragraph*{OpenHVR should not put excessive pressure on system resources of the computer running VR applications <SYS-N2>}
+\label{sys-n2}
 Regarding system resources, VR applications are very demanding. It must be
 made sure that OpenHVR will not use excessive amounts of system resources,
 to keep the VR applications running smoothly.
 
-\paragraph*{\textbf{Reproduction of the technical setup should not be expensive and accessible} [SYS-N3]}
+\paragraph*{Reproduction of the technical setup should not be expensive and accessible <SYS-N3>}
+\label{sys-n3}
 OpenHVR is focused on being non-expensive. The basic technical setup should be
 optimized on price, and consists of commonly available equipment.
 
 
-\hypertarget{x-means-of-communication-analysis}{\section{Means of communication analysis}}
+\section{Means of communication analysis}
+
 It was established that the effect devices would communicate over a computer network.
 There are many network protocols, with different properties. The chapter will
 analyze possible communication protocols and tools for communication
@@ -580,7 +596,7 @@ Firstly let us focus on a protocol that would seem to be the best for controllin
 physical devices, such as lights or fans. Art-Net is a network protocol for
 the distribution of data over an Ethernet network. It supports the connection of DMX
 devices, which are most often used for stage lights. It uses a UDP-based packet
-structure. \cite{artnet}
+structure.\,\cite{artnet}
 
 Art-Net is mostly used for lighting live performances. The first version,
 `Art-Net I', was released in 1998. The latest 4th version released
@@ -618,7 +634,7 @@ less suitable for use with real-time effects.
 \subsection{HTTP (REST)}
 The most straightforward way of communication between devices would be to use
 HTTP protocol, which is the most widespread protocol used in computer networks
-and is used every day by billions of users. \cite{httpsrv}
+and is used every day by billions of users.\,\cite{httpsrv}
 
 
 A small disadvantage might be the large versatility of the HTTP protocol. There would be
