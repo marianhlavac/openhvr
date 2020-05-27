@@ -4,14 +4,13 @@ To demonstrate the abilities of the system, an example VR application
 will validate the functionality and present an example typical VR
 environment, in which OpenHVR could be used.
 
-In the environment, the user can walk around the virtual room and interact with
-various items inside the room. Some of the items equip the OpenHVR
+In the environment (fig.\,\ref{exenv}), the user can walk around the virtual 
+room and interact with various items inside the room. Some of the items equip the OpenHVR
 effects. Each example effect use is described below.
 
 One of the user tests will use this example application, where
 participants will be asked about an overall opinion on the experience and
 how immersive it is.
-
 
 The 3D models and materials were created using Microsoft Maquette
 \footnote{VR prototyping tool, allowing a fast building of spatial environments \href{https://maquette.ms}{https://maquette.ms}}.
@@ -32,17 +31,16 @@ all parts of the system — the server must be running, the devices must be
 connected and tracked their positions. The application is producing effects
 using those devices, so the Unity plug-in must be used to produce the effects.
 
-
-\begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/test-room.png}
-\caption{Overview of the example room scene}
-
-\end{figure}
-
 \hypertarget{x-testing-entities}{\section{Testing entities}}
 The example application can also be used for user testing. For those purposes,
 the application scene includes two main types of testing entities.
 
+\newpage
+
+\begin{figure}[h]{}
+    \centering\includegraphics[width=\textwidth]{assets/test-room-windows.png}
+    \caption{Screenshot of the windows inside the example scene}
+    \end{figure}
 
 \hypertarget{x-windows}{\subsection{Windows}}
 There are for interactive breakable windows in the room. Each of the
@@ -51,6 +49,7 @@ of the following effects can be turned on or off, according to testing
 scenario needs:
 
 \begin{itemize}
+    \itemsep0em
 \item Visual effect of blowing wind
 \item Sound effect of blowing wind
 \item Blue cold screen colorization to indicate changing temperature
@@ -61,10 +60,11 @@ The room also contains interactable pieces of stones. Users can grab those
 stones and throw them at the windows to break them. After breaking the window,
 the effect will run.
 
-\begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/test-room-windows.png}
-\caption{Screenshot of the windows inside the example scene}
+\newpage
 
+\begin{figure}[h]{}
+\centering\includegraphics[width=\textwidth]{assets/test-room-fireplaces.png}
+\caption{Screenshot of the fireplaces inside the example scene}
 \end{figure}
 
 \hypertarget{x-fireplaces}{\subsection{Fireplaces}}
@@ -75,14 +75,17 @@ When a fire is started, similarily to the windows, an optional
 combination of effects will start:
 
 \begin{itemize}
+    \itemsep0em
 \item Visual effect of fire
 \item Sound effect of fire and cracking wood
 \item Orange warm screen colorization to indicate the change of temperature
 \item OpenHVR heat effect at the location of the fireplace
 \end{itemize}
 
-\begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/test-room-fireplaces.png}
-\caption{Screenshot of the fireplaces inside the example scene}
+\newpage
 
+\begin{figure}[p]{}
+\centering\includegraphics[width=\textwidth]{assets/test-room.png}
+\caption{Overview of the example room scene}
+\label{exenv}
 \end{figure}

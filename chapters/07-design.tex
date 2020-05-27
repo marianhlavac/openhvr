@@ -11,7 +11,12 @@ go with the name, was also designed.
 
 \hypertarget{x-components-cooperation}{\section{Components cooperation}}
 The following simple diagram is picturing the system components and the
-communication between them.
+communication between them. There are two actors and five system
+components defined. Administrator defines the configuration with the
+Configurator Tool using his browser. All three client components
+(i.e., Configurator Tool, Unity Plug-in, Effect Devices) are then communicating
+with the server using REST HTTP API. In the future, the Effect Devices
+can communicate using MQTT or UDP.
 
 
 \begin{figure}[h]{}
@@ -19,7 +24,7 @@ communication between them.
 \caption{Simple diagram picturing the overview of system functionality}
 \begin{enumerate}
     \item Administrator is a user that configures the system and performs the first setup.
-    \item VR User is a user experiencing VR application. This user can (and often will be) the same as the Administrator.
+    \item VR User is a user experiencing VR application. This user can the same as the Administrator.
     \item Configurator Tool (as described in Chapter 4.4).
     \item VR Application written in Unity Engine (or possibly later other supported frameworks and game engines) which use OpenHVR Unity Plug-in
     \item Unity plug-in (as described in Chapter 4.6).
@@ -33,26 +38,32 @@ communication between them.
 As a first step in designing the Configurator Tool, a wireframe prototype
 has been designed. Configurator Tool user interface will consist of only
 two interactive screens — the main screen and screen for adding a new device.
-On the main screen, the user will be able to see an overview of the room configuration,
-manage (update or remove) effect devices, and will see the system’s status.
-The `New device screen' will be displayed after clicking on the `Add device'
+On main screen (fig.\,\ref{wire1}), the user will be able to see an overview of the room configuration,
+manage (update or remove) effect devices (as seen in fig.\,\ref{wire2}), and will see the system’s status.
+The new device screen (fig.\,\ref{wire3}) will be displayed after clicking on the `Add device'
 button at the main screen.
 
 
-\begin{figure}[h]{}
+\begin{figure}[p]{}
 \centering\includegraphics[width=\textwidth]{assets/wireframe-1-dash.pdf}
 \caption{Wireframe design of the Configurator Tool's dashboard (main) screen}
+\label{wire1}
 \end{figure}
 
-\begin{figure}[h]{}
+\begin{figure}[p]{}
 \centering\includegraphics[width=\textwidth]{assets/wireframe-2-editing.pdf}
 \caption{Wireframe design of the in-place device edit mode}
+\label{wire2}
 \end{figure}
 
-\begin{figure}[h]{}
+\begin{figure}[p]{}
 \centering\includegraphics[width=\textwidth]{assets/wireframe-3-adding.pdf}
 \caption{Wireframe design of the `Add device' screen}
+\label{wire3}
 \end{figure}
+
+\pagebreak
+
 
 \hypertarget{x-rest-api-design}{\section{REST API Design}}
 Following is a list of resources available at the server’s API endpoint.

@@ -11,13 +11,10 @@ The system consists of the following components:
 
 
 \begin{itemize}
-
-\item Communication Server
-
-\item Configurator Tool
-
-\item Unity Plug-in
-
+  \itemsep0em
+  \item Communication Server
+  \item Configurator Tool
+  \item Unity Plug-in
 \end{itemize}
 
 
@@ -39,12 +36,12 @@ easily affectable by the standard electronics, but they also might not be safe
 and comfortable for the users. The moral point of view
 might also be in the way.
 
-
 We are taking into consideration following human senses:
-Visual (sight), Auditory (hearing), Somatosensory (touch), Olfaction (smell),
-Gustation (taste), and Equilibrioception (balance). Somatosensory sense can
-be further divided into Mechanoreception (skin touch), Nociception (pain), and
-Thermoception (heat). Each of them is assessed more in detail further in this
+Visual~(sight), Auditory~(hearing), Somatosensory~(touch), Olfaction~(smell),
+Gustation~(taste), and Equilibrioception~(balance). \\
+Somatosensory sense can
+be further divided into Mechanoreception~(skin~touch), Nociception (pain), and
+Thermoception~(heat). Each of them is assessed more in detail further in this
 chapter.
 
 
@@ -55,13 +52,14 @@ Each of the senses is evaluated by categorizing into three types of results:
 
 
 \begin{itemize}
+  \itemsep0em
 
-\item \textbf{Suitable} — it might be appropriate to create effects affecting this sense,
+  \item \textbf{Suitable} — it might be appropriate to create effects affecting this sense,
 
-\item \textbf{Irrelevant} — even though it might be appropriate to affect this sense,
-there are reasons why it will not have any effect,
+  \item \textbf{Irrelevant} — even though it might be appropriate to affect this sense,
+  there are reasons why it will not have any effect,
 
-\item \textbf{Not Suitable} — affecting such sense is inappropriate.
+  \item \textbf{Not Suitable} — affecting such sense is inappropriate.
 
 \end{itemize}
 
@@ -156,8 +154,8 @@ pose a risk of damaging the equipment.
 In the case of a typical virtual reality setup, none of the equipment is ready
 for contact with water or high humidity levels. For example — both the
 \emph{Oculus Rift} virtual reality headset and the \emph{Oculus Touch} virtual reality
-controllers have maximum operating humidity stated at 95\% RH (non-condensing)
-. \cite{orhswg}
+controllers have maximum operating humidity stated at 95\% RH (non-condensing). 
+\cite{orhswg}
 
 
 \hypertarget{x-not-suitable:-nociception-(pain)}{\subsection{Not suitable: Nociception (pain)}}
@@ -243,19 +241,18 @@ in the current state is not suitable for the project.
 To this date, we do not record any electronic device that could
 directly affect body balance and simulate its state.
 
-
 We know too little about controlling the body balance, and overall,
 it might not be a good idea to affect the user’s balance. Losing
 balance might result in users falling and damaging the equipment (headset and
 controllers) or damaging the equipment in the room around the user.
 
-
 VR is constantly fighting with user’s balance problems,
 affecting balance perceptors could potentially be
 counter-productive in efforts to eliminate motion sickness.
 
-
 Affecting user balance is considered as not suitable.
+
+\newpage
 
 
 \hypertarget{x-overview}{\subsection{Overview}}
@@ -267,26 +264,26 @@ and smell.
 For simplicity, this work will be focusing on just two of the mentioned suitable
 effects — wind and heat.
 
-\begin{center}
-\begin{figure}
+\begin{table}[H]
+\catcode`\-=12
+\centering
+\vspace{2em}
 \begin{tabular}{|l|l|l|l|}
 \hline
-\multicolumn{3}{|l|}{Visual (sight)} & Irrelevant \\ 
-\multicolumn{3}{|l|}{Auditory (hearing)} & \textbf{Suitable} \\ 
-\multirow{3}{*}{Somatosensory} & \multirow{2}{*}{Mechanoreception (skin touch)}  & Direct contact & \textbf{Suitable} \\ 
-& & Moving air & \textbf{Suitable} \\ 
-& \multicolumn{2}{|l|}{Wetness, fluids} & Not Suitable \\ 
-\multicolumn{3}{|l|}{Nociception (pain)} & Not Suitable \\ 
-\multicolumn{3}{|l|}{Thermoception (heat)} & \textbf{Suitable} \\ 
-\multicolumn{3}{|l|}{Olfaction (smell)} & \textbf{Suitable} \\ 
-\multicolumn{3}{|l|}{Gustation (taste)} & Not Suitable \\ 
-\multicolumn{3}{|l|}{Equilibrioception (balance)} & Not Suitable \\ 
-\hline
+\multicolumn{3}{|l|}{\textbf{Sense}}                                                              & \textbf{Result}   \\ \hline
+\multicolumn{3}{|l|}{Visual (sight)}                                                              & Irrelevant        \\ \hline
+\multicolumn{3}{|l|}{Auditory (hearing)}                                                          & \textbf{Suitable} \\ \hline
+\multirow{4}{*}{Somatosensory} & \multirow{3}{*}{Mechanoreception (skin touch)} & Direct contact  & \textbf{Suitable} \\ \cline{3-4} 
+                                &                                                & Moving air      & \textbf{Suitable} \\ \cline{3-4} 
+                                &                                                & Wetness, fluids & Not Suitable      \\ \cline{2-4} 
+                                & \multicolumn{2}{l|}{Nociception (pain)}                          & Not Suitable      \\ \hline
+\multicolumn{3}{|l|}{Thermoception (heat)}                                                        & \textbf{Suitable} \\ \hline
+\multicolumn{3}{|l|}{Olfaction (smell)}                                                           & \textbf{Suitable} \\ \hline
+\multicolumn{3}{|l|}{Gustation (taste)}                                                           & Not Suitable      \\ \hline
+\multicolumn{3}{|l|}{Equilibrioception (balance)}                                                 & Not Suitable      \\ \hline
 \end{tabular}
 \caption{Overview table of assesment results}
-\end{figure}
-\end{center}
-
+\end{table}
 
 \hypertarget{x-viable-electrical-appliances}{\section{Viable electrical appliances}}
 Provided with the senses appropriate to affect, it is now important to determine
@@ -295,25 +292,29 @@ the mentioned senses.
 
 We set categories of effects in the following table, and from now on will
 refer to these effects by the category names. The choice of specific appliances
-is discussed in Chapter 7.
+is discussed in Chapter~7.
 
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-Auditory (hearing) & \textbf{Vibrations} & Large speakers \\ 
-Subwoofer speakers \\ 
-Vibration generators/motors \\ 
-Somatosensory, Mechanoreception (touch) & \textbf{Wind} & Pedestal fans \\ 
-Thermoception (heat) & \textbf{Heat} & Heaters \\ 
-Infrared heaters \\ 
-Olfaction (smell) & \textbf{Smell} & Perfume dispensers \\ 
-\hline
-\end{tabular}
-\end{center}
+  \begin{table}[H]
+  \catcode`\-=12
+  \centering
+  \begin{tabular}{|l|l|l|}
+  \hline
+  \textbf{Sense}                          & \textbf{Category}                    & \textbf{Affectable by}      \\ \hline
+  \multirow{3}{*}{Auditory (hearing)}     & \multirow{3}{*}{\textbf{Vibrations}} & Large speakers              \\ \cline{3-3} 
+                                          &                                      & Subwoofer speakers          \\ \cline{3-3} 
+                                          &                                      & Vibration generators/motors \\ \hline
+  Mechanoreception (touch) & \textbf{Wind}                        & Pedestal fans               \\ \hline
+  \multirow{2}{*}{Thermoception (heat)}   & \multirow{2}{*}{\textbf{Heat}}       & Heaters                     \\ \cline{3-3} 
+                                          &                                      & Infrared heaters            \\ \hline
+  Olfaction (smell)                       & \textbf{Smell}                       & Perfume dispensers          \\ \hline
+  \end{tabular}
+  \caption{Electrical appliances categories corresponding to senses}
+  \end{table}
 
 Appliance must be controllable programmatically over a computer network,
 to act as a dynamic effect generator.
 
+\pagebreak
 
 There are appliances available on the market labeled as `smart'.
 Briefly speaking, it means that the appliance
@@ -339,7 +340,7 @@ This approach does not allow to precisely control the fan speeds or the power ou
 of heaters.
 
 \hypertarget{x-analysis-of-the-appliances-used}{\section{Analysis of the appliances used}}
-According to Table X.X and taking into consideration the
+According to Table 4.2 and taking into consideration the
 options available while working on the project, we will be using \textbf{fans
 and infrared heaters}
 to create wind currents and sources of heat, respectively.
@@ -350,16 +351,16 @@ type, a set of properties will be defined
 or measured and set as a `effect device properties' in the configuration
 software. Such measurements will be taken as a part of the user testing.
 
-\begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6em}|p{20em}|p{6em}|}
 \hline
-Actuation time & The time the device needs to go from a turned-off state to
-  a turned-on state. & seconds \\ 
-Directionality and range & The range and direction span of the area in
-  which can be the effect experienced by the user. & seconds \\ 
-\hline
+\textbf{Property}        & \textbf{Description}                                                                         & \textbf{Expected values} \\ \hline
+Actuation time           & The time the device needs to go from a turned-off state to a turned-on state.                & seconds                  \\ \hline
+Directionality and range & The range and direction span of the area in which can be the effect experienced by the user. & seconds                  \\ \hline
 \end{tabular}
-\end{center}
+\caption{Effect device properties}
+\end{table}
 
 The fact that the appliances differ by manufacturer, model, and type,
 makes the measurements specific to each individual device.
@@ -367,6 +368,7 @@ For example, it is expected that the spin-up time
 (actuation time) and range of wind effect produced by various pedestal fans
 will be different, as such properties heavily depend on the power of the fan.
 
+\pagebreak
 
 For the testing environment built for this work, approximate measures will be
 taken, and they will be provided in the configuration software as optional
@@ -394,7 +396,7 @@ can also be used for various general configurations that might arise from
 the implementation process, that could not be mentioned in the analysis.
 
 
-\subsection*{Functional requirements}
+\subsection{Functional requirements}
 \hypertarget{x-\textbf{user-wants-to-configure-his-room-for-use-with-openhvr-system}-[cfg-f1]}{\paragraph*{\textbf{User wants to configure his room for use with OpenHVR system} [CFG-F1]}}
 Before using the OpenHVR system in a new space,
 the room properties must be configured with the configurator tool.
@@ -403,8 +405,6 @@ the room properties must be configured with the configurator tool.
 \hypertarget{x-\textbf{user-wants-to-add-an-effect-device-into-the-configuration}-[cfg-f2]}{\paragraph*{\textbf{User wants to add an effect device into the room configuration} [CFG-F2]}}
 Each device placed into a room that the user intends to use for producing the effects
 must be connected with the communication server, and its type must be specified.
-
-
 Additionally, more configuration might be required, depending on the type
 of the device (e.g., thresholds, relay/channel selection, hardware limitations)
 
@@ -422,7 +422,7 @@ devices and mapping between the real world coordinate system and virtual
 world coordinate system.
 
 
-\subsection*{Non-Functional requirements}
+\subsection{Non-Functional requirements}
 \hypertarget{x-\textbf{user-interface-must-be-fast-and-responsive}-[cfg-n1]}{\paragraph*{\textbf{User interface must be fast and responsive} [CFG-N1]}}
 To provide satisfying user experience, the user interface should be fast and
 responsive. The user interface should display loading progress and inform users
@@ -441,12 +441,11 @@ passing information between the IoT devices and the computer with
 running VR application. This server holds data about room configuration,
 status, and location of the effect devices and overall status of the system.
 
-
 It must provide API \footnote{Application Programming Interface} to enable
 information exchange between the computer running the simulation and IoT devices.
 
 
-\subsection*{Functional requirements}
+\subsection{Functional requirements}
 \hypertarget{x-\textbf{user-wants-to-save-a-new-configuration.}-[srv-f1]}{\paragraph*{\textbf{User wants to save a new configuration.} [SRV-F1]}}
 After creating or editing a configuration in Configurator Tool, the user
 want to save his changes and apply the effects.
@@ -463,14 +462,13 @@ All running effect devices will individually expect instructions for their
 behavior. The server must receive instructions coming from Unity plug-in (in \hyperlink{srv-f2}{\textit{SRV-F2}})
 and decide which devices will receive instructions and what content of the
 instruction will be.
-
-
 Practically speaking, if Unity plug-in asks to blow wind from the northern side of
 the room, the server will determine which fans are located on the northern side
 and send them instruction to start or stop spinning.
 
+\pagebreak
 
-\subsection*{Non-Functional requirements}
+\subsection{Non-Functional requirements}
 \textbf{The server should be fast and responsive.} [SRV-N1]
 
 Server will work with real-time data, and therefore, it should be fast and
@@ -492,11 +490,9 @@ Most often, such details are not generally simulated by the application
 (for example, not all VR applications simulate wind currents or
 temperature in the scene).
 
-
 For providing such information to the OpenHVR system, so that it can
 reproduce virtual scene conditions in the real world, a custom Unity plug-in
 will be implemented.
-
 
 This plug-in will interoperate with Unity’s Transforms
 \footnote{Unity’s built-in components implementing the scene graph and defining location and rotation of the objects.}
@@ -506,24 +502,26 @@ a component object, that can be attached to any game object.
 Developers can then use the component in the same way as they use the other
 components.
 
-
-\begin{figure}[h]{}
-\centering\includegraphics[width=0.9\textwidth]{assets/unity-components.png}
-\caption{Screenshot of Unity componential architecture visible in the Unity Editor UI}
-
-\end{figure}
-
 Plug-in components can be similar to existing Unity components, which
 developers are used to. For example — the definition of vibration effect can be
 very similar to defining a 3D audio source in Unity. In the same way, 
 the developers will be able to fine-tune the effect type and its range.
 
-\begin{figure}[h]{}
-\centering\includegraphics[width=0.9\textwidth]{assets/unity-audio.png}
-\caption{3D Audio source set in a Unity Engine scene; the speaker icon defines the location of the sound source, and the blue sphere defines the strength (range) of the 3D sound.}
+\begin{figure}[H]{}
+  \centering\includegraphics[width=\textwidth]{assets/unity-components.png}
+  \caption{Screenshot of Unity componential architecture visible in the Unity Editor UI}
 \end{figure}
 
-\subsection*{Functional requirements}
+\begin{figure}[H]{}
+  \centering\includegraphics[width=\textwidth]{assets/unity-audio.png}
+  \caption{3D Audio source set in a Unity Engine scene; the speaker icon defines 
+  the location of the sound source, and the blue sphere around it defines the 
+  range of the 3D sound}
+  \end{figure}
+
+\pagebreak
+
+\subsection{Functional requirements}
 \hypertarget{x-\textbf{developer-wants-to-produce-an-effect-at-some-location-in-the-game-world}-[plg-f1]}{\paragraph*{\textbf{Developer wants to produce an effect at some location in the game world} [PLG-F1]}}
 Using the component provided by the Unity plug-in, the developer will attach
 a component to any object with a Transform component. The Transform component
@@ -535,13 +533,12 @@ set and trigger an effect by sending signals to the effect source component.
 The developer can receive
 positions and rotations of effect devices to produce effects in the
 game world at better and more accurate positions.
-
 This function will be used in the example app. Location points of
 fans will be collected, and one of them will be picked and used to alter
 the position of the virtual window (it will help to pick the correct wall position,
 including the height of the window).
 
-\subsection*{Non-Functional requirements}
+\subsection{Non-Functional requirements}
 \hypertarget{x-\textbf{provided-resources-will-be-standardized-among-the-unity-engine-environment}-[plg-n1]}{\paragraph*{\textbf{Provided resources will be standardized among the Unity Engine environment} [PLG-N1]}}
 For the implementation of the plug-in, native tools, UI elements, and properties
 will be used to achieve creating an interface between Unity and OpenHVR.
@@ -555,13 +552,8 @@ users, specific requirements arise. These requirements are not coupled with
 any specific component, but rather imposes requirements on the system as a whole.
 
 
-\subsection*{Functional requirements}
-\hypertarget{x-\textbf{user-wants-to-enhance-his-virtual-reality-experience-and-immersion-by-feeling-special-effects-in-his-room}-[sys-f1]}{\paragraph*{\textbf{User wants to enhance his virtual reality experience and immersion by feeling special effects in his room} [SYS-F1]}}
-This functional requirement represents the primary functionality of the system.
-
-
-\subsection*{Non-Functional requirements}
-\hypertarget{x-\textbf{user-wants-the-effects-not-affect-his-virtual-reality-experience-negatively}-[sys-n1]}{\paragraph*{\textbf{User wants the effects not affect his virtual reality experience negatively} [SYS-N1]}}
+\subsection{Non-Functional requirements}
+\paragraph*{\textbf{User wants the effects not affect his virtual reality experience negatively} [SYS-N1]}
 OpenHVR should not affect the original virtual reality experience in any
 negative way. For example, no such effect, produced by the system, should ever
 constrain users from experiencing some parts of the original VR experience.
@@ -590,17 +582,15 @@ the distribution of data over an Ethernet network. It supports the connection of
 devices, which are most often used for stage lights. It uses a UDP-based packet
 structure. \cite{artnet}
 
-
 Art-Net is mostly used for lighting live performances. The first version,
 `Art-Net I', was released in 1998. The latest 4th version released
 in September 2016
 is called `Art-Net 4'. Art-Net is hence matured and widely used in the
 entertainment industry.
 
-
-Unfortunately, the majority of equipment supporting Art-Net is
-professional-grade, built to be very reliable, which raises the price point
-by a lot and makes them unavailable for a typical consumer.
+Equipment supporting Art-Net is professional-grade, 
+built to be very reliable, which raises the price point
+by a lot and generally makes them unavailable for a typical consumer.
 
 
 \hypertarget{x-mqtt}{\subsection{MQTT}}
@@ -623,6 +613,7 @@ in tens or hundreds of milliseconds for the most popular implementations,
 \cite{mqttlat} which is sufficient, but the unpredictability is making MQTT
 less suitable for use with real-time effects.
 
+\pagebreak
 
 \subsection{HTTP (REST)}
 The most straightforward way of communication between devices would be to use

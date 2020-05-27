@@ -12,11 +12,10 @@ a particular debt of gratitude.
 The test was performed at the Faculty of Information Technology, using
 the Oculus Rift VR headset with Oculus Touch tracked controllers.
 
-
-\begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/IMG_5238.jpeg}
-\caption{Prepared room with equipment for the user testing at FIT CTU}
-\end{figure}
+% \begin{figure}[h]{}
+% \centering\includegraphics[width=\textwidth]{assets/IMG_5238.jpeg}
+% \caption{Prepared room with equipment for the user testing at FIT CTU}
+% \end{figure}
 
 \hypertarget{x-devices-property-measuring}{\section{Devices property measuring}}
 Some testers were asked to help with measuring two properties of the fans used
@@ -29,6 +28,7 @@ For the next two tests, the following conditions must be satisfied:
 
 
 \begin{itemize}
+    \itemsep0em
 
 \item Tester was introduced to the VR and the headset and controller
 he or she will be using.
@@ -53,23 +53,37 @@ Each device is different and the properties depends on the power and quality of 
 As an example, a specific measuring tests were performed for one of the fans
 used for testing purposes:
 
-\begin{figure}
-\begin{center}
-\begin{tabular}{|c|c|}
-\hline
-Manufacturer & Sencor \\ 
-Model & SFN 4047WH \\ 
-Rating & AC 220-240 V, 50 Hz \\ 
-Consumption & 50 W \\ 
-Loudness & 50 dB \\ 
-Fan radius & 40 cm \\ 
-Maximum airflow volume & $ 49 \frac{m^3}{min} $ \\ 
-Maximum airflow speed & $ 2.9 \frac{m}{s} $ \\ 
-\hline
-\end{tabular}
-\end{center}
-\caption{Technical properties of the used Sencor pedestal fan \cite{sencormanual}}
-\end{figure}
+\begin{table}
+    \centering
+    \begin{tabular}{|p{0.18\textwidth}|p{0.24\textwidth}|}
+        \hline
+        \textbf{Type} & Pedestal fan \\ 
+        \textbf{Manufacturer} & Sencor \\ 
+        \textbf{Model} & SFN 4047WH \\ 
+        \textbf{Rating} & AC 220-240 V, 50 Hz \\ 
+        \textbf{Power} & 50 W \\ 
+        \textbf{Loudness} & 50 dB \\ 
+        \textbf{Fan radius} & 40 cm \\ 
+        \textbf{Max. \mbox{airflow} volume} & $ 49 \frac{m^3}{min} $ \\ 
+        \textbf{Max. \mbox{airflow} speed} & $ 2.9 \frac{m}{s} $ \\ 
+        \hline
+    \end{tabular}
+    \quad
+    \begin{tabular}{|p{0.18\textwidth}|p{0.24\textwidth}|}
+        \hline
+        \textbf{Type} & Infrared heater \\ 
+        \textbf{Manufacturer} & Eliz \\
+        \textbf{Model} & EHH 120 \\ 
+        \textbf{Rating }& AC 230 V, 50 Hz \\ 
+        \textbf{Power} & 400 / 800 / 1200 W \\ 
+        \textbf{Loudness} & 50 dB \\ 
+        \textbf{Weight} & 1,5 kg \\ 
+        \textbf{Rated room max. volume} & $ 45 m^3 $ \\ 
+        \hline
+    \end{tabular}
+    \caption{Technical properties of the used appliances}
+    \label{}
+\end{table}
 
 The results of these measurements will serve as reference values for future
 room setups. It is evident that for different devices, these measurements
@@ -90,7 +104,6 @@ when they are ready and press it again the exact moment they can feel a wind
 blowing on their skin. The test program records the time between the presses.
 Each tester collected four samples.
 
-
 Throughout the testing, the VR headset blocks the tester’s view (an arbitrary
 background image is shown in the view), and loud music plays, so the tester
 cannot see and hear the fan spinning. After the tester first presses the button,
@@ -98,23 +111,22 @@ a random fan will start to spin, and stopwatch is started. After the second
 press, stopwatch and fan will stop, and the tester will wait for a few seconds
 to repeat the process for all positions.
 
-There was a total of 16 samples collected. The measurements are included 
-in Appendix A.1.
-
-\begin{figure}
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tabular}{|c|c|}
 \hline
-Minimum & 2432 ms \\ 
-Maximum & 3953 ms \\ 
-Mean & 2974.188 ms \\ 
-Std. deviation & 420.202 ms \\ 
-Median & 2865 ms \\ 
+\textbf{Minimum} & 2432 ms \\ 
+\textbf{Maximum} & 3953 ms \\ 
+\textbf{Mean} & 2974.188 ms \\ 
+\textbf{Std. deviation} & 420.202 ms \\ 
+\textbf{Median} & 2865 ms \\ 
 \hline
 \end{tabular}
 \caption{Measurements results of the fan spin-up time}
-\end{center}
 \end{figure}
+
+There was a total of 16 samples collected. The complete measurements are included 
+in Appendix A.1.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/IMG_5242.jpeg}
@@ -135,6 +147,7 @@ have four different positions:
 
 
 \begin{itemize}
+    \itemsep0em
 
 \item \textbf{A:} Placed directly in front of the tester
 
@@ -146,14 +159,14 @@ have four different positions:
 
 \end{itemize}
 
+\pagebreak
 
-The positions are indicated in the following diagram:
+The positions A--D are indicated in the following diagram:
 
-
-\begin{figure}[h]{}
+\begin{figure}[H]{}
 \centering\includegraphics[width=\textwidth]{assets/fans-positions.pdf}
 \caption{Indication of fans positions}
-
+\label{fanpos}
 \end{figure}
 
 The distribution of the positions is determined by the limited number of
@@ -172,9 +185,12 @@ While the tester is asked to determine the fan’s position, the VR headset
 blocks his view and the test program will play loud music, so they
 cannot locate the fan with hearing, or visually.
 
+\pagebreak
+
 After pressing the button, the test program will save the following information:
 
 \begin{itemize}
+    \itemsep0em
 \item Three-dimensional direction vector oriented from controller position to
 the current spinning fan location (reference input)
 \item Three-dimensional direction vector representing the rotation of the
@@ -240,6 +256,7 @@ the virtual windows and virtual fireplaces.
 There are conditions to meet, before the test starts:
 
 \begin{itemize}
+    \itemsep0em
 
 \item Tester was introduced to the VR and controls of
 the example app (e.g., how to pick objects, what buttons to use)
@@ -260,6 +277,7 @@ immersion into the virtual world.
 
 
 \begin{itemize}
+    \itemsep0em
 
 \item Window A — only visual effect of blowing wind
 
@@ -283,6 +301,7 @@ Three variants of the fireplaces will be similar to windows:
 
 
 \begin{itemize}
+    \itemsep0em
 
 \item Fireplace E — visual and sound effect of burning fire
 
@@ -302,6 +321,7 @@ effects of burning fire and additional questions.
 
 \hypertarget{x-questions}{\subsection{Questions}}
 \begin{itemize}
+    \itemsep0em
 
 \item ``On a scale of 0-10 (0 worst, 10 best) evaluate the level of immersion and quality
 of effects in the virtual environment when breaking the window, relatively
@@ -316,6 +336,7 @@ between the fireplaces E/F/G.''
 
 \hypertarget{x-additional-questions}{\subsection{Additional questions}}
 \begin{itemize}
+    \itemsep0em
 
 \item ``Did the wind effect at window D affect your comfort while using VR?''
 
@@ -347,9 +368,11 @@ test results negatively.
 The following table lists collected evauations on questions about immersion level and
 quality of the effects.
 
-\begin{figure}
+\begin{figure}[h]
     \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+    \hline
+    \textbf{Tester} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{F} & \textbf{G} \\ 
     \hline
     Tester A & 2 & 5 & 10 & 7 & 3 & 6 & 10 \\ 
     Tester B & 0 & 0 & 4 & 8.5 & 0 & 4.5 & 9.5 \\ 
@@ -373,14 +396,16 @@ effects.
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/vlcsnap-2020-05-22-16h41m28s649.jpg}
 \caption{Tester (on the right) standing in front of the window (D) in the virtual world}
-
 \end{figure}
+
+\pagebreak
 
 Following is the list of relevant comments, that some testers reported
 (translated from the Czech language):
 
 
 \begin{itemize}
+    \itemsep0em
 
 \item ``I have noticed that the smoke was coming out of the walls, which
 lowered the immersion for me.''

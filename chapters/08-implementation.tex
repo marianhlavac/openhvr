@@ -159,7 +159,8 @@ a familiar user interface, partially satisfying the
 
 
 \begin{figure}[h]{}
-\centering\includegraphics[width=\textwidth]{assets/icon-series.png}
+    \vspace{1em}
+\centering\includegraphics[width=0.95\textwidth]{assets/icon-series.png}
 \caption{Designed series of Gizmos icons for use in Unity editor}
 
 \end{figure}
@@ -241,26 +242,29 @@ When looking for a more safe and certified solution, while still keeping the
 low-cost requirements, smart relays manufactured by company Sonoff
 are a great choice. The model `Sonoff Basic' is certified for 10 A load,
 theoretically allowing connection of appliances with power draw up to 2300 W (for the
-electricity grid in our country).
+electricity grid in our country). Other model, `Sonoff DUAL R2` features
+two channels, which can be independently controlled, and is certified for 15 A
+load.
 
+\begin{figure}[h]{}
+    \centering\includegraphics[width=0.8\textwidth]{assets/IMG_5236.jpeg}
+    \caption{Sonoff DUAL R2 with two relay channels}
+    \label{dualr2}
+\end{figure}
+
+\pagebreak
 
 Most of the models of smart relays by Sonoff are based on ESP8266 chip;
-hence they can be flashed with the Tasmota firmware to provide non-proprietary
-access to the device. With original firmware, the users are ``locked'' to use
+because they can be flashed with the Tasmota firmware to provide non-proprietary
+access to the device, they are very popular for consumers with interests to
+flash custom firmware. With original firmware, the users are ``locked'' to use
 Sonoff’s online cloud platform called `WeLink', to send and receive data.
 
-
-For this work, the model `DUAL R2' was picked. These relays are used to
+For this work, the model `DUAL R2' was picked (fig.\,\ref{dualr2}). 
+These relays are used to
 control the infrared heater and some of the fans. DUAL R2 offers two output
 channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
-
-
-\begin{figure}[h]{}
-\centering\includegraphics[width=0.8\textwidth]{assets/IMG_5236.jpeg}
-\caption{Sonoff DUAL R2 with two relay channels}
-
-\end{figure}
 
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
 Tasmota\footnote{https://tasmota.github.io/docs/} is an alternative open-source 
