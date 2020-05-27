@@ -35,37 +35,38 @@ filesystem persistence of data. Conveniently, the Beego framework has built-in
 ORM support for SQLite databases.
 
 
-\hypertarget{x-unit-tests}{\subsection{Unit tests}}
 For unit testing, Convey \footnote{\href{https://github.com/smartystreets/goconvey}{https://github.com/smartystreets/goconvey}}
 library is used. Unit tests cover the functions in models, helper functions,
 and others.
 
 
-\hypertarget{x-device-drivers}{\subsection{Device drivers}}
-To support the future extendability of the communication server, a concept named
-"drivers" has been implemented. This concept allows other developers to write
-request handlers to extend the server’s abilities further.
-
+\subsection{Device drivers}
+To support the future extendability of the communication server, the program
+will support multiple "drivers" -- pieces of code that receives a device information 
+and effect request. The driver's purpose is to implement a reaction to the 
+forwarded effect request and perform device-specific steps for controlling
+various appliances.
+This concept allows developers to write request handlers to extend the server’s 
+abilities further and support larger range of devices compatible with OpenHVR.
 
 The following diagram pictures the data flow of the incoming effect request.
-
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/drivers-diagram.pdf}
 \caption{Simplified program diagram of the device driver behavior when an effect request is received}
 \end{figure}
 
-Devices will register at the initialization of the server (in the server code).
-Each device driver then gets its name, which needs to be specified when adding a new
-device using \texttt{POST /devices/}. For the clients, to know about available device
-drivers, a resource \texttt{GET /devices/drivers} exists, which returns a list
+Drivers will register at the initialization of the server (in the server code).
+Each driver gets its name, which needs to be specified when adding a new
+device using \texttt{POST /devices/}. For the clients, to know about available
+drivers, a resource \texttt{GET /devices/drivers} returns a list
 of currently supported drivers.
 
 
 \hypertarget{x-configurator-tool}{\section{Configurator Tool}}
 The assumptions when designing the configurator tool suggested that it will
-be a web application. The web application will allow configuring the system
-on a computer or mobile device. Since the server will provide REST API,
+be a web application. The application will allow configuring the system
+on a computer or mobile device. Since the server provide REST API,
 the configurator tool acts as a
 web client (thin client) and uses this REST API to communicate and transfer
 all data.
