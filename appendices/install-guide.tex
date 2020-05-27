@@ -3,16 +3,17 @@
 The purpose of this chapter is to guide administrators through the process
 of instalation of the OpenHVR system.
 
-\section{Server installation}
+\section*{Server installation}
 
 Users are offered two ways to install OpenHVR server. Installation of the
 server contains the configuration tool and is not needed to install separately.
 
-\subsection{Install using Docker image}
+\subsection*{Install using Docker image}
 
 The easiest way to install OpenHVR server is to run Docker image, which is
 publicly available in the Docker Hub\footnote{https://hub.docker.com/}
-container registry. The requirement is to have Docker Engine of version 2.2 or
+container registry. The requirement is to have Docker 
+Engine\footnote{https://docs.docker.com/get-docker/} of version 2.2 or
 newer installed on your computer. 
 
 Run the image using the following command:
@@ -26,7 +27,7 @@ Run the image using the following command:
 The command will run the server on port 47023, and the configuration tool will
 be available at \verb|http://localhost:47023|
 
-\subsection{Install manually}
+\subsection*{Install manually}
 
 If you do not prefer Docker, you can compile the server manually and run it.
 
@@ -51,7 +52,6 @@ server executable:
 \end{verbatim}
 
 The library dependencies required for the build will be automatically downloaded.
-
 After the build process is finished, you can find an executable in the current
 directory.
 
@@ -78,7 +78,7 @@ the \verb|openhvr-server| directory, and run the compiled executable.
     ./main
 \end{verbatim}
 
-\section{Effect device preparation}
+\section*{Effect device preparation}
 
 Before your electrical appliance can be used for producing the effects
 within the OpenHVR system, it needs to be configured first.
@@ -87,10 +87,11 @@ within the OpenHVR system, it needs to be configured first.
 person should be allowed to install electronics working with higher voltages, to avoid
 damaging the equipment or other risks.
 
-\subsection{Flash the Tasmota firmware}
+\subsection*{Flash the Tasmota firmware}
 
-The device must be flashed with the Tasmota firmware on the chip of the
-device.
+The device must be flashed with the 
+Tasmota\footnote{https://github.com/arendst/Tasmota/releases}
+firmware on the chip of the device.
 The appliance itself must be based on the ESP8266 chip, or connected to a 
 smart relay or switch, which is based on the ESP8266 chip. To check if your
 device is compatible with Tasmota firmware, consult the 
@@ -102,7 +103,7 @@ pins of the chip or other sophisticated methods of flashing. If you are not
 experienced with electronics, leave the flashing process to someone
 more experienced or try searching for a pre-flashed devices on the market.
 
-\subsection{Add the device to OpenHVR}
+\subsection*{Add the device to OpenHVR}
 
 After your device is ready and running the Tasmota firmware, it needs to be
 connected to the same LAN as the OpenHVR server. Determine its IP address and

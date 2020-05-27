@@ -14,8 +14,8 @@ how immersive it is.
 
 
 The 3D models and materials were created using Microsoft Maquette
-\footnote{VR prototyping tool, allowing a fast building of spatial environments \href{https://maquette.ms}{https://maquette.ms}}
-and Unity’s XR Interaction Toolkit library provides the ability to
+\footnote{VR prototyping tool, allowing a fast building of spatial environments \href{https://maquette.ms}{https://maquette.ms}}.
+Unity’s XR Interaction Toolkit library added the ability to
 interact with various items inside the 3D worlds. This library allows users to
 pick items with their hands and iteract with them intuitively (e.g., throwing them
 or putting them somewhere).
@@ -23,11 +23,11 @@ or putting them somewhere).
 
 The created models are very basic; there was not much of a focus on the design
 of the models or making the scene photorealistic. Because of the limited time,
-the scene design is functional and simplistic, not beautiful.
+the scene design is functional and simplistic.
 
 
 By making this example application, the OpenHVR project was validated and proved
-to work as a whole and can be used for the desired purpose. The application uses
+to work as a integrated whole and can be used for the desired purpose. The application uses
 all parts of the system — the server must be running, the devices must be
 connected and tracked their positions. The application is producing effects
 using those devices, so the Unity plug-in must be used to produce the effects.
@@ -40,31 +40,26 @@ using those devices, so the Unity plug-in must be used to produce the effects.
 \end{figure}
 
 \hypertarget{x-testing-entities}{\section{Testing entities}}
-The example application could be used for user testing. For those purposes,
-the application scene includes two main testing entities.
+The example application can also be used for user testing. For those purposes,
+the application scene includes two main types of testing entities.
 
 
 \hypertarget{x-windows}{\subsection{Windows}}
-There are multiple breakable windows in the room. Each of the interactable
+There are for interactive breakable windows in the room. Each of the
 windows can be set to produce various combinations of effects. Any combination
 of the following effects can be turned on or off, according to testing
-scenario requirements:
-
+scenario needs:
 
 \begin{itemize}
-
 \item Visual effect of blowing wind
 \item Sound effect of blowing wind
 \item Blue cold screen colorization to indicate changing temperature
 \item OpenHVR wind effect at the location of the window
-
 \end{itemize}
-
 
 The room also contains interactable pieces of stones. Users can grab those
 stones and throw them at the windows to break them. After breaking the window,
-the effects will run.
-
+the effect will run.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/test-room-windows.png}
@@ -73,23 +68,18 @@ the effects will run.
 \end{figure}
 
 \hypertarget{x-fireplaces}{\subsection{Fireplaces}}
-The virtual room will have multiple fireplaces. Users can grab a match and
-start a fire. When a fire is started, similarily to the windows, an optional
+The virtual room will have three fireplaces. The lower number of fireplaces 
+is caused by the limited amount of tracked space by the Oculus Rift VR headset.
+Users can grab a match and start a fire. 
+When a fire is started, similarily to the windows, an optional
 combination of effects will start:
 
-
 \begin{itemize}
-
 \item Visual effect of fire
-
 \item Sound effect of fire and cracking wood
-
 \item Orange warm screen colorization to indicate the change of temperature
-
 \item OpenHVR heat effect at the location of the fireplace
-
 \end{itemize}
-
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/test-room-fireplaces.png}

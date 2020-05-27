@@ -1,20 +1,20 @@
 \chapter{Existing solutions and Related work}
 
 In this chapter, existing similar software and research papers related to this
-work are discussed. While the previous chapter discussed the VR haptics in
-general and presented the most popular current products and researches, this
-chapter will focus more on similar projects that implement winds simulations
+work are examined. While the previous chapter discussed the sensory feedback in
+general and presented interesting current products and researches, this
+chapter will focus more on similar projects that implement wind and heat simulations
 or other external effects on the user. It also focuses on similar software
 solutions relevant to the configuration tool planned for this work.
 
 
 \hypertarget{x-related-work}{\section{Related work}}
-One of the research papers, called
-"Wind and Warmth in Virtual Reality: Implementation and Evaluation",
+One of the research papers that implemented heat and wind simulation into the
+CAVE virtual reality system,
 showed that it is very similar to this work and chose a similar approach. Two
 other projects (VRScooter and Ambiotherm) are of the similar or same topic,
 but choosing different approach with different objectives.
-The following text is discussing the results of the research.
+The following text is outlining the results of the research.
 
 
 \hypertarget{x-ambiotherm}{\subsection{Ambiotherm}}
@@ -22,7 +22,8 @@ Ambiotherm is a project researched by Nimesha Ranasinghe et al. at Keio-NUS
 CUTE Center, Interactive \& Digital Media Institute, National University of
 Singapore. This project presents a prototype of a wearable accessory for virtual
 reality headsets attached to the user’s head and neck to simulate wind
-and heat sources. The control module is communicating over Bluetooth with
+and heat sources. \cite{ambiotherm} 
+The control module is communicating over Bluetooth with
 a mobile device running the VR simulation.
 
 
@@ -51,10 +52,20 @@ VR experience takes place.
 
 
 In 2014, at the Faculty of Technology of Bielefield University in Germany,
-a group of researchers called "AI Group" presented a research paper, in which
+a group of researchers called `AI Group' presented a research paper, in which
 they described a system within the CAVE that can simulate winds
-and heat in a room in various locations and directions.
+and heat in a room in various locations and directions. \cite{wwcave}
 
+\begin{figure}[h]{}
+    \centering\includegraphics[width=0.8\textwidth]{assets/wwcave.png}
+    \caption{Technical setup of wind and warmth enhanced CAVE at 
+    Bielefeld University (Image courtesy of Bielefeld University)}
+\end{figure}
+
+The setup used eight powerful axial fans and six modified
+infrared lamps. All equipment was mounted to the top of the CAVE. Technical
+setup is accompanied with software to detect user's position, ambient
+temperature and to control the fans and lamps.
 
 Their results have served as inspiration for creating this work.
 However, the equipment used for reproducing the system described in this work
@@ -67,18 +78,17 @@ also very expensive.
 
 \hypertarget{x-vr-scooter}{\subsection{VR Scooter}}
 In 2006 L.Deligiannidis and R. J.K. Jacob presented a novel input device called
-"VR scooter". This device has vibrotactile feedback generators mounted on itself
-and accompanying fans are blowing wind to simulate scooter’s motion.
-
+`VR scooter'. This device has vibrotactile feedback generators mounted on itself
+and accompanying fans are blowing wind to simulate scooter’s motion. \cite{vrscooter}
 
 Work concluded that the wind simulation and vibration is a viable travel
 mechanism type in VR environments. The study conducted within
 the work confirmed the hypothesis that the performance improves when the level of
 immersion is increased.
 
+\subsection*{Note}
 
-\hypertarget{x-conclusion}{\subsection{Conclusion}}
-It is also important to note that almost none of the mentioned works focused on
+It should be noted that almost none of the mentioned works focused on
 creating accessible developer tools to help interested developers to create
 content utilizing modern tools, frameworks, and game engines.
 
@@ -88,9 +98,9 @@ To produce effects in real-world mapped to virtual reality worlds,
 the room needs to be configured first.
 It’s the reason why the OpenHVR system will need a configuration utility.
 Software related to room configuration is evaluated, whether it is relevant
-to virtual reality, IoT, or none of them. It is focused on user interface and functionalities.
-The results of this short research of existing solutions
-will provide the input for the upcoming analysis and design.
+to virtual reality, IoT, or none of them. A short research will be focused on 
+user interface and functionalities, and the results will yield 
+the input for the upcoming analysis and design.
 
 
 \hypertarget{x-steamvr-room-setup}{\subsection{SteamVR Room Setup}}
@@ -121,11 +131,9 @@ More information about SteamVR can be found online at
 
 \begin{itemize}
 \item The user interface is plain and easy to use, later it is trying to be informal
-and entertaining (it’s employing characters from the Portal 2 game universe
-\footnote{Game universe refers to a collection of art, characters, story or items related to a single or series of computer games.},
+and entertaining (it’s employing characters from the Portal 2 game universe\footnote{Game universe refers to a collection of art, characters, story or items related to a single or series of computer games.},
 and displays various entertaining animations throughout the process)
-\item Tracked devices (headset, controllers, and lighthouses
-\footnote{Tracking devices used for locating headset and controllers in space}
+\item Tracked devices (headset, controllers, and lighthouses\footnote{Tracking devices used for locating headset and controllers in space}
 ) are visible in
 real-time on the screen.
 \item All locations are set using tracked controllers. Users can set play-space
@@ -139,9 +147,9 @@ on a 2-dimensional plane.
 \end{itemize}
 
 \hypertarget{x-oculus-rift-sensor-setup}{\subsection{Oculus Rift Sensor Setup}}
-Oculus Rift Sensor Setup is a configuration utility from Valve Corporation’s
+Oculus Rift Sensor Setup is a configuration utility made by Valve Corporation’s
 competitor — Facebook Inc. It is intended for use with their headsets
-product line named "Oculus".
+product line named `Oculus'.
 
 Since the Oculus Rift uses a different tracking method (it utilizes infrared cameras),
 the configuration utility is slightly different and takes a little more
@@ -187,7 +195,7 @@ The system can be scripted to perform a variety of tasks. It is available
 for free as an open-source project on GitHub.
 
 \begin{itemize}
-    \item The user interface is very simple and bare.
-    \item There is no information about the location of connected devices.
-    \item MQTT allows the connection of various types of devices.
+\item The user interface is very simple and bare.
+\item There is no information about the physical location of connected devices.
+\item MQTT allows the connection of various types of devices, independent on the manufacturer.
 \end{itemize}

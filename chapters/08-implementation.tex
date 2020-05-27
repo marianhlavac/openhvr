@@ -1,24 +1,20 @@
 \chapter{Implementation}
 
-This chapter describes the process of implementation of the OpenHVR system.
-As the analysis chapter stated, the system consists of three components: the
-Communication Server, Configuration UI, and Unity Plug-in — each of their
-implementation processes is described.
-
-
-First, the process of communication server implementation is described,
-followed by the description of the configurator and the plug-in. Lastly, the choice
-of the hardware used for testing the system is discussed.
+This chapter describes the process of implementing the OpenHVR system.
+As Chapter 4 stated, the system consists of three components: the
+Communication Server, Configuration UI, and Unity Plug-in. First, the process 
+of communication server implementation is described,
+followed by the same description of the configurator and the plug-in. 
+Lastly, the choice of the hardware used for testing the system is listed.
 
 
 \hypertarget{x-communication-server}{\section{Communication Server}}
 For the implementation of the server, the
 \textbf{Go} \footnote{The Go Programming Language \href{http://golang.org}{http://golang.org}} language was
-chosen. The design of the language is not considered a modern
-language’s design, but on the other hand, it is
+chosen. Among experienced developers, the design of the language is not 
+considered as modern, \cite{gogbu} but on the other hand, it is
 suited for writing performant server web applications, and easy
-to learn and write the code. \cite{gogbu}
-
+to learn and write the code. 
 
 For the rapid development of the REST API, the \textbf{Beego} \footnote{\href{https://beego.me}{https://beego.me}}
 framework was picked. It offers MVC architecture, URL routing abilities, ORM,
@@ -29,20 +25,18 @@ For persisting the data, \textbf{SQLite} \footnote{\href{https://www.sqlite.org/
 is used by the server as a database engine. SQLite 3 is
 a popular database, and it does not require any complicated installation
 (as opposed to, for example, PostgreSQL or MySQL) and can save all data into
-memory or file system. SQLite is suitable especially for modest data loads, as
-it is not as performant as previously mentioned alternatives. The server uses the
+memory or a single file. SQLite is suitable especially for modest data loads, as
+it is not as performant as the mentioned alternatives. The server uses the
 filesystem persistence of data. Conveniently, the Beego framework has built-in
 ORM support for SQLite databases.
-
 
 For unit testing, Convey \footnote{\href{https://github.com/smartystreets/goconvey}{https://github.com/smartystreets/goconvey}}
 library is used. Unit tests cover the functions in models, helper functions,
 and others.
 
-
 \subsection{Device drivers}
 To support the future extendability of the communication server, the program
-will support multiple "drivers" -- pieces of code that receives a device information 
+will support multiple ``drivers'' -- pieces of code that receives a device information 
 and effect request. The driver's purpose is to implement a reaction to the 
 forwarded effect request and perform device-specific steps for controlling
 various appliances.
@@ -77,11 +71,11 @@ to run in current browsers. One of the currently
 emerging candidates — \textbf{WebAssembly} \footnote{\href{https://webassembly.org}{https://webassembly.org}} — binary instruction format for web browsers, can be considered as
 a present-day alternative to JavaScript. Even though WebAssembly is
 currently available in almost all modern browsers \cite{wasmroadmap}, frameworks
-and tools are rather new and many are in early experimental states.
+and tools are rather new and many are still in early experimental state.
 
 
 For the implementation, \textbf{JavaScript} language was picked, because
-of existing mature tools and frameworks. It is known that WebAssembly
+of the existing mature tools and frameworks. It is known that WebAssembly
 is much faster than Javascript \cite{wasmfast}, but given the nature of the
 application, it is fairly safe to say that using JavaScript, the application
 will be fast enough to satisfy the \hyperlink{./05-analysis}{}
@@ -94,10 +88,10 @@ To build the user interface more quickly, it was decided to use a UI framework.
 that can help build the configurator UI much faster and make the application
 more reliable. Unlike other UI frameworks for JavaScript, Svelte offers
 faster DOM updates
-\footnote{The Document Object Model (DOM) is a programming interface for HTML and XML documents. \cite{dom}}
-, less unnecessary data transfers
-to clients, and the framework code is run at build time rather than at runtime on
-client’s browsers. \cite{svelteblog} On the other side, Svelte does not officially
+\footnote{Document Object Model (DOM) is a programming interface for HTML and XML documents. \cite{dom}}
+, transfer less unnecessary data to clients, and the framework code is run 
+at build time rather than at runtime on client’s browsers. \cite{svelteblog} 
+On the other side, Svelte does not officially
 support transpilation
 \footnote{Transpiler is a source code translator, that does not translate code into bytecode or assembly (as typical compilers do), but translates code to different source code of the same or different language (for example TypeScript -> JavaScript) \cite{sscd}}
 from other languages, so for example, it is not possible
@@ -129,16 +123,16 @@ can be found in the following chapter.
 
 \hypertarget{x-unity-plug-in}{\section{Unity Plug-in}}
 Game scripts are used to extend the behavior of Unity applications. Even though
-we call this component a "plug-in", in reality, it consists just of a
+we call this component a ``plug-in'', in reality, it consists just of a
 set of scripts and related assets, that can be imported into an existing
 or new Unity project and used.
 
 
-For scripting, the Unity Engine gives a choice between three languages — C\#, UnityScript \footnote{UnityScript is a special variant of JavaScript}, and
+For scripting, the Unity Engine gives a choice between three languages — C\#, 
+UnityScript\footnote{UnityScript is a special variant of JavaScript}, and
 Boo. From these three, the first one is the most popular and the most
 feature-rich with the most complex binding to the Unity API. \cite{unityblog}
-Because of those reasons, the immediate choice of language for this
-project was C\#.
+Because of those reasons, the prompt choice of language was C\#.
 
 
 Through C\# scripts, Unity offers developers exceptional abilities to extend
@@ -154,14 +148,14 @@ typically not visible in the scene.
 
 
 Plug-in uses Gizmos to visualize positions and directions of the
-effects, and after running the game, even positions of the configured
-effect devices.
+effects, and positions of the configured effect devices, when running the game.
 
 
 For the OpenHVR plug-in, a set of icons were designed and are used for
 Unity prefabs, that developers might use when using the plug-in. The icons
 are designed to be similar to Unity’s default ones and therefore provide
-a familiar user interface.
+a familiar user interface, partially satisfying the 
+\hyperlink{plg-n1}{\textit{PLG-N1}} requirement.
 
 
 \begin{figure}[h]{}
@@ -212,6 +206,16 @@ More information on how to install with Docker is present in the Install Guide.
 In this chapter, specific hardware selection, which will be used for testing the
 system’s implementation, is presented.
 
+\subsection{ESP8266}
+
+ESP8266 is a low-cost microchip with TCP/IP stack and WiFi connection, 
+often used for rapid prototyping of IoT devices. It features
+a 32-bit 80MHz microprocessor with 32 KiB of instruction memory and 80 KiB for
+user data, and with up to 16 MiB of a flash storage. \cite{espspecs}
+
+The integrated Wi-Fi module makes this chip suited for various IoT use-cases 
+and is used in many current commercial IoT products or development boards.
+Some of them are described in the following sections of this chapter.
 
 \hypertarget{x-esp-01s-relay-boards}{\subsection{ESP-01S relay boards}}
 One of the cheapest variants to make electronic appliance controllable
@@ -220,38 +224,33 @@ These boards can be bought very cheaply at popular online marketplaces
 (depending on the seller, around US\$3), making it perfect for buying in
 higher amounts to control many devices around the VR play-space in the room.
 
-
 The main disadvantage of these cheap boards is their quality. In most cases,
-they are not certified, and their parameters often cannot be trusted. Therefore
+they are not certified, and their parameters often cannot be trusted. Therefore,
 these are suitable only for lower loads (like pedestal fans). Connecting high
-loads might not be safe.
-
-
-ESP8266 chips have integrated wi-fi and the communication can be made over
-TCP/IP with which are many developers (sometimes even users) already familiar.
+loads (infrared heaters) might not be safe.
 
 
 These boards come with plain firmware flashed into the memory. Alternative
-firmware called "Tasmota" can be easily flashed using FTDI into the memory
+firmware called `Tasmota' can be easily flashed using FTDI into the memory
 of the chip. The advantages of the alternative firmware are described
 in one of the following chapters.
 
 
 \hypertarget{x-sonoff-smart-relays}{\subsection{Sonoff Smart Relays}}
-When looking for a more safe and certified solution, while still staying in
+When looking for a more safe and certified solution, while still keeping the
 low-cost requirements, smart relays manufactured by company Sonoff
-seem to be a great choice. The model "Sonoff Basic" is certified for 10 A load,
-theoretically allowing connecting appliances with power draw up to 2300 W (for the
+are a great choice. The model `Sonoff Basic' is certified for 10 A load,
+theoretically allowing connection of appliances with power draw up to 2300 W (for the
 electricity grid in our country).
 
 
 Most of the models of smart relays by Sonoff are based on ESP8266 chip;
 hence they can be flashed with the Tasmota firmware to provide non-proprietary
-access to the device. With original firmware, the users are "locked" to use
-Sonoff’s online cloud platform called "WeLink", to send and receive data.
+access to the device. With original firmware, the users are ``locked'' to use
+Sonoff’s online cloud platform called `WeLink', to send and receive data.
 
 
-For this work, the model "DUAL R2" was picked. These relays are used to
+For this work, the model `DUAL R2' was picked. These relays are used to
 control the infrared heater and some of the fans. DUAL R2 offers two output
 channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
@@ -264,24 +263,24 @@ by voltages in the range 100-240V AC.
 \end{figure}
 
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
-Tasmota is an alternative open-source firmware for ESP8266-based devices.
+Tasmota\footnote{https://tasmota.github.io/docs/} is an alternative open-source 
+firmware for ESP8266-based devices.
 As of April 2020, there are currently over 1180 devices supported\cite{tasdirec},
 which also includes many commercial consumer electronics based on ESP8266 chip,
-that can be disassembled and "hacked" by flashing the alternative firmware
+that can be disassembled and ``hacked'' by flashing the alternative firmware
 (such devices, unfortunately, will lose their warranty).
 The firmware provides all necessary functions and non-proprietary
-interfaces for communication over the TCP/IP utilizing multiple protocols
+interfaces for communication over the TCP/IP, utilizing multiple protocols
 (e.g., HTTP, MQTT).
 
 
-The difficulty of flashing the firmware differs for each device. A programming pin
+The difficulty of flashing the firmware differs for each device. The programming pin
 on the ESP8266 chip must be pulled down to the ground and connected to a computer using
 any compatible FTDI device. There are many existing tools (e.g., esptool.py
 \footnote{\href{https://github.com/espressif/esptool}{https://github.com/espressif/esptool}})
 that provides simple and easy to use command-line
-interface for flashing new firmware to the device. Detailed description and
-steps, how to flash firmware to ESP8266 device are mentioned in the
-Install Guide.
+interface for flashing a new firmware to the device. Detailed description and
+steps, how to prepare a ESP8266 device are mentioned in Appendix B (Install Guide).
 
 Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
 
@@ -290,15 +289,15 @@ All three components of the system are implemented and specific hardware
 for the testing environment was selected.
 
 
-The communication server was created and provided with OpenAPI documentation.
+The communication server was created and provides live OpenAPI documentation.
 A simple but sufficient web application for configuring the room for use with
 OpenHVR was created. The web application is client-side and is included with
-the OpenHVR Server. The server is hosting static files,
+the OpenHVR server code. The server is hosting static files,
 including the client-side application.
-For using with Unity game engine, a set of scripts denoted as "Unity Plug-in"
-was also implemented. The devices communicate over HTTP API because the
-latencies of MQTT was unsatisfactory for the real-time connections. 
-Nonetheless, the support for MQTT can be added later as a feature.
+For using with Unity game engine, a set of scripts denoted as `Unity plug-in'
+were also implemented. The devices communicate over HTTP API;
+latencies of MQTT was unsatisfactory for the real-time connections, and Art-Net
+did not meet the requirements for being a low-cost solution.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/running-server.png}

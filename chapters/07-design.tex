@@ -1,6 +1,6 @@
 \chapter{Designing the System}
 
-The name "OpenHVR" was chosen as a codename and project name, under which
+The name `OpenHVR' was chosen as a codename and project name, under which
 all source codes will be publicly available. A simple logo to
 go with the name, was also designed.
 
@@ -17,7 +17,15 @@ communication between them.
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/openhvr-diagram.pdf}
 \caption{Simple diagram picturing the overview of system functionality}
-
+\begin{enumerate}
+    \item Administrator is a user that configures the system and performs the first setup.
+    \item VR User is a user experiencing VR application. This user can (and often will be) the same as the Administrator.
+    \item Configurator Tool (as described in Chapter 4.4).
+    \item VR Application written in Unity Engine (or possibly later other supported frameworks and game engines) which use OpenHVR Unity Plug-in
+    \item Unity plug-in (as described in Chapter 4.6).
+    \item Effect Devices registered in setup instance of OpenHVR System.
+    \item OpenHVR Communication Server (as described in Chapter 4.5).
+\end{enumerate}
 \end{figure}
 
 
@@ -26,12 +34,9 @@ As a first step in designing the Configurator Tool, a wireframe prototype
 has been designed. Configurator Tool user interface will consist of only
 two interactive screens — the main screen and screen for adding a new device.
 On the main screen, the user will be able to see an overview of the room configuration,
-manage (move, update, remove) effect devices, and will see the system’s status.
-The "New device screen" will be displayed after clicking on the "Add device"
+manage (update or remove) effect devices, and will see the system’s status.
+The `New device screen' will be displayed after clicking on the `Add device'
 button at the main screen.
-
-
-The prototype pictures layout of the user interface.
 
 
 \begin{figure}[h]{}
@@ -46,17 +51,16 @@ The prototype pictures layout of the user interface.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/wireframe-3-adding.pdf}
-\caption{Wireframe design of the "Add device" screen}
+\caption{Wireframe design of the `Add device' screen}
 \end{figure}
 
 \hypertarget{x-rest-api-design}{\section{REST API Design}}
 Following is a list of resources available at the server’s API endpoint.
 With short descriptions it represents a simple draft of functions provided 
-by the server component.
-Concrete resource and schemas documentation derived
-directly from the implementation, is present
-in \hyperlink{./13-developer-guide#server-api}{} of the
-Developer Guide chapter.
+by the server component and doesn't represent the final form of the API.
+Concrete resource and schemas documentation can be generated directly
+from the implementation. The instructions how to generate the documentation
+are present in Appendix C (Developer Guide).
 
 \begin{description}
 
@@ -68,11 +72,11 @@ together with their properties (e.g., location, rotation, name).
 \item[GET /devices/drivers]Returns a list of currently available drivers. New drivers can be added only
 by extending the source code of the server.
 
-\item[GET /devices/{deviceId}]Returns details about a specific device.
+\item[GET /devices/\{deviceId\}]Returns details about a specific device.
 
-\item[PUT /devices/{deviceId}]Updates specific device properties (e.g., location, rotation, name).
+\item[PUT /devices/\{deviceId\}]Updates specific device properties (e.g., location, rotation, name).
 
-\item[DELETE /devices/{deviceId}]Removes registration of the device from the room configuration.
+\item[DELETE /devices/\{deviceId\}]Removes registration of the device from the room configuration.
 
 \item[POST /effects/]Requests a new effect performance. This resource is meant to be requested by the
 client each time there is an event happening in the VR scene, which should also
@@ -86,13 +90,13 @@ the scene needs to be cleared, or, for any reason, it needs to be reassured that
 no devices are producing any effects (for example, when quitting the VR
 application).
 
-\item[DELETE /effects/{effectId}]Immediately cancels a specific, previously requested effect performance.
+\item[DELETE /effects/\{effectId\}]Immediately cancels a specific, previously requested effect performance.
 Canceling specific performances is needed only when infinite duration
 was specified when requesting. Otherwise, the effect will end after the
 duration, and there is no need to cancel it.
 
 \item[GET /effects/types]Returns list of available types of effects. Client applications can request
-this list at their startup and raise a warning at the client-side if VR
+this list at their startup and raise a warning if the VR
 application is requesting an effect that is not available.
 
 \item[GET /system/status]Returns system status.
@@ -103,10 +107,10 @@ application is requesting an effect that is not available.
 \hypertarget{x-api-security}{\section{API Security}}
 The server will not support authentication, and all resources will be publicly
 available. It is expected that each server will serve a single instance of
-a virtual reality set-up and will run on a local network without public access.
+a virtual reality setup and will run on a local network without public access.
 Should the user ever be concerned about unwanted access to the system, the server
 will support IP whitelisting
-\footnote{IP Whitelisting is a common name for the process of filtering requests by the sender IP address and letting through only the requests with senders listed on the "whitelist".}.
+\footnote{IP Whitelisting is a common name for the process of filtering requests by the sender IP address and letting through only the requests with senders listed on the ``whitelist''.}.
 
 
 The security of each of the device depends on the software and firmware provided
