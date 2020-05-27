@@ -54,12 +54,12 @@ Each of the senses is evaluated by categorizing into three types of results:
 \begin{itemize}
   \itemsep0em
 
-  \item \textbf{Suitable} — it might be appropriate to create effects affecting this sense,
+  \item \textbf{Suitable} — it might be appropriate to create effects affecting this sense
 
   \item \textbf{Irrelevant} — even though it might be appropriate to affect this sense,
-  there are reasons why it will not have any effect,
+  there are reasons why it will not have any effect
 
-  \item \textbf{Not Suitable} — affecting such sense is inappropriate.
+  \item \textbf{Not Suitable} — affecting such sense is inappropriate
 
 \end{itemize}
 
@@ -397,11 +397,13 @@ the implementation process, that could not be mentioned in the analysis.
 
 \subsection{Functional requirements}
 \paragraph*{User wants to configure his room for use with OpenHVR system <CFG-F1>}
+\label{cfg-f1}
 Before using the OpenHVR system in a new space,
 the room properties must be configured with the configurator tool.
 
 
 \paragraph*{User wants to add an effect device into the room configuration <CFG-F2>}
+\label{cfg-f2}
 Each device placed into a room that the user intends to use for producing the effects
 must be connected with the communication server, and its type must be specified.
 Additionally, more configuration might be required, depending on the type
@@ -409,11 +411,13 @@ of the device (e.g., thresholds, relay/channel selection, hardware limitations)
 
 
 \paragraph*{User wants to define a location of added effect device <CFG-F3>}
+\label{cfg-f3}
 Each device in a room that the administrator configured,
 must have location and rotation (pose) information.
 
 
 \paragraph*{User wants to input location information using one of the tracked controller in virtual reality space <CFG-F4>}
+\label{cfg-f4}
 Additionally, to input location values, for user convenience,
 the application will allow using a tracked controller to input the location at
 various places for locating the effect
@@ -424,12 +428,14 @@ world coordinate system.
 \subsection{Non-Functional requirements}
 
 \paragraph*{User interface must be fast and responsive <CFG-N1>}
+\label{cfg-n1}
 To provide satisfying user experience, the user interface should be fast and
 responsive. The user interface should display loading progress and inform users
 about currently ongoing actions.
 
 
 \paragraph*{User interface must follow WCAG 2.1 <CFG-N2>}
+\label{cfg-n2}
 The user interface must follow WCAG 2.1\footnote{Web Content Accessibility 
 Guidelines (WCAG) 2.1 \href{https://www.w3.org/TR/WCAG21/}{https://www.w3.org/TR/WCAG21/}}
 guidelines to provide an accessible user interface.

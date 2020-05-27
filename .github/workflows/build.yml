@@ -17,7 +17,7 @@ jobs:
     - name: Compose Bibliography with bibtex
       run: bibtex DP_Hlavac_Marian_2020.aux
     - name: Final render
-      run: pdflatex DP_Hlavac_Marian_2020
+      run: pdflatex DP_Hlavac_Marian_2020; pdflatex DP_Hlavac_Marian_2020
     - name: Upload PDF as artifact
       uses: actions/upload-artifact@v2
       with:

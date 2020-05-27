@@ -15,6 +15,7 @@ Directory \verb|openhvr-server/devicedrivers| contains implementations of
 device drivers. To add new drives, create a new file with a new function,
 that conform to following interface:
 
+\begin{small}
 \begin{verbatim}
     package devicedrivers
 
@@ -24,15 +25,18 @@ that conform to following interface:
         ...
     }
 \end{verbatim}
+\end{small}
 
 Implemented driver then must be registered in file \verb|openhvr-server/main.go|
 on line 26. Example:
 
+\begin{small}
 \begin{verbatim}
     ...
     devicedrivers.RegisterDriver("name_of_the_driver", devicedrivers.FooDriver)
     ...
 \end{verbatim}
+\end{small}
 
 \section*{Server API documentation}
 
@@ -46,7 +50,7 @@ Run the developement server with the \verb|-downdoc=true -gendoc=true| arguments
     bee run -downdoc=true -gendoc=true
 \end{verbatim}
 
-then visit the address \verb|\href{http://localhost:47023/docs}{http://localhost:47023/docs}| to read the
+then visit the address \href{http://localhost:47023/docs}{http://localhost:47023/docs} to read the
 documentation.
 
 The generated documentation can be also found on the enclosed CD of the thesis.
@@ -56,9 +60,9 @@ The generated documentation can be also found on the enclosed CD of the thesis.
 Download the Unity package file \verb|openhvr.unitypackage| from the GitHub
 repository or enclosed CD.
 
-In Unity Editor, open contextual menu and select 
-\verb|Assets| > \verb|Import Package| > \verb|Custom package...| and select
-the \verb|openhvr.unitypackage| file.
+In Unity Editor, open contextual menu and select \\
+\verb|Assets| > \verb|Import Package| > \verb|Custom package...| \\
+and choose the \verb|openhvr.unitypackage| file.
 
 In the scene, where the OpenHVR effects are desired to be used, create an empty
 game object and add a new \verb|OpenHVR Manager| component to it.
