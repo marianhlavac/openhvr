@@ -27,6 +27,8 @@ Run the image using the following command:
 The command will run the server on port 47023, and the configuration tool will
 be available at \href{http://localhost:47023}{http://localhost:47023}
 
+\pagebreak
+
 \subsection*{Install manually}
 
 If you do not prefer Docker, you can compile the server manually and run it.
@@ -79,6 +81,8 @@ the \verb|openhvr-server| directory, and run the compiled executable.
     ./main
 \end{verbatim}
 
+\pagebreak
+
 \section*{Effect device preparation}
 
 Before your electrical appliance can be used for producing the effects
@@ -91,13 +95,20 @@ damaging the equipment or other risks.
 \subsection*{Flash the Tasmota firmware}
 
 The device must be flashed with the 
-Tasmota\footnote{https://github.com/arendst/Tasmota/releases}
+Tasmota\footnote{\href{https://github.com/arendst/Tasmota/releases}{https://github.com/arendst/Tasmota/releases}}
 firmware on the chip of the device.
 The appliance itself must be based on the ESP8266 chip, or connected to a 
 smart relay or switch, which is based on the ESP8266 chip. To check if your
 device is compatible with Tasmota firmware, consult the 
 \href{https://templates.blakadder.com}{Tasmota Devices Templates Repository}
 which lists all supported devices.
+
+The \href{https://tasmota.github.io/docs/Getting-Started/}{`Getting Started'}
+page of Tasmota Documentation Website\footnote{
+    \href{https://tasmota.github.io}{https://tasmota.github.io}}
+guides through the process of flashing
+the firmware on any supported device. The page is considered as a solid starting
+point for the process of flashing the firmware.
 
 \textbf{TIP:} Some devices are difficult to flash, requires soldering on the
 pins of the chip or other sophisticated methods of flashing. If you are not

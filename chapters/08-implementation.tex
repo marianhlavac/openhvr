@@ -82,8 +82,7 @@ will be fast enough to satisfy the \hyperref[cfg-n1]{CFG-N1}
 (\emph{User interface must be fast and responsive})
 requirement.
 
-
-To build the user interface more quickly, it was decided to use a UI framework.
+To build the user interface quickly, UI framework was used.
 \textbf{Svelte}\footnote{\href{https://svelte.dev}{https://svelte.dev}} is a modern web framework for JavaScript
 that can help build the configurator UI much faster and make the application
 more reliable. Unlike other UI frameworks for JavaScript, Svelte offers
@@ -129,7 +128,7 @@ set of scripts and related assets, that can be imported into an existing
 or new Unity project and used.
 
 
-For scripting, the Unity Engine gives a choice between three languages — C\#, 
+For scripting, the Unity Engine gives a choice between three languages — C\#, \\
 UnityScript\footnote{UnityScript is a special variant of JavaScript}, and
 Boo. From these three, the first one is the most popular and the most
 feature-rich with the most complex binding to the Unity API.\,\cite{unityblog}
@@ -196,12 +195,12 @@ storing larger assets (such as textures, models, and pictures)
 Built binaries and configuration setup are packaged into Docker\footnote{Docker
  is container platform, using OS-level virtualization to deliver programs in 
  packages called containers \href{https://docker.com}{https://docker.com}}
-images, that can be easily and quickly run on any machine.
+image, that can be easily and quickly run on any machine.
 
 
 Users are given a choice to compile the server manually, or if their machine has
-Docker installed, they can download the images and run them without
-the necessity of configuring the Go compiler and compiling it.
+Docker installed, they can download the image and run it without
+the necessity of configuring the Go Tools to compile the source code.
 
 More information on how to install with Docker is present in the Install Guide.
 
@@ -269,7 +268,7 @@ channels and support for electrical load up to 15A total and can be powered
 by voltages in the range 100-240V AC.
 
 \hypertarget{x-tasmota — alternative-firmware-for-esp8266-based-devices}{\subsection{Tasmota — alternative firmware for ESP8266-based devices}}
-Tasmota\footnote{https://tasmota.github.io/docs/} is an alternative open-source 
+Tasmota\footnote{\href{https://tasmota.github.io/docs/}{https://tasmota.github.io/docs/}} is an alternative open-source 
 firmware for ESP8266-based devices.
 As of April 2020, there are currently over 1180 devices supported,\cite{tasdirec}
 which also includes many commercial consumer electronics based on ESP8266 chip,
@@ -285,8 +284,8 @@ on the ESP8266 chip must be pulled down to the ground and connected to a compute
 any compatible FTDI device. There are many existing tools (e.g., 
 esptool.py\footnote{\href{https://github.com/espressif/esptool}{https://github.com/espressif/esptool}})
 that provides simple and easy to use command-line
-interface for flashing a new firmware to the device. Detailed description and
-steps, how to prepare a ESP8266 device are mentioned in 
+interface for flashing a new firmware to the device. Additional information
+on how to prepare a ESP8266 device are mentioned in the 
 \nameref{installguide} on page \pageref{installguide}.
 
 Devices equipped with Tasmota firmware can communicate over HTTP API or MQTT.
@@ -303,8 +302,8 @@ the OpenHVR server code. The server is hosting static files,
 including the client-side application.
 For using with Unity game engine, a set of scripts denoted as `Unity plug-in'
 were also implemented. The devices communicate over HTTP API;
-latencies of MQTT was unsatisfactory for the real-time connections, and Art-Net
-did not meet the requirements for being a low-cost solution.
+latencies of MQTT was unsatisfactory for the real-time communications, and Art-Net
+did not meet the requirement for being a low-cost solution.
 
 \begin{figure}[h]{}
 \centering\includegraphics[width=\textwidth]{assets/running-server.png}

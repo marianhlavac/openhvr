@@ -381,11 +381,11 @@ on accessible hardware, open-source and non-proprietary solutions, and
 the opportunity for more people to build their effect system in DIY style.
 
 
-\section{Configurator tool analysis}\label{analysis:conftool}
+\section{Configurator Tool analysis}\label{analysis:conftool}
 Configurator Tool (alternatively `Room Configurator') is a web application that
 can be used to input properties of the room and effect devices properties and
 connection details.
-The application should provide convenient GUI\footnote{Graphical User Interface}
+The application should provide convenient GUI
 for users to easily configure the system for their room and VR setup.
 
 
@@ -424,6 +424,7 @@ various places for locating the effect
 devices and mapping between the real world coordinate system and virtual
 world coordinate system.
 
+\pagebreak
 
 \subsection{Non-Functional requirements}
 
@@ -438,7 +439,8 @@ about currently ongoing actions.
 \label{cfg-n2}
 The user interface must follow WCAG 2.1\footnote{Web Content Accessibility 
 Guidelines (WCAG) 2.1 \href{https://www.w3.org/TR/WCAG21/}{https://www.w3.org/TR/WCAG21/}}
-guidelines to provide an accessible user interface.
+guidelines to provide an accessible user interface. It should meet at least
+level A of WCAG requirements.
 
 
 \section{Communication Server analysis}\label{analysis:server}
@@ -448,7 +450,7 @@ passing information between the IoT devices and the computer with
 running VR application. This server holds data about room configuration,
 status, and location of the effect devices and overall status of the system.
 
-It must provide API\footnote{Application Programming Interface} to enable
+It must provide API to enable
 information exchange between the computer running the simulation and IoT devices.
 
 
@@ -531,7 +533,7 @@ the developers will be able to fine-tune the effect type and its range.
   range of the 3D sound}
   \end{figure}
 
-\pagebreak
+\newpage
 
 \subsection{Functional requirements}
 
@@ -561,7 +563,7 @@ will be used to achieve creating an interface between Unity and OpenHVR.
 Interface and tools should feel familiar for Unity developers.
 
 
-\section{OpenHVR System analysis}
+\section{OpenHVR system analysis}
 
 Users will often come into contact with the system as a whole. End-users
 often cannot distinguish between the specific parts or components. From such
@@ -643,7 +645,7 @@ HTTP protocol, which is the most widespread protocol used in computer networks
 and is used every day by billions of users.\,\cite{httpsrv}
 
 
-A small disadvantage might be the large versatility of the HTTP protocol. There would be
+A disadvantage might be the large versatility of the HTTP protocol. There would be
 a need for a standardized API for communication between devices and with the
 server. To mitigate this disadvantage, a RESTful API can be designed to provide
 the standardized API with expectable results.

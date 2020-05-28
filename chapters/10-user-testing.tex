@@ -210,13 +210,13 @@ the test program collects the following vectors:
 \begin{enumerate}
 \item{Normalized location difference between the current world position of the right
 controller and location of the currently blowing fan:
-\( l_{diff} = \frac{l_{fan} - l_{rctrl}}{|l_{fan} - l_{rctrl}|} \),
+\( d_{rctrlfan} = \frac{l_{fan} - l_{rctrl}}{|l_{fan} - l_{rctrl}|} \),
  The difference gives a direction vector from the controller to the fan.}
-\item{Direction vector \( r_{rctrl} = (r_x, r_y, r_z) \) , derived from the current controller rotation.}
+\item{Direction vector \( d_{rctrl} = (r_x, r_y, r_z) \) , derived from the current controller rotation.}
 \end{enumerate}
 
 For each pair of these two vectors, the magnitude of their difference is calculated
-as \( d = | r_{rctrl} - l_{diff} | \).
+as \( \Delta = | d_{rctrl} - d_{rctrlfan} | \).
 Lower values represent greater tester’s precision (value \( 0 \) represents the 
 perfect alignment).
 
@@ -244,7 +244,7 @@ correct. The test failed and must be performed again.
 Section \ref{measured:a} of appendix \ref{measured} contains the collected data.
 
 
-\hypertarget{x-main-user-test}{\section{Main User Test}}
+\section{Primary user test}
 For the primary test, an example app was used, with four breakable windows
 and three fireplaces. All 8 of the testers were participating
 in this test. Chapter~\ref{exampleapp} describes the appearance of the room 
